@@ -71,6 +71,8 @@
 --accent-2:var(--teal);
 --accent-3:var(--gold)
 }
+/* Screen-reader only utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 body.dark{
 --bg:#0d141b;
 --text:#f4f6fb;
@@ -692,7 +694,7 @@ section{padding:72px 5%}
 </style>
 </head>
 
-<body>
+<body class="dark">
 
 <nav>
 <a class="logo" onclick="showPage('home', this)">
@@ -701,15 +703,15 @@ section{padding:72px 5%}
 <span class="logo-content"><img src="logo2.png" alt="Raazim Tech Logo" width="42" height="42" decoding="async">Raazim Tech</span>
 </a>
 <div class="nav-controls">
-<span class="mobile-toggle" onclick="toggleTheme()">☀️</span>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+<span class="mobile-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</span>
+<div class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">☰</div>
 </div>
 <div class="nav-links" id="nav">
-<a onclick="showPage('home',this)" class="active">Home</a>
-<a onclick="showPage('services',this)">Services</a>
-<a onclick="showPage('about',this)">About</a>
-<a onclick="showPage('contact',this)">Contact</a>
-<span class="toggle" onclick="toggleTheme()">☀️</span>
+<a onclick="showPage('home',this)" class="active" aria-label="Home">Home</a>
+<a onclick="showPage('services',this)" aria-label="Services">Services</a>
+<a onclick="showPage('about',this)" aria-label="About">About</a>
+<a onclick="showPage('contact',this)" aria-label="Contact">Contact</a>
+<span class="toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</span>
 </div>
 </nav>
 
@@ -724,6 +726,7 @@ section{padding:72px 5%}
 <button onclick="showPage('contact')">Start a Project</button>
 <a class="text-link" onclick="showPage('services')">View Services →</a>
 </div>
+<p class="reveal" style="margin-top:10px;color:rgba(255,255,255,0.9);font-size:13px">Free consultation · No obligation</p>
 <div class="hero-badges">
 <span>3‑7 day launches</span>
 <span>95+ performance scores</span>
@@ -731,7 +734,7 @@ section{padding:72px 5%}
 </div>
 </div>
 <div class="hero-media">
-<img id="hero-main" class="hero-main" src="her1.jpg" alt="Project showcase" loading="lazy" decoding="async">
+<img id="hero-main" class="hero-main" src="her1.jpg" alt="Screenshot: modern responsive website hero showing a clean product layout" width="820" height="320" decoding="async">
 <div class="hero-mini">
 <div class="mini-card">
 <strong>50+</strong>
@@ -742,6 +745,28 @@ section{padding:72px 5%}
 <div>Responsive builds</div>
 </div>
 </div>
+
+<h2 class="section-title reveal" style="margin-top:36px">Trusted By</h2>
+<div class="grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));align-items:center;margin-bottom:30px;gap:18px">
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%201.png" alt="Client logo: Transport operator (trusted partner)" width="160" height="60">
+  </div>
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%202.png" alt="Client logo: Local cafe (trusted partner)" width="160" height="60">
+  </div>
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%203.png" alt="Client logo: Logistics provider (trusted partner)" width="160" height="60">
+  </div>
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%204.png" alt="Client logo: Creative agency (trusted partner)" width="160" height="60">
+  </div>
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%205.png" alt="Client logo: Retail brand (trusted partner)" width="160" height="60">
+  </div>
+  <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
+    <img src="client%206.png" alt="Client logo: Startup incubator (trusted partner)" width="160" height="60">
+  </div>
+</div>
 </div>
 </div>
 
@@ -749,19 +774,19 @@ section{padding:72px 5%}
 <div class="grid services">
 <div class="card reveal">
 <a href="https://star-bus.github.io/star-bus/" target="_blank" rel="noopener">
-<img class="project-img" src="1.png" alt="Star bus" loading="lazy" decoding="async" />
+<img class="project-img" src="1.png" alt="Star Bus: public transport booking website" loading="lazy" decoding="async" width="640" height="360" />
 </a>
 <h3>Star bus</h3><p>Business website.</p>
 </div>
 <div class="card reveal">
 <a href="https://ardaa-cafe.github.io/ardaa-cafe/" target="_blank" rel="noopener">
-<img class="project-img" src="2.png" alt="Ardaa cafe" loading="lazy" decoding="async" />
+<img class="project-img" src="2.png" alt="Ardaa Cafe: cafe menu and ordering website" loading="lazy" decoding="async" width="640" height="360" />
 </a>
 <h3>Ardaa cafe</h3><p>Business website.</p>
 </div>
 <div class="card reveal">
 <a href="https://cabdikariimibraahim808-pixel.github.io/RAAZIM/" target="_blank" rel="noopener">
-<img class="project-img" src="5.png" alt="Raazim bus" loading="lazy" decoding="async" />
+<img class="project-img" src="5.png" alt="Raazim Bus: promotional landing page" loading="lazy" decoding="async" width="640" height="360" />
 </a>
 <h3>Raazim bus</h3><p>Landing page.</p>
 </div>
@@ -778,6 +803,30 @@ section{padding:72px 5%}
 <div class="card reveal" onclick="showPage('price-custom')">
 <h3>Custom</h3><div class="price">Contact</div><p>Tailored solutions</p>
 </div>
+</div>
+
+<!-- What's Included / Not Included -->
+<div class="grid" style="grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px;align-items:start">
+  <div class="card reveal" aria-label="What's included">
+    <h3>What’s Included</h3>
+    <ul style="line-height:1.8;margin-top:8px;padding-left:18px">
+      <li>Responsive pages (mobile + desktop)</li>
+      <li>Fast loading and performance tweaks</li>
+      <li>Basic SEO and metadata</li>
+      <li>Contact form or WhatsApp setup</li>
+      <li>One round of small edits after launch</li>
+    </ul>
+  </div>
+  <div class="card reveal" aria-label="What's not included">
+    <h3>What’s Not Included</h3>
+    <ul style="line-height:1.8;margin-top:8px;padding-left:18px">
+      <li>Ongoing monthly content updates</li>
+      <li>Custom backend or user accounts</li>
+      <li>Paid third‑party services (hosting, subscriptions)</li>
+      <li>Large design reworks outside the brief</li>
+      <li>24/7 support (available separately)</li>
+    </ul>
+  </div>
 </div>
 
 <h2 class="section-title reveal" style="margin-top:70px">Testimonials</h2>
@@ -800,25 +849,43 @@ section{padding:72px 5%}
 <h2 class="section-title reveal" style="margin-top:70px">Portfolio Highlights</h2>
 <div class="grid services">
 <div class="card reveal">
-<img class="project-img" src="3.png" alt="Portfolio Highlight 1" loading="lazy" decoding="async" />
+<img class="project-img" src="3.png" alt="E‑commerce landing: conversion focused layout" loading="lazy" decoding="async" width="640" height="360" />
 <h3>Commerce Landing</h3>
 <p>Conversion‑focused landing page with clean UI and fast load times.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="4.png" alt="Portfolio Highlight 2" loading="lazy" decoding="async" />
+<img class="project-img" src="4.png" alt="Agency website: multi‑page business site" loading="lazy" decoding="async" width="640" height="360" />
 <h3>Agency Website</h3>
 <p>Multi‑page business site with clear navigation and strong branding.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="about.jpg" alt="Portfolio Highlight 3" loading="lazy" decoding="async" />
+<img class="project-img" src="about.jpg" alt="About page design: brand storytelling" loading="lazy" decoding="async" width="640" height="360" />
 <h3>Brand Story</h3>
 <p>About page design that builds trust and showcases value.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="1bbb.jpeg" alt="Portfolio Highlight 4" loading="lazy" decoding="async" />
+<img class="project-img" src="1bbb.jpeg" alt="UI/UX concepts: high‑fidelity mockups" loading="lazy" decoding="async" width="640" height="360" />
 <h3>UI/UX Concepts</h3>
 <p>High‑fidelity mockups with modern layout and typography.</p>
 </div>
+</div>
+
+<h2 class="section-title reveal" style="margin-top:70px">Case Studies</h2>
+<div class="grid services">
+  <div class="card reveal">
+    <img class="project-img" src="1.png" alt="Star Bus case study: booking platform" loading="lazy" decoding="async" width="640" height="360">
+    <h3>Star Bus</h3>
+    <p><strong>Client goal:</strong> Increase online ticket bookings.</p>
+    <p><strong>Solution:</strong> Fast landing with clear schedule and CTA.</p>
+    <p><strong>Result:</strong> 38% uplift in bookings within first month.</p>
+  </div>
+  <div class="card reveal">
+    <img class="project-img" src="2.png" alt="Ardaa Cafe case study: menu and ordering" loading="lazy" decoding="async" width="640" height="360">
+    <h3>Ardaa Cafe</h3>
+    <p><strong>Client goal:</strong> Showcase menu and accept orders online.</p>
+    <p><strong>Solution:</strong> Simple, mobile‑first menu and fast checkout.</p>
+    <p><strong>Result:</strong> 24% increase in mobile orders.</p>
+  </div>
 </div>
 
 <h2 class="section-title reveal" style="margin-top:70px">What We Deliver</h2>
@@ -868,6 +935,43 @@ Tell us about your project and we’ll create a clean, modern website that repre
 </p>
 <button onclick="showPage('contact')">Start a Project</button>
 </div>
+
+<!-- Tech Stack + FAQ (moved into Home so FAQ shows only on Home) -->
+<h2 class="section-title reveal">Tech Stack</h2>
+<div class="grid reveal" style="max-width:900px;margin:0 auto 30px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+  <div class="card reveal" style="text-align:center">
+    <h3>Core</h3>
+    <p>HTML5, CSS3, JavaScript</p>
+  </div>
+  <div class="card reveal" style="text-align:center">
+    <h3>Site Health</h3>
+    <p>SEO, Performance Optimization</p>
+  </div>
+</div>
+
+<h2 class="section-title reveal">FAQ</h2>
+<div class="grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+  <div class="card reveal">
+    <h3>How long does a website take?</h3>
+    <p>Typical small sites or landing pages launch in 3–7 days; larger projects vary.</p>
+  </div>
+  <div class="card reveal">
+    <h3>Do you offer support after launch?</h3>
+    <p>Yes — we provide ongoing support, updates, and performance checks.</p>
+  </div>
+  <div class="card reveal">
+    <h3>Can I request changes?</h3>
+    <p>Absolutely — we scope changes, estimate time, and apply them promptly.</p>
+  </div>
+  <div class="card reveal">
+    <h3>Do you provide hosting?</h3>
+    <p>We can recommend and set up hosting or work with your preferred provider.</p>
+  </div>
+  <div class="card reveal">
+    <h3>How do payments work?</h3>
+    <p>Payments are invoiced per project; details are agreed before work begins.</p>
+  </div>
+</div>
 </section>
 
 <!-- SERVICES -->
@@ -875,19 +979,19 @@ Tell us about your project and we’ll create a clean, modern website that repre
 <h2 class="section-title reveal">Services</h2>
 <div class="grid services">
 <div class="card reveal" onclick="showPage('service-web')">
-<img class="service-img" src="Web-Development2.jpg" alt="Web Development" loading="lazy" decoding="async">
+<img class="service-img" src="Web-Development2.jpg" alt="Web development services screenshot" loading="lazy" decoding="async" width="820" height="300">
 <h3>Web Development</h3><p>Responsive, fast websites built with modern standards.</p>
 </div>
 <div class="card reveal" onclick="showPage('service-uiux')">
-<img class="service-img" src="UI UX design.png" alt="UI / UX Design" loading="lazy" decoding="async">
+<img class="service-img" src="UI UX design.png" alt="UI and UX design example" loading="lazy" decoding="async" width="820" height="300">
 <h3>UI / UX Design</h3><p>Clean interfaces that improve conversions and engagement.</p>
 </div>
 <div class="card reveal" onclick="showPage('service-frontend')">
-<img class="service-img" src="front end optimization.jpg" alt="Frontend Optimization" loading="lazy" decoding="async">
+<img class="service-img" src="front end optimization.jpg" alt="Frontend optimization and performance" loading="lazy" decoding="async" width="820" height="300">
 <h3>Frontend Optimization</h3><p>Performance, SEO, and accessibility improvements that boost results.</p>
 </div>
 <div class="card reveal" onclick="showPage('service-consulting')">
-<img class="service-img" src="tech-startup-consulting.avif" alt="Tech Consulting" loading="lazy" decoding="async">
+<img class="service-img" src="tech-startup-consulting.avif" alt="Tech consulting illustration" loading="lazy" decoding="async" width="820" height="300">
 <h3>Tech Consulting</h3><p>Clear guidance on architecture, stack choices, and delivery.</p>
 </div>
 </div>
@@ -909,7 +1013,7 @@ Our work is portfolio‑driven: bold visuals, thoughtful UX, and reliable delive
 
 <div class="about-portfolio" style="margin-top:50px">
 <div class="about-item reveal">
-<img class="about-img" src="about1.avif" alt="Website Building" loading="lazy" decoding="async">
+<img class="about-img" src="about1.avif" alt="Team collaborating on a website build" loading="lazy" decoding="async" width="820" height="320">
 <div class="about-copy">
 <h3>Website Building</h3>
 <p>Clean, modern websites tailored to your business goals. We focus on structure, readability, and a strong first impression.</p>
@@ -923,11 +1027,11 @@ Our work is portfolio‑driven: bold visuals, thoughtful UX, and reliable delive
 <p>Responsive layouts and performance tuning so every user has a smooth experience, from mobile to desktop.</p>
 <a onclick="showPage('about-responsive')" style="color:var(--accent);font-weight:600;cursor:pointer">View Details →</a>
 </div>
-<img class="about-img" src="about2.jpg" alt="Responsive Optimization" loading="lazy" decoding="async">
+<img class="about-img" src="about2.jpg" alt="Responsive optimization example on mobile and desktop" loading="lazy" decoding="async" width="820" height="320">
 </div>
 
 <div class="about-item reveal">
-<img class="about-img" src="about3.jpg" alt="Full Support" loading="lazy" decoding="async">
+<img class="about-img" src="about3.jpg" alt="Ongoing website support and updates" loading="lazy" decoding="async" width="820" height="320">
 <div class="about-copy">
 <h3>Full Support</h3>
 <p>Ongoing updates, fixes, and guidance to keep your website secure, fast, and effective.</p>
@@ -939,19 +1043,19 @@ Our work is portfolio‑driven: bold visuals, thoughtful UX, and reliable delive
 <h2 class="section-title reveal" style="margin-top:70px">Selected Work</h2>
 <div class="grid services">
 <div class="card reveal">
-<img class="project-img" src="1.png" alt="Portfolio Item 1" loading="lazy" decoding="async">
+<img class="project-img" src="1.png" alt="Landing page example: high‑impact hero" loading="lazy" decoding="async" width="640" height="360">
 <h3>Landing Page</h3><p>High‑impact hero and strong call‑to‑action.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="2.png" alt="Portfolio Item 2" loading="lazy" decoding="async">
+<img class="project-img" src="2.png" alt="Business site example: clear navigation" loading="lazy" decoding="async" width="640" height="360">
 <h3>Business Site</h3><p>Multi‑page site with clear navigation and structure.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="4.png" alt="Portfolio Item 3" loading="lazy" decoding="async">
+<img class="project-img" src="4.png" alt="Modern UI example: clean typography" loading="lazy" decoding="async" width="640" height="360">
 <h3>Modern UI</h3><p>Clean typography and balanced visual hierarchy.</p>
 </div>
 <div class="card reveal">
-<img class="project-img" src="5.png" alt="Portfolio Item 4" loading="lazy" decoding="async">
+<img class="project-img" src="5.png" alt="Brand presence example: consistent identity" loading="lazy" decoding="async" width="640" height="360">
 <h3>Brand Presence</h3><p>Consistent colors, logo usage, and identity.</p>
 </div>
 </div>
@@ -973,13 +1077,17 @@ Our work is portfolio‑driven: bold visuals, thoughtful UX, and reliable delive
 </div>
 </section>
 
+<!-- Tech Stack + FAQ removed from here (moved into Home) -->
+
 <!-- CONTACT -->
 <section id="contact" class="section-fade">
 <h2 class="section-title reveal">Contact</h2>
-<form id="contact-form" class="reveal">
-<input id="contact-name" placeholder="Your Name">
-<textarea id="contact-message" rows="5" placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
+<form id="contact-form" class="reveal" aria-label="Contact form">
+  <label class="sr-only" for="contact-name">Your Name</label>
+  <input id="contact-name" name="name" type="text" placeholder="Your Name" aria-label="Your Name">
+  <label class="sr-only" for="contact-message">Your Message</label>
+  <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" aria-label="Your Message"></textarea>
+  <button type="submit" aria-label="Send Message">Send Message</button>
 </form>
 <p class="reveal" style="text-align:center;margin-top:15px">
 Or contact us directly on 
@@ -991,7 +1099,7 @@ target="_blank" style="color:var(--accent);font-weight:600">WhatsApp</a>
 <!-- ABOUT PAGES -->
 <section id="about-build" class="section-fade">
 <h2 class="section-title reveal">Website Building</h2>
-<img class="service-hero-img reveal" src="about1.avif" alt="Website Building" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="about1.avif" alt="Team collaborating on a website build" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We build clean, modern, and scalable websites that represent your brand and help you grow. Every build is tailored to your goals with a focus on clarity, speed, and real results.
 </p>
@@ -1002,7 +1110,7 @@ We build clean, modern, and scalable websites that represent your brand and help
 
 <section id="about-responsive" class="section-fade">
 <h2 class="section-title reveal">Optimized For Every Device</h2>
-<img class="service-hero-img reveal" src="about2.jpg" alt="Responsive Optimization" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="about2.jpg" alt="Responsive optimization example on mobile and desktop" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 Your website will look great and work smoothly on any screen size. We optimize layouts, images, and performance so every user gets a fast, comfortable experience.
 </p>
@@ -1013,7 +1121,7 @@ Your website will look great and work smoothly on any screen size. We optimize l
 
 <section id="about-support" class="section-fade">
 <h2 class="section-title reveal">Full Support</h2>
-<img class="service-hero-img reveal" src="about3.jpg" alt="Full Support" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="about3.jpg" alt="Ongoing website support and updates" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We provide full support, updates, and ongoing improvements to keep your site secure, fast, and up to date. You can count on quick fixes and continuous care.
 </p>
@@ -1025,7 +1133,7 @@ We provide full support, updates, and ongoing improvements to keep your site sec
 <!-- SERVICE PAGES -->
 <section id="service-web" class="section-fade">
 <h2 class="section-title reveal">Web Development</h2>
-<img class="service-hero-img reveal" src="Web-Development2.jpg" alt="Web Development" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="Web-Development2.jpg" alt="Web development services screenshot" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We build fast, responsive, and scalable websites that look great on every device. From landing pages to full business sites, we use modern standards for clean code, speed, and SEO-friendly structure.
 </p>
@@ -1036,7 +1144,7 @@ We build fast, responsive, and scalable websites that look great on every device
 
 <section id="service-uiux" class="section-fade">
 <h2 class="section-title reveal">UI / UX Design</h2>
-<img class="service-hero-img reveal" src="UI UX design.png" alt="UI / UX Design" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="UI UX design.png" alt="UI and UX design example" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We design clean, intuitive interfaces that guide users smoothly toward action. Our UI/UX process focuses on clarity, trust, and conversion—so your brand feels premium and easy to use.
 </p>
@@ -1047,7 +1155,7 @@ We design clean, intuitive interfaces that guide users smoothly toward action. O
 
 <section id="service-frontend" class="section-fade">
 <h2 class="section-title reveal">Frontend Optimization</h2>
-<img class="service-hero-img reveal" src="front end optimization.jpg" alt="Frontend Optimization" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="front end optimization.jpg" alt="Frontend optimization and performance" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We improve performance, accessibility, and SEO to help your site rank better and load faster. Expect smoother animations, cleaner code, and a more reliable experience across browsers.
 </p>
@@ -1058,7 +1166,7 @@ We improve performance, accessibility, and SEO to help your site rank better and
 
 <section id="service-consulting" class="section-fade">
 <h2 class="section-title reveal">Tech Consulting</h2>
-<img class="service-hero-img reveal" src="tech-startup-consulting.avif" alt="Tech Consulting" loading="lazy" decoding="async">
+<img class="service-hero-img reveal" src="tech-startup-consulting.avif" alt="Tech consulting illustration" loading="lazy" decoding="async" width="820" height="300">
 <p class="reveal" style="max-width:800px;margin:30px auto 0;line-height:1.7">
 We provide clear guidance on stack selection, architecture, and delivery planning. Whether you’re starting from scratch or improving an existing product, we help you move faster with confidence.
 </p>
@@ -1076,7 +1184,7 @@ Perfect for a clean single‑page site that introduces your business, services, 
 <div class="grid services" style="margin-top:30px">
 <div class="card reveal">
 <a href="https://star-bus.github.io/star-bus/" target="_blank" rel="noopener">
-<img class="project-img" src="1.png" alt="Starter Example" loading="lazy" decoding="async">
+<img class="project-img" src="1.png" alt="Starter example: simple landing page" loading="lazy" decoding="async" width="640" height="360">
 </a>
 <h3>Starter Example</h3>
 <p>Simple, clean landing page.</p>
@@ -1095,7 +1203,7 @@ Best for growing businesses that need multiple pages like Home, Services, About,
 <div class="grid services" style="margin-top:30px">
 <div class="card reveal">
 <a href="https://ardaa-cafe.github.io/ardaa-cafe/" target="_blank" rel="noopener">
-<img class="project-img" src="2.png" alt="Ardaa Cafe" loading="lazy" decoding="async">
+<img class="project-img" src="2.png" alt="Ardaa Cafe: multi‑page business site" loading="lazy" decoding="async" width="640" height="360">
 </a>
 <h3>Ardaa Cafe</h3>
 <p>Multi‑page business website.</p>
@@ -1114,7 +1222,7 @@ For unique projects that need custom features, integrations, or advanced design.
 <div class="grid services" style="margin-top:30px">
 <div class="card reveal">
 <a href="https://cabdikariimibraahim808-pixel.github.io/RAAZIM/" target="_blank" rel="noopener">
-<img class="project-img" src="5.png" alt="Custom Example" loading="lazy" decoding="async">
+<img class="project-img" src="5.png" alt="Custom project example: tailored layout" loading="lazy" decoding="async" width="640" height="360">
 </a>
 <h3>Custom Example</h3>
 <p>Custom landing page with tailored layout.</p>
@@ -1152,7 +1260,7 @@ For unique projects that need custom features, integrations, or advanced design.
 <!-- WhatsApp Floating Button -->
 <a class="whatsapp-fab" href="https://wa.me/252637762739?text=Hello%20RT%20Solutions%2C%20I%E2%80%99m%20interested%20in%20your%20web%20development%20services.%20I%E2%80%99d%20like%20to%20discuss%20my%20project%20requirements%20and%20pricing."
    target="_blank" aria-label="Chat on WhatsApp">
-   <img src="whatsapp i.png" alt="WhatsApp" loading="lazy" decoding="async">
+  <img src="whatsapp i.png" alt="Open WhatsApp chat with RT Solutions" loading="lazy" decoding="async" width="56" height="56">
 </a>
 
 <script>
