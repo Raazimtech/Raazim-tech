@@ -440,7 +440,8 @@ background:linear-gradient(90deg, transparent, rgba(11,18,26,0.25), transparent)
 display:flex;
 gap:28px;
 width:max-content;
-will-change:transform
+will-change:transform;
+animation:marquee var(--marquee-duration,32s) linear infinite
 }
 .testimonial{
 min-width:320px;
@@ -642,7 +643,12 @@ max-width:92%
 .hero-actions{justify-content:center}
 .hero-badges{justify-content:center}
 .hero-media{align-items:center}
-.hero-main{height:220px}
+.hero-main{
+width:170px;
+height:170px;
+border-radius:20px
+}
+.hero-mini{display:none}
 .service-hero-img{height:220px}
 .about-img{height:240px}
 .nav-links{
@@ -666,7 +672,7 @@ nav{padding:14px 5%}
 .hero p{font-size:15.5px}
 .hero-badges{gap:8px}
 .hero-badges span{font-size:12px;padding:7px 12px}
-.hero-main{height:200px}
+.hero-main{width:150px;height:150px}
 .hero-mini{gap:10px}
 .mini-card strong{font-size:20px}
 .section-title{font-size:28px}
@@ -683,7 +689,7 @@ section{padding:72px 5%}
 .hero{min-height:26vh;padding:26px 5%}
 .hero h1{font-size:28px}
 .hero p{font-size:15px}
-.hero-main{height:180px}
+.hero-main{width:130px;height:130px}
 .section-title{font-size:26px}
 .price{font-size:26px}
 .nav-links{top:64px}
@@ -1218,17 +1224,7 @@ const duration=Math.max(22, items.length * 4);
 testimonialTrack.style.setProperty("--marquee-duration", `${duration}s`);
 }
 if(testimonialTrack){
-testimonialTrack.classList.add("marquee-js");
-let offset=0;
-const speed=0.8;
-const getLoopWidth=()=>testimonialTrack.scrollWidth/2;
-const step=()=>{
-const loopWidth=getLoopWidth();
-offset=(offset+speed) % loopWidth;
-testimonialTrack.style.transform=`translateX(${-offset}px)`;
-requestAnimationFrame(step);
-};
-requestAnimationFrame(step);
+testimonialTrack.style.setProperty("--marquee-duration", `${Math.max(22, testimonialTrack.children.length * 3.5)}s`);
 }
 
 
