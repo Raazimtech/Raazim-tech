@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RT Solutions | Raazim Tech Solutions</title>
-<meta name="description" content="RT Solutions (Raazim Tech Solutions) builds modern, fast, and scalable frontend websites, UI/UX design, and performance optimization for businesses.">
-<meta name="keywords" content="RT Solutions, Raazim Tech Solutions, web development, frontend, UI UX, web design, responsive websites, SEO optimization, Somaliland, Somalia">
+<title>Somaliland Web Design Company — RT Solutions | Raazim Tech Solutions</title>
+<meta name="description" content="RT Solutions — Somaliland web design company offering web design, eCommerce, mobile apps, custom development and SEO services in Hargeisa and Somaliland. Fast, responsive, and conversion‑focused websites.">
+<meta name="keywords" content="Somaliland web design company, Web design in Somaliland, Website development Somaliland, Somaliland website designer, Tech company Somaliland, IT services Somaliland, Custom website developers Somaliland, E-commerce website development Somaliland, Mobile app development Somaliland, Software development company Somaliland, Digital marketing Somaliland, SEO services Somaliland, Best web design company in Hargeisa, Web developers near me, Tech company in Hargeisa, Digital agency in Somaliland">
 <meta name="author" content="RT Solutions">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -12,11 +12,12 @@
 <link rel="canonical" href="https://example.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Raazim Tech Solutions">
-<meta property="og:title" content="RT Solutions | Raazim Tech Solutions">
-<meta property="og:description" content="Modern frontend websites, UI/UX design, and performance optimization for businesses.">
+<meta property="og:title" content="Somaliland Web Design Company — RT Solutions">
+<meta property="og:description" content="RT Solutions provides web design, eCommerce, mobile apps and SEO services in Somaliland. Professional websites for businesses in Hargeisa and Somaliland.">
 <meta property="og:url" content="https://example.com/">
-<meta property="og:image" content="https://example.com/logo2.png">
-<meta property="og:image:alt" content="Raazim Tech Solutions Logo">
+<meta property="og:image" content="tech-startup-consulting.avif">
+<meta property="og:image:alt" content="Raazim Tech UI/UX design — RT Solutions">
+<link rel="image_src" href="tech-startup-consulting.avif">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RT Solutions | Raazim Tech Solutions">
 <meta name="twitter:description" content="Modern frontend websites, UI/UX design, and performance optimization for businesses.">
@@ -38,7 +39,7 @@
   "name": "Raazim Tech Solutions",
   "alternateName": "RT Solutions",
   "url": "https://example.com/",
-  "logo": "https://example.com/logo2.png",
+  "logo": "logo2.png",
   "sameAs": [
     "https://wa.me/252637762739"
   ],
@@ -47,6 +48,53 @@
     "contactType": "customer support",
     "telephone": "+252637762739"
   }]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "tech-startup-consulting.avif",
+  "name": "Raazim Tech UI/UX design — modern responsive UI for businesses",
+  "description": "UI/UX design sample by Raazim Tech Solutions — responsive interfaces, accessible design, and modern visual language.",
+  "thumbnail": "tech-startup-consulting.avif",
+  "author": {
+    "@type": "Organization",
+    "name": "Raazim Tech Solutions"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "https://example.com/",
+      "name": "RT Solutions — Raazim Tech Solutions",
+      "description": "Somaliland web design company offering web design, eCommerce, mobile apps, custom development and SEO services in Hargeisa and Somaliland."
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "RT Solutions",
+      "telephone": "+252637762739",
+      "url": "https://example.com/",
+      "areaServed": "Somaliland",
+      "sameAs": ["https://wa.me/252637762739"],
+      "@context": "https://schema.org",
+      "@id": "https://example.com/#RTSolutions"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Web Design & Development",
+      "provider": { "@type": "LocalBusiness", "name": "RT Solutions" },
+      "description": "Web design in Somaliland, website development Somaliland, eCommerce website development Somaliland, mobile app development, SEO services Somaliland.",
+      "areaServed": "Somaliland",
+      "keywords": "Somaliland web design company, Web design in Somaliland, Website development Somaliland, Somaliland website designer, E-commerce website development Somaliland, SEO services Somaliland"
+    }
+  ]
 }
 </script>
 
@@ -324,6 +372,59 @@ border-radius:999px;
 box-shadow:0 8px 20px rgba(255,122,89,0.3)
 }
 .grid{display:grid;gap:25px}
+
+/* Trusted By: smaller logos so the section doesn't dominate layout */
+.trusted-grid .card{display:flex;align-items:center;justify-content:center;padding:10px}
+.trusted-grid img{max-width:120px;max-height:48px;width:auto;height:auto;object-fit:contain;display:block}
+@media(max-width:900px){
+  .trusted-grid img{max-width:100px;max-height:44px}
+}
+@media(max-width:560px){
+  .trusted-grid img{max-width:88px;max-height:36px}
+  .trusted-grid .card{padding:8px}
+}
+@media(max-width:420px){
+  .trusted-grid img{max-width:72px;max-height:32px}
+  .trusted-grid .card{padding:6px}
+}
+
+/* Ultra-compact phone sizes */
+@media(max-width:380px){
+  .trusted-grid{grid-template-columns:repeat(auto-fit,minmax(44px,1fr)) !important;gap:6px !important;margin-bottom:10px !important}
+  .trusted-grid img{max-width:56px;max-height:28px}
+  .trusted-grid .card{padding:4px;border-radius:6px}
+}
+
+@media(max-width:340px){
+  .trusted-grid{grid-template-columns:repeat(auto-fit,minmax(40px,1fr)) !important;gap:4px !important;margin-bottom:8px !important}
+  .trusted-grid img{max-width:48px;max-height:24px}
+  .trusted-grid .card{padding:3px;border-radius:4px}
+}
+
+/* Trusted logos: keep logos small and responsive */
+.trusted-grid .card{display:flex;align-items:center;justify-content:center;padding:8px !important}
+.trusted-grid img{max-width:120px;max-height:48px;width:auto;height:auto;object-fit:contain;display:block}
+@media(max-width:900px){
+  .trusted-grid img{max-width:100px;max-height:44px}
+}
+@media(max-width:560px){
+  .trusted-grid img{max-width:88px;max-height:40px}
+}
+@media(max-width:420px){
+  .trusted-grid img{max-width:72px;max-height:34px}
+}
+
+/* Extra small / phone-specific compact layout */
+@media(max-width:560px){
+  .trusted-grid{grid-template-columns:repeat(auto-fit,minmax(64px,1fr)) !important;gap:10px !important;margin-bottom:16px !important}
+  .trusted-grid .card{padding:6px !important;border-radius:8px}
+  .trusted-grid img{max-width:68px;max-height:32px}
+}
+@media(max-width:420px){
+  .trusted-grid{grid-template-columns:repeat(auto-fit,minmax(56px,1fr)) !important;gap:8px !important;margin-bottom:12px !important}
+  .trusted-grid .card{padding:4px !important;border-radius:6px}
+  .trusted-grid img{max-width:56px;max-height:28px}
+}
 
 /* CARDS */
 .card{
@@ -747,7 +848,7 @@ section{padding:72px 5%}
 </div>
 
 <h2 class="section-title reveal" style="margin-top:36px">Trusted By</h2>
-<div class="grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));align-items:center;margin-bottom:30px;gap:18px">
+<div class="grid reveal trusted-grid" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));align-items:center;margin-bottom:30px;gap:18px">
   <div class="card" style="display:flex;align-items:center;justify-content:center;padding:14px">
     <img src="client%201.png" alt="Client logo: Transport operator (trusted partner)" width="160" height="60">
   </div>
