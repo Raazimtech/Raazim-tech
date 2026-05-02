@@ -113,6 +113,7 @@
       --teal: #2f92a8;
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
       --radius: 24px;
+      --scroll-white: 0;
     }
 
     * { box-sizing: border-box; }
@@ -127,6 +128,18 @@
         linear-gradient(180deg, #05070c 0%, #070b14 55%, #04060b 100%);
       font-family: "Bahnschrift", "Segoe UI", Tahoma, sans-serif;
       overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.24));
+      opacity: var(--scroll-white);
+      mix-blend-mode: screen;
+      z-index: 0;
+      transition: opacity 120ms linear;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -150,6 +163,8 @@
       gap: 24px;
       min-height: 92px;
       padding: 14px 0;
+      position: relative;
+      z-index: 2;
     }
     .brand {
       display: flex;
@@ -181,6 +196,49 @@
       letter-spacing: 0.22em;
       color: #a7b2c8;
     }
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 3;
+    }
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(18, 41, 73, 0.96), rgba(10, 22, 44, 0.96));
+      box-shadow:
+        10px 10px 20px rgba(0, 0, 0, 0.3),
+        -10px -10px 18px rgba(120, 176, 222, 0.06),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.06);
+      padding: 0;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: #fff;
+      transition: transform 220ms ease, opacity 220ms ease, width 220ms ease;
+    }
+    .nav-shell.nav-open .nav-toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-shell.nav-open .nav-toggle span:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+    .nav-shell.nav-open .nav-toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
     .nav {
       display: flex;
       align-items: center;
@@ -208,7 +266,11 @@
     }
     .nav a:hover::after { transform: scaleX(1); }
 
-    main { padding: 34px 0 0; }
+    main {
+      padding: 34px 0 0;
+      position: relative;
+      z-index: 1;
+    }
 
     .hero {
       display: grid;
@@ -672,9 +734,22 @@
     .case .preview {
       height: 250px;
       position: relative;
+      overflow: hidden;
       background:
         radial-gradient(circle at 25% 20%, rgba(24, 195, 255, 0.18), transparent 24%),
         linear-gradient(135deg, rgba(255,255,255,0.96), rgba(220, 235, 255, 0.92));
+    }
+    .case .preview img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .case:hover .preview img {
+      transform: scale(1.08);
     }
     .case .preview.dark {
       background:
@@ -686,6 +761,8 @@
       content: "";
       position: absolute;
       inset: 18px;
+      z-index: 1;
+      pointer-events: none;
       border-radius: 18px;
       border: 1px solid rgba(24, 195, 255, 0.32);
     }
@@ -706,6 +783,7 @@
       right: 26px;
       bottom: 24px;
       width: 72px;
+      z-index: 2;
       height: 72px;
       border-radius: 50%;
       background: radial-gradient(circle, #ffffff 0 36%, var(--blue) 36% 100%);
@@ -1439,20 +1517,181 @@
 
     @media (max-width: 760px) {
       .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
       }
-      .nav { gap: 16px; }
+      .brand img {
+        width: 60px;
+        height: 60px;
+      }
+      .brand-copy .name { font-size: 0.98rem; }
+      .nav-shell {
+        margin-left: auto;
+      }
+      .nav-toggle {
+        display: inline-flex;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 24px;
+        background: rgba(8, 20, 38, 0.98);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+          18px 18px 34px rgba(0, 0, 0, 0.4),
+          -12px -12px 24px rgba(128, 170, 215, 0.06),
+          inset 2px 2px 3px rgba(255,255,255,0.05),
+          inset -10px -10px 18px rgba(0,0,0,0.25);
+      }
+      .nav-shell.nav-open .nav {
+        display: flex;
+      }
+      .nav a {
+        justify-content: center;
+        width: 100%;
+      }
+      main { padding-top: 22px; }
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 26px 0 30px;
+      }
+      .hero-copy {
+        order: 1;
+      }
+      .visual {
+        order: 2;
+        min-height: 440px;
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 8.5vw, 3.45rem);
+      }
+      .hero p {
+        font-size: 0.98rem;
+      }
+      .hero-actions {
+        gap: 10px;
+      }
+      .btn {
+        min-height: 48px;
+        width: 100%;
+      }
+      .btn.primary {
+        width: 100%;
+      }
+      .visual {
+        transform: none;
+      }
+      .screen.dashboard {
+        width: 86%;
+        height: 42%;
+        top: 10%;
+        left: 7%;
+        transform: perspective(900px) rotateY(-10deg) rotateX(8deg);
+      }
+      .screen.palette {
+        width: 70%;
+        height: 26%;
+        right: 6%;
+        top: 45%;
+        transform: perspective(900px) rotateY(10deg) rotateX(7deg);
+      }
+      .screen.sidebar {
+        display: none;
+      }
       .cards {
         grid-template-columns: 1fr;
       }
-      .case { flex-basis: 86vw; }
+      .case { flex-basis: 88vw; }
+      .approach {
+        grid-template-columns: 1fr;
+      }
+      .approach-copy {
+        padding-right: 0;
+      }
+      .funnel {
+        justify-items: center;
+        width: 100%;
+      }
+      .funnel-pill {
+        width: min(100%, 340px);
+      }
+      .funnel-pill:nth-child(2) { width: min(92%, 320px); }
+      .funnel-pill:nth-child(3) { width: min(84%, 300px); }
+      .funnel-pill:nth-child(4) { width: min(76%, 280px); }
       .footer-inner {
         grid-template-columns: 1fr;
       }
-      .brand-copy .name { font-size: 0.98rem; }
-      .hero h1 { max-width: none; }
-      .funnel-pill { font-size: 0.88rem; min-height: 62px; }
+      .footer-brand {
+        align-items: flex-start;
+      }
+      .footer-brand img {
+        width: 52px;
+        height: 52px;
+      }
+      .funnel-pill { font-size: 0.82rem; min-height: 60px; }
+    }
+
+    @media (max-width: 900px) and (orientation: landscape) {
+      .hero {
+        grid-template-columns: 0.95fr 1.05fr;
+        min-height: auto;
+        padding: 22px 0 28px;
+      }
+      .nav-shell {
+        margin-left: auto;
+      }
+      .nav-toggle {
+        display: inline-flex;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 24px;
+        background: rgba(8, 20, 38, 0.98);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+          18px 18px 34px rgba(0, 0, 0, 0.4),
+          -12px -12px 24px rgba(128, 170, 215, 0.06),
+          inset 2px 2px 3px rgba(255,255,255,0.05),
+          inset -10px -10px 18px rgba(0,0,0,0.25);
+      }
+      .nav-shell.nav-open .nav {
+        display: flex;
+      }
+      .visual {
+        min-height: 360px;
+      }
+      .screen.sidebar {
+        display: none;
+      }
+      .screen.dashboard {
+        width: 64%;
+        height: 52%;
+      }
+      .screen.palette {
+        width: 54%;
+        top: 30%;
+      }
+      .nav a {
+        justify-content: center;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -1466,13 +1705,20 @@
           <div class="tag">SYSTEMS &amp; BRANDING</div>
         </div>
       </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#top">Home</a>
-        <a href="#expertise">Systems</a>
-        <a href="#expertise">Branding</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#consult">Contact</a>
-      </nav>
+      <div class="nav-shell" id="navShell">
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav" id="siteNav" aria-label="Main navigation">
+          <a href="#top">Home</a>
+          <a href="#expertise">Systems</a>
+          <a href="#expertise">Branding</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#consult">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -1602,15 +1848,17 @@
           <div class="carousel-track" id="caseTrack">
             <article class="case">
               <div class="preview">
+                <img src="project 1.png" alt="Micro-interactions Project Preview" />
                 <div class="award">✦</div>
               </div>
               <div class="body">
-                <h3>Micro-interactions</h3>
-                <p>White abstract UI elements with an award seal icon and subtle motion language.</p>
+                <h3>Dual UI</h3>
+                <p>A seamless interface architecture designed for optimal performance on both desktop and mobile platforms.</p>
               </div>
             </article>
             <article class="case">
               <div class="preview dark">
+                <img src="project4.png" alt="Brand System Project Preview" />
                 <div class="award" style="background: radial-gradient(circle, #e9fbff 0 34%, #18c3ff 34% 100%);">◈</div>
               </div>
               <div class="body">
@@ -1620,6 +1868,7 @@
             </article>
             <article class="case">
               <div class="preview dark">
+                <img src="project3.png" alt="Conversion Landing Project Preview" />
                 <div class="award" style="background: radial-gradient(circle, #ffffff 0 34%, #2b6cff 34% 100%);">◎</div>
               </div>
               <div class="body">
@@ -1759,6 +2008,9 @@
   </footer>
 
   <script>
+    const navShell = document.getElementById('navShell');
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('siteNav');
     const track = document.getElementById('caseTrack');
     const dots = Array.from(document.querySelectorAll('#dots button'));
     const slides = Array.from(document.querySelectorAll('.case'));
@@ -1771,6 +2023,45 @@
       '.hero-copy, .visual, .card, .step, .funnel, .carousel, .consult-panel, .cta-box, .footer-inner'
     );
     revealTargets.forEach((el) => el.classList.add('reveal'));
+
+    function setScrollAmbient() {
+      const doc = document.documentElement;
+      const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      const white = 0.02 + progress * 0.28;
+      doc.style.setProperty('--scroll-white', white.toFixed(3));
+    }
+
+    function closeNav() {
+      navShell.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    navToggle.addEventListener('click', () => {
+      const open = navShell.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 760) closeNav();
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (window.innerWidth > 760) return;
+      if (!navShell.contains(event.target)) closeNav();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeNav();
+    });
+
+    window.addEventListener('resize', () => {
+      setScrollAmbient();
+      if (window.innerWidth > 760) closeNav();
+    });
+    window.addEventListener('scroll', setScrollAmbient, { passive: true });
+    setScrollAmbient();
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
