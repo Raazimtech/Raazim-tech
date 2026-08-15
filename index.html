@@ -169,6 +169,26 @@
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* --- DARK THEME OVERRIDES --- */
+    body.dark-theme {
+      --primary: #3B82F6;
+      --primary-hover: #60A5FA;
+      --accent: #60A5FA;
+      --accent-light: #1E293B;
+      --accent-soft: #334155;
+      --text-dark: #F8FAFC;
+      --text-main: #CBD5E1;
+      --text-muted: #94A3B8;
+      --bg-main: #0F172A;
+      --bg-alt: #1E293B;
+      --bg-card: #0B1120;
+      --border: #334155;
+    }
+    body.dark-theme .header,
+    body.dark-theme .project-header {
+      background: rgba(15, 23, 42, 0.95);
+    }
+
     /* --- RESET & BASE --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -180,6 +200,7 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      transition: background-color var(--transition), color var(--transition);
     }
     
     a { color: inherit; text-decoration: none; transition: color var(--transition); }
@@ -247,7 +268,7 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      transition: box-shadow var(--transition);
+      transition: background-color var(--transition), box-shadow var(--transition);
     }
     .header-inner {
       display: flex;
@@ -283,6 +304,34 @@
       font-weight: 600;
     }
     
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      background: var(--accent-light);
+      color: var(--primary);
+      border-color: var(--accent-soft);
+    }
+    .theme-toggle svg { width: 20px; height: 20px; }
+    body.dark-theme .sun-icon { display: none; }
+    body.dark-theme .moon-icon { display: block; }
+    .moon-icon { display: none; }
+
     .nav-shell { position: relative; }
     .nav {
       display: flex;
@@ -698,6 +747,71 @@
     
     .copyright { text-align: center; color: var(--text-muted); font-size: 0.875rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
+    /* --- ABOUT US PAGE ADDITIONS --- */
+    .ceo-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 4rem;
+    }
+    .ceo-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-soft);
+      box-shadow: var(--shadow-md);
+      flex-shrink: 0;
+    }
+    .ceo-info h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-dark);
+    }
+    .ceo-info p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .office-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .office-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+    .office-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-soft);
+    }
+    .office-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+    .office-card h3 {
+      padding: 1.5rem;
+      margin: 0;
+      text-align: center;
+      font-size: 1.125rem;
+      color: var(--text-dark);
+    }
+
     /* --- RESPONSIVE --- */
     @media (max-width: 992px) {
       .hero, .approach, .consult { grid-template-columns: 1fr; gap: 3rem; }
@@ -707,11 +821,13 @@
       .visual { order: 1; min-height: 400px; margin-bottom: 2rem; }
       .eyebrow { margin: 0 auto 1.5rem; }
       
-      .cards { grid-template-columns: 1fr; }
+      .cards, .office-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
     }
     
     @media (max-width: 768px) {
+      .nav-desktop-only { display: none !important; }
+      
       .nav-shell { position: static; }
       .nav-toggle { display: flex; }
       .nav {
@@ -741,6 +857,13 @@
       .project-title { font-size: 1.75rem; padding: 0; background: none; }
       .project-description { padding: 0 1rem; }
       .project-content { padding: 2rem 1rem; }
+
+      .ceo-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -754,21 +877,41 @@
           <div class="tag">Systems &amp; Branding</div>
         </div>
       </a>
-      <div class="nav-shell" id="navShell">
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
-          <span></span><span></span><span></span>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
-        <nav class="nav" id="siteNav" aria-label="Main navigation">
-          <a href="#top">Home</a>
-          <a href="#expertise">Systems</a>
-          <a href="#expertise">Branding</a>
-          <a href="#cases">Case Studies</a>
-          <a href="#consult">Contact</a>
-        </nav>
+        <div class="nav-shell" id="navShell">
+          <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="nav" id="siteNav" aria-label="Main navigation">
+            <a href="#top">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#expertise" class="nav-desktop-only">Systems</a>
+            <a href="#expertise" class="nav-desktop-only">Branding</a>
+            <a href="#cases" class="nav-desktop-only">Case Studies</a>
+            <a href="#consult" class="nav-desktop-only">Contact</a>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- HOME VIEW -->
   <main id="top">
     <section class="wrap hero section-pad" aria-labelledby="hero-heading">
       <div class="hero-copy reveal">
@@ -790,7 +933,7 @@
                 <span></span><span></span><span></span><span></span><span></span>
               </div>
               <div class="metric-row">
-                <div class="metric"><strong>92%</strong><span>Uptime</span></div>
+                <div class="metric"><strong>99%</strong><span>Uptime</span></div>
                 <div class="metric"><strong>8.4x</strong><span>Reach</span></div>
                 <div class="metric"><strong>34k</strong><span>Leads</span></div>
               </div>
@@ -982,6 +1125,52 @@
     </section>
   </main>
 
+  <!-- ABOUT US VIEW -->
+  <main id="about-view" style="display: none; padding-bottom: 5rem;">
+    <section class="wrap section-pad">
+      <div class="section-head reveal">
+        <div class="eyebrow">About Raazim Tech</div>
+        <h2>Driving Digital Excellence in East Africa</h2>
+        <p>We are a dedicated team of digital architects, building systems, modern websites, and distinct brand identities that seamlessly scale your business operations and impact.</p>
+      </div>
+
+      <!-- CEO Section -->
+      <div class="ceo-section reveal">
+        <img src="CEO_IMAGE_URL.png" alt="Abdikariim Mohamoud Ibraahim - CEO" class="ceo-img">
+        <div class="ceo-info" style="display: flex; flex-direction: column;">
+          <h3>Abdikariim Mohamoud Ibraahim</h3>
+          <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">Chief Executive Officer</div>
+          <p>Abdikariim leads Raazim Tech with a vision to transform the digital landscape of East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
+          
+          <a href="https://www.linkedin.com/in/abdikariimmohamoud/" target="_blank" rel="noopener noreferrer" class="btn primary" style="margin-top: 1.5rem; width: fit-content; padding: 0.6rem 1.2rem; font-size: 0.95rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Office Images Section -->
+      <div class="section-head reveal" style="margin-top: 5rem;">
+        <h2>Our Workspace</h2>
+        <p>A look inside the environment where our best strategies, designs, and code come to life.</p>
+      </div>
+      <div class="office-grid">
+        <article class="office-card reveal">
+          <img src="OFFICE1.png" alt="Office 1" class="office-img" loading="lazy" decoding="async">
+          <h3>Office 1</h3>
+        </article>
+        <article class="office-card reveal">
+          <img src="OFFICE2.png" alt="Office 2" class="office-img" loading="lazy" decoding="async">
+          <h3>Office 2</h3>
+        </article>
+        <article class="office-card reveal">
+          <img src="OFFICE3.jpg" alt="Office 3" class="office-img" loading="lazy" decoding="async">
+          <h3>Office 3</h3>
+        </article>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer" aria-label="Site Footer">
     <div class="wrap">
       <div class="footer-inner">
@@ -1018,6 +1207,7 @@
           <h4>Sitemap</h4>
           <ul>
             <li><a href="#top">Home</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#cases">Case Studies</a></li>
             <li><a href="#consult">Contact</a></li>
@@ -1049,10 +1239,28 @@
   </div>
 
   <script>
-    // --- NAVIGATION LOGIC ---
+    // --- THEME TOGGLE LOGIC ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('raazim-theme');
+    
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+    }
+    
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('raazim-theme', 'dark');
+      } else {
+        localStorage.setItem('raazim-theme', 'light');
+      }
+    });
+
+    // --- NAVIGATION LOGIC & VIEW SWITCHING ---
     const navShell = document.getElementById('navShell');
     const navToggle = document.getElementById('navToggle');
-    const siteNav = document.getElementById('siteNav');
+    const viewHome = document.getElementById('top');
+    const viewAbout = document.getElementById('about-view');
 
     function closeNav() {
       navShell.classList.remove('nav-open');
@@ -1064,15 +1272,42 @@
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
-    siteNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) closeNav();
+    // Handle all internal anchor links globally for SPA-style page switching
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Target: About Us
+        if (href === '#about') {
+          e.preventDefault();
+          viewHome.style.display = 'none';
+          viewAbout.style.display = 'block';
+          window.scrollTo(0, 0);
+          if (window.innerWidth <= 768) closeNav();
+        } 
+        // Target: Home or Home-Sections
+        else {
+          if (viewAbout.style.display === 'block') {
+             e.preventDefault();
+             viewAbout.style.display = 'none';
+             viewHome.style.display = 'block';
+             
+             // Allow a tiny delay for display:block to compute layout before native smooth scroll kicks in
+             setTimeout(() => {
+               const el = document.querySelector(href);
+               if (el) el.scrollIntoView({ behavior: 'smooth' });
+             }, 10);
+          }
+          if (window.innerWidth <= 768 && navShell.classList.contains('nav-open')) {
+              closeNav();
+          }
+        }
       });
     });
 
     document.addEventListener('click', (event) => {
       if (window.innerWidth > 768) return;
-      if (!navShell.contains(event.target)) closeNav();
+      if (!navShell.contains(event.target) && !themeToggleBtn.contains(event.target)) closeNav();
     });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
@@ -1087,7 +1322,6 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
