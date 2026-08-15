@@ -829,26 +829,11 @@
       .nav-desktop-only { display: none !important; }
       
       .nav-shell { position: static; }
-      .nav-toggle { display: flex; }
+      .nav-toggle { display: none !important; } /* Modified per user instructions */
       .nav {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--bg-main);
-        flex-direction: column;
-        padding: 2rem;
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-md);
-        transform: translateY(-10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition);
+        display: flex;
+        gap: 1rem;
       }
-      .nav-shell.nav-open .nav { transform: translateY(0); opacity: 1; visibility: visible; }
-      .nav-shell.nav-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .nav-shell.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-      .nav-shell.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
       
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
       
@@ -871,7 +856,7 @@
   <header class="header" aria-label="Site Header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Raazim Tech home">
-        <img src="logo.png" alt="Raazim Tech Official Logo" fetchpriority="high" />
+        <img src="logo.png" alt="Raazim Tech Official Logo" width="48" height="48" fetchpriority="high" decoding="async" />
         <div class="brand-copy">
           <div class="name">Raazim Tech</div>
           <div class="tag">Systems &amp; Branding</div>
@@ -1136,7 +1121,7 @@
 
       <!-- CEO Section -->
       <div class="ceo-section reveal">
-        <img src="CEO_IMAGE_URL.png" alt="Abdikariim Mohamoud Ibraahim - CEO" class="ceo-img">
+        <img src="CEO_IMAGE_URL.png" alt="Abdikariim Mohamoud Ibraahim - CEO" class="ceo-img" width="180" height="180" loading="lazy" decoding="async">
         <div class="ceo-info" style="display: flex; flex-direction: column;">
           <h3>Abdikariim Mohamoud Ibraahim</h3>
           <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">Chief Executive Officer</div>
@@ -1156,15 +1141,15 @@
       </div>
       <div class="office-grid">
         <article class="office-card reveal">
-          <img src="OFFICE1.png" alt="Office 1" class="office-img" loading="lazy" decoding="async">
+          <img src="OFFICE1.png" alt="Office 1" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
           <h3>Office 1</h3>
         </article>
         <article class="office-card reveal">
-          <img src="OFFICE2.png" alt="Office 2" class="office-img" loading="lazy" decoding="async">
+          <img src="OFFICE2.png" alt="Office 2" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
           <h3>Office 2</h3>
         </article>
         <article class="office-card reveal">
-          <img src="OFFICE3.jpg" alt="Office 3" class="office-img" loading="lazy" decoding="async">
+          <img src="OFFICE3.jpg" alt="Office 3" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
           <h3>Office 3</h3>
         </article>
       </div>
@@ -1176,7 +1161,7 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand">
-            <img src="logo.png" alt="Raazim Tech Logo" loading="lazy" decoding="async" />
+            <img src="logo.png" alt="Raazim Tech Logo" width="40" height="40" loading="lazy" decoding="async" />
             <strong>Raazim Tech</strong>
           </div>
           <p>Integrated architecture for products, websites, and identity systems.</p>
@@ -1227,10 +1212,10 @@
     </div>
     
     <div class="project-content">
-      <img id="detailPreview" class="project-hero-img" src="" alt="" loading="lazy" decoding="async">
+      <img id="detailPreview" class="project-hero-img" src="" alt="" width="1600" height="900" loading="lazy" decoding="async">
       <div class="project-branding">
         <div class="project-logo-large">
-          <img id="detailLogo" src="" alt="" loading="lazy" decoding="async">
+          <img id="detailLogo" src="" alt="" width="100" height="100" loading="lazy" decoding="async">
         </div>
         <h2 id="detailTitle" class="project-title"></h2>
       </div>
@@ -1366,10 +1351,10 @@
       slide.onclick = () => openProject(index);
       
       slide.innerHTML = `
-        <img src="${proj.preview}" alt="${proj.title} preview interface" class="work-preview-img" loading="lazy" decoding="async">
+        <img src="${proj.preview}" alt="${proj.title} preview interface" class="work-preview-img" width="1200" height="800" loading="lazy" decoding="async">
         <div class="work-slide-content">
           <div class="work-logo-overlay">
-            <img src="${proj.logo}" alt="${proj.title} logo" loading="lazy" decoding="async">
+            <img src="${proj.logo}" alt="${proj.title} logo" width="60" height="60" loading="lazy" decoding="async">
           </div>
           <h3>${proj.title}</h3>
         </div>
