@@ -48,6 +48,22 @@
     }
   </script>
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Cabdikariim Mohamoud",
+      "jobTitle": "CEO and Founder",
+      "image": "https://www.raazimtech.com/cabdikariim-mohamoud-raazim-tech-ceo.webp",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Raazim Tech"
+      },
+      "url": "https://www.raazimtech.com/#about",
+      "sameAs": "https://www.linkedin.com/in/abdikariimmohamoud/"
+    }
+  </script>
+
   <link rel="icon" type="image/png" href="logo.png" />
   
   <link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
@@ -330,7 +346,16 @@
       width: 20px;
       height: 2px;
       background-color: currentColor;
-      transition: var(--transition);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
 
     /* --- HERO SECTION --- */
@@ -696,11 +721,10 @@
       .nav-shell { position: static; }
       .nav-toggle { display: flex !important; }
       
-      /* Target the actual nav element instead of .nav-shell */
       .nav {
-        display: none; 
+        display: flex; 
         position: absolute;
-        top: 90px; /* Align precisely below the header inner content */
+        top: 90px;
         left: 0;
         width: 100%;
         background: var(--bg-card);
@@ -712,9 +736,21 @@
         border-bottom: 1px solid var(--glass-border);
         box-shadow: var(--shadow-md);
         z-index: 40;
+        /* Animation setup */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    visibility 0.4s;
+        pointer-events: none;
       }
-      /* Changed from .nav-shell.nav-open .nav */
-      .nav.nav-open { display: flex; } 
+      .nav.nav-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      } 
       
       .hero { padding-top: 8rem; }
       .visual { display: none; }
@@ -727,9 +763,31 @@
         gap: 2rem;
       }
     }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .nav, .nav-toggle span {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <script>
+    // PREVENT DARK MODE FLASH BEFORE RENDER
+    (function() {
+      var savedTheme = localStorage.getItem('raazim-theme');
+      if (!savedTheme) {
+        localStorage.setItem('raazim-theme', 'dark');
+        savedTheme = 'dark';
+      }
+      if (savedTheme === 'light') {
+        document.body.classList.remove('dark-theme');
+      } else {
+        document.body.classList.add('dark-theme');
+      }
+    })();
+  </script>
+
   <header class="header" id="siteHeader" aria-label="Site Header">
     <div class="wrap header-inner">
       <div class="header-left">
@@ -973,11 +1031,11 @@
 
       <!-- CEO Section -->
       <div class="ceo-section glass reveal">
-        <img src="CEO_IMAGE_URL.jpg" alt="Cabdikariim Mohamoud - CEO" class="ceo-img" width="200" height="200" loading="lazy" decoding="async">
+        <img src="CEO_IMAGE_URL.jpg" alt="Cabdikariim Mohamoud, CEO and Founder of Raazim Tech in Somaliland" class="ceo-img" width="200" height="200" loading="lazy" decoding="async">
         <div class="ceo-info" style="display: flex; flex-direction: column;">
           <h3>Cabdikariim Mohamoud</h3>
-          <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">Chief Executive Officer</div>
-          <p>Cabdikariim leads Raazim Tech with a vision to transform the digital landscape of East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
+          <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">CEO & Founder of Raazim Tech</div>
+          <p>Cabdikariim Mohamoud leads Raazim Tech with a vision to transform the digital landscape of Somaliland and East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
           
           <a href="https://www.linkedin.com/in/abdikariimmohamoud/" target="_blank" rel="noopener noreferrer" class="btn primary" style="margin-top: 1.5rem; width: fit-content; padding: 0.6rem 1.2rem; font-size: 0.95rem;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -1067,11 +1125,6 @@
 
     // --- THEME TOGGLE LOGIC ---
     const themeToggleBtn = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('raazim-theme');
-    
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-theme');
-    }
     
     themeToggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
