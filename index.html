@@ -9,7 +9,7 @@
   <meta name="keywords" content="Raazim Tech, Somaliland web design, software company Somaliland, Hargeisa web developer, Borama tech, ERP systems Somaliland, custom software systems, business branding, UI design, digital agency East Africa" />
   <meta name="author" content="Raazim Tech" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#F1F5F9" />
   <link rel="canonical" href="https://www.raazimtech.com/" />
   
   <meta name="geo.region" content="SO-WOQ" />
@@ -26,12 +26,6 @@
   <meta property="og:url" content="https://www.raazimtech.com/" />
   <meta property="og:locale" content="en_US" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Raazim Tech Somaliland | Systems, Websites & Branding" />
-  <meta name="twitter:description" content="Somaliland-based digital architecture, custom software, branding, and high-converting website systems." />
-  <meta name="twitter:image" content="https://www.raazimtech.com/logo.png" />
-  <meta name="twitter:image:alt" content="Raazim Tech Logo" />
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,7 +34,6 @@
           "@type": "Organization",
           "@id": "https://www.raazimtech.com/#organization",
           "name": "Raazim Tech",
-          "alternateName": "Raazim Tech Systems & Branding",
           "url": "https://www.raazimtech.com",
           "logo": {
             "@type": "ImageObject",
@@ -49,86 +42,7 @@
             "height": 512
           },
           "email": "raazimtech@gmail.com",
-          "telephone": "+252636581295",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+252636581295",
-            "contactType": "customer service",
-            "email": "raazimtech@gmail.com",
-            "areaServed": ["SO", "Somaliland", "East Africa"],
-            "availableLanguage": ["en", "so"]
-          },
-          "sameAs": [
-            "https://x.com/raazimtech",
-            "https://facebook.com/raazimtech",
-            "https://instagram.com/raazimtech"
-          ]
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://www.raazimtech.com/#localbusiness",
-          "name": "Raazim Tech",
-          "image": "https://www.raazimtech.com/logo.png",
-          "description": "Leading provider of systems integration, custom software, websites, and branding services based in Hargeisa, Somaliland.",
-          "telephone": "+252636581295",
-          "email": "raazimtech@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Hargeisa",
-            "addressRegion": "Woqooyi Galbeed",
-            "addressCountry": "SO"
-          },
-          "areaServed": ["Somaliland", "Hargeisa", "Berbera", "Burao", "Borama", "Gabiley", "Erigavo", "Las Anod"],
-          "priceRange": "$$",
-          "knowsAbout": ["Systems integration", "Custom Software Development", "Website design", "Branding", "Digital strategy", "UI/UX design", "ERP Systems"]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://www.raazimtech.com/#website",
-          "url": "https://www.raazimtech.com",
-          "name": "Raazim Tech",
-          "publisher": { "@id": "https://www.raazimtech.com/#organization" }
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://www.raazimtech.com/#portfolio",
-          "name": "Raazim Tech Case Studies",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Edux Exam Management System" },
-            { "@type": "ListItem", "position": 2, "name": "Power GYM MS" },
-            { "@type": "ListItem", "position": 3, "name": "Basetext IT Exam Prep" },
-            { "@type": "ListItem", "position": 4, "name": "School Management System" }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://www.raazimtech.com/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Website design in Somaliland",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We build responsive business websites in Somaliland that are fast, clear, and designed to convert visitors into leads."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Branding agency in Hargeisa",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Raazim Tech creates branding systems, logos, and visual direction for modern companies in Hargeisa and across Somaliland."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Systems integration and digital architecture",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We unify websites, internal systems, and brand presentation into one digital architecture so the business feels consistent everywhere."
-              }
-            }
-          ]
+          "telephone": "+252636581295"
         }
       ]
     }
@@ -136,57 +50,68 @@
 
   <link rel="icon" type="image/png" href="logo.png" />
   
+  <link rel="preload" as="image" href="hero.png" fetchpriority="high">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* --- CSS VARIABLES: Modern White & Deep Blue SaaS Theme --- */
+    /* --- CSS VARIABLES: Light Glassmorphism Default --- */
     :root {
-      --primary: #0A3D91;
-      --primary-hover: #082d6e;
-      --accent: #2563EB;
-      --accent-light: #EFF6FF;
-      --accent-soft: #DBEAFE;
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --accent: #3B82F6;
+      --accent-light: rgba(59, 130, 246, 0.15);
+      --accent-soft: rgba(59, 130, 246, 0.25);
+      
       --text-dark: #0F172A;
       --text-main: #334155;
       --text-muted: #64748B;
-      --bg-main: #FFFFFF;
-      --bg-alt: #F8FAFC;
-      --bg-card: #FFFFFF;
-      --border: #E2E8F0;
       
-      /* Clean, lightweight shadows */
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --bg-main: #F8FAFC; 
+      --bg-alt: #F1F5F9;
+      --bg-card: rgba(255, 255, 255, 0.6); 
+      --glass-border: rgba(255, 255, 255, 1);
+      --border: rgba(15, 23, 42, 0.1);
       
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      /* Added Hero Overlay for Light Mode */
+      --hero-overlay: rgba(248, 250, 252, 0.85);
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
       
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* --- DARK THEME OVERRIDES --- */
+    /* --- DARK THEME OVERRIDE --- */
     body.dark-theme {
       --primary: #3B82F6;
       --primary-hover: #60A5FA;
-      --accent: #60A5FA;
-      --accent-light: #1E293B;
-      --accent-soft: #334155;
-      --text-dark: #F8FAFC;
-      --text-main: #CBD5E1;
-      --text-muted: #94A3B8;
-      --bg-main: #0F172A;
-      --bg-alt: #1E293B;
-      --bg-card: #0B1120;
-      --border: #334155;
-    }
-    body.dark-theme .header,
-    body.dark-theme .project-header {
-      background: rgba(15, 23, 42, 0.95);
+      
+      --text-dark: #FFFFFF;
+      --text-main: #E5E7EB;
+      --text-muted: #9CA3AF;
+      
+      --bg-main: #0f172a;
+      --bg-alt: #020617;
+      --bg-card: rgba(30, 41, 59, 0.4); 
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.1);
+
+      /* Added Hero Overlay for Dark Mode */
+      --hero-overlay: rgba(15, 23, 42, 0.75);
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
     }
 
     /* --- RESET & BASE --- */
@@ -201,22 +126,45 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transition: background-color var(--transition), color var(--transition);
+      position: relative;
     }
     
+    /* Global Ambient Background Orbs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: background var(--transition);
+    }
+    body::before {
+      top: -10%; left: -10%;
+      width: 50vw; height: 50vw;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent 70%);
+    }
+    body::after {
+      bottom: -10%; right: -10%;
+      width: 40vw; height: 40vw;
+      background: radial-gradient(circle, rgba(200, 70, 40, 0.15), transparent 70%);
+    }
+
     a { color: inherit; text-decoration: none; transition: color var(--transition); }
     img { max-width: 100%; height: auto; display: block; }
     ul { list-style: none; }
     button { font-family: inherit; border: none; background: none; cursor: pointer; }
 
     /* --- TYPOGRAPHY --- */
-    h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; transition: color var(--transition); }
     p { margin-bottom: 1rem; }
     
     .wrap { width: min(1200px, 90%); margin: 0 auto; }
-    .section-pad { padding: 5rem 0; }
+    .section-pad { padding: 6rem 0; }
     .bg-alt { background-color: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-    /* --- REVEAL ANIMATIONS (Lightweight) --- */
+    /* --- REVEAL ANIMATIONS --- */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
@@ -224,6 +172,17 @@
       will-change: opacity, transform;
     }
     .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* --- GLASSMORPHISM UTILITY --- */
+    .glass {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      transition: all var(--transition);
+    }
 
     /* --- BUTTONS --- */
     .btn {
@@ -248,33 +207,35 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
     }
-    .btn.secondary {
-      background-color: var(--bg-main);
-      color: var(--primary);
-      border: 1px solid var(--border);
-    }
-    .btn.secondary:hover {
-      background-color: var(--accent-light);
-      border-color: var(--accent-soft);
-      transform: translateY(-2px);
-    }
 
     /* --- HEADER & NAVIGATION --- */
     .header {
-      position: sticky;
+      position: absolute;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      background: transparent;
       transition: background-color var(--transition), box-shadow var(--transition);
+    }
+    .header.scrolled {
+      position: fixed;
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-sm);
     }
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 90px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
     }
     .brand {
       display: flex;
@@ -282,166 +243,207 @@
       gap: 12px;
     }
     .brand img {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
     }
     .brand-copy {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
     }
     .brand-copy .name {
-      font-size: 1.125rem;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -0.01em;
+      font-weight: 700;
+      color: var(--text-dark);
+      transition: color var(--transition);
     }
     .brand-copy .tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 400;
+      color: var(--primary);
     }
     
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     
     .theme-toggle {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
-      color: var(--text-main);
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
+      color: var(--text-dark);
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
       transition: var(--transition);
     }
     .theme-toggle:hover {
-      background: var(--accent-light);
-      color: var(--primary);
-      border-color: var(--accent-soft);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
     .theme-toggle svg { width: 20px; height: 20px; }
-    body.dark-theme .sun-icon { display: none; }
-    body.dark-theme .moon-icon { display: block; }
-    .moon-icon { display: none; }
+    body.dark-theme .moon-icon { display: none; }
+    body.dark-theme .sun-icon { display: block; }
+    .sun-icon { display: none; }
+    .moon-icon { display: block; }
 
     .nav-shell { position: relative; }
     .nav {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.5rem;
     }
     .nav a {
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--text-main);
       position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
     .nav a:hover { color: var(--primary); }
     
     .nav-toggle {
       display: none;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       gap: 6px;
-      background: var(--accent-light);
+      background: var(--bg-card);
       border-radius: var(--radius-sm);
-      color: var(--primary);
+      color: var(--text-dark);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
     }
     .nav-toggle span {
       display: block;
       width: 20px;
       height: 2px;
-      background-color: var(--primary);
+      background-color: currentColor;
       transition: var(--transition);
     }
 
-    /* --- HERO SECTION --- */
+    /* --- HERO SECTION MODIFIED WITH DYNAMIC BACKGROUND & GLASSMORPHISM --- */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      min-height: calc(100vh - 80px);
-      padding: 4rem 0;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 10rem 1rem 4rem;
+      text-align: center;
+      overflow: hidden;
+      
+      background-image: url('hero.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll;
     }
-    .eyebrow {
+
+    /* Dynamic Theme Overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--hero-overlay); 
+      z-index: 1;
+      transition: background var(--transition);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 900px;
+      
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 4rem 2rem;
+      box-shadow: var(--shadow-xl);
+      transition: all var(--transition);
+    }
+    
+    .hero-breadcrumb {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 1rem;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
       border-radius: 999px;
-      background-color: var(--accent-light);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      backdrop-filter: blur(12px);
+      transition: all var(--transition);
     }
+    .hero-breadcrumb .current { color: var(--text-dark); font-weight: 800; }
+
+    /* Text now adapts dynamically to the theme */
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1.25rem;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
       color: var(--text-dark);
+      transition: color var(--transition);
     }
     .hero p {
       font-size: 1.125rem;
-      color: var(--text-muted);
-      max-width: 540px;
-      margin-bottom: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      color: var(--text-main);
+      transition: color var(--transition);
     }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    
-    /* Sleek Dashboard Visual Replacement */
+
+    /* Abstract Visual aligned below */
     .visual {
       position: relative;
+      z-index: 2;
       width: 100%;
-      height: 100%;
-      min-height: 500px;
+      max-width: 800px;
+      height: 300px;
+      margin: 4rem auto 0;
     }
     .screen {
       position: absolute;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-xl);
       padding: 1.5rem;
-      transition: transform var(--transition);
     }
     .screen.dashboard {
-      width: 80%;
-      height: 380px;
-      top: 10%;
-      left: 0;
+      width: 70%;
+      height: 250px;
+      top: 0;
+      left: 15%;
       z-index: 2;
     }
     .screen.palette {
-      width: 60%;
-      height: 160px;
-      bottom: 5%;
-      right: 0;
+      width: 40%;
+      height: 120px;
+      bottom: 0;
+      right: 5%;
       z-index: 3;
     }
     .screen.sidebar {
-      width: 45%;
-      height: 220px;
-      top: 0;
-      right: 5%;
+      width: 35%;
+      height: 180px;
+      top: 40px;
+      left: 5%;
       z-index: 1;
-      opacity: 0.9;
     }
     
     /* Dashboard inner elements */
@@ -450,19 +452,21 @@
     .chart h3 { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 0.05em; }
     .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
     .metric { background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem; }
-    .metric strong { display: block; font-size: 1.125rem; color: var(--primary); }
+    .metric strong { display: block; font-size: 1.125rem; color: var(--text-dark); }
     .metric span { font-size: 0.7rem; color: var(--text-muted); }
     
-    .bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 60px; margin-bottom: 1rem; }
-    .bars span { flex: 1; background: var(--accent-soft); border-radius: 4px 4px 0 0; }
-    .bars span:nth-child(1){ height: 40%; } .bars span:nth-child(2){ height: 70%; } .bars span:nth-child(3){ height: 50%; } .bars span:nth-child(4){ height: 90%; } .bars span:nth-child(5){ height: 60%; background: var(--accent); }
+    .bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 40px; margin-bottom: 1rem; }
+    .bars span { flex: 1; background: var(--border); border-radius: 4px 4px 0 0; }
+    .bars span:nth-child(1){ height: 40%; } .bars span:nth-child(2){ height: 70%; } .bars span:nth-child(3){ height: 50%; } .bars span:nth-child(4){ height: 90%; } .bars span:nth-child(5){ height: 60%; background: var(--primary); }
 
     .palette-swatch { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; height: 100%; }
-    .palette-swatch div { border-radius: var(--radius-sm); position: relative; display: flex; align-items: flex-end; padding: 0.5rem; font-size: 0.65rem; font-weight: 600; color: #fff; }
-    .palette-swatch .a { background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-main); }
-    .palette-swatch .b { background: var(--accent-soft); color: var(--accent); }
-    .palette-swatch .c { background: var(--accent); }
-    .palette-swatch .d { background: var(--primary); }
+    .palette-swatch div { border-radius: var(--radius-sm); position: relative; display: flex; align-items: flex-end; padding: 0.5rem; font-size: 0.65rem; font-weight: 600; box-shadow: var(--shadow-sm); transition: all var(--transition); }
+    
+    /* Color fixed for contrast consistency in both modes */
+    .palette-swatch .a { background: var(--text-dark); color: var(--bg-main); }
+    .palette-swatch .b { background: var(--text-muted); color: #ffffff; }
+    .palette-swatch .c { background: var(--primary-hover); color: #ffffff; }
+    .palette-swatch .d { background: var(--primary); color: #ffffff; }
 
     .mini-card { display: flex; flex-direction: column; gap: 0.75rem; }
     .mini-pill { height: 12px; background: var(--border); border-radius: 999px; }
@@ -476,34 +480,44 @@
     .section-head { margin-bottom: 3rem; max-width: 600px; }
     .section-head h2 { font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: 1rem; }
     .section-head p { color: var(--text-muted); font-size: 1.125rem; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background-color: var(--accent-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
 
     /* --- EXPERTISE CARDS --- */
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
       padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
       border-color: var(--accent-soft);
     }
     .card .icon {
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--accent-light);
-      color: var(--accent);
+      color: var(--primary);
       border-radius: var(--radius-sm);
       font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 1.5rem;
+      border: 1px solid rgba(59, 130, 246, 0.2);
     }
     .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
     .card p { color: var(--text-muted); margin: 0; }
@@ -514,23 +528,20 @@
     .step {
       display: flex;
       gap: 1.25rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
       padding: 1.5rem;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
     }
     .step .num {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--primary);
       color: #fff;
-      font-weight: 700;
+      font-weight: 800;
       border-radius: 50%;
+      box-shadow: var(--shadow-sm);
     }
     .step strong { display: block; font-size: 1.125rem; margin-bottom: 0.25rem; color: var(--text-dark); }
     .step span { color: var(--text-muted); font-size: 0.95rem; }
@@ -542,236 +553,103 @@
       justify-content: center;
       height: 70px;
       background: var(--bg-card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       box-shadow: var(--shadow-md);
       transition: transform var(--transition);
     }
-    .funnel-pill:hover { transform: scale(1.02); }
+    .funnel-pill:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
     .funnel-pill:nth-child(1) { width: 100%; background: var(--primary); color: #fff; border-color: var(--primary); }
-    .funnel-pill:nth-child(2) { width: 85%; background: var(--accent); color: #fff; border-color: var(--accent); }
-    .funnel-pill:nth-child(3) { width: 70%; background: var(--accent-light); }
-    .funnel-pill:nth-child(4) { width: 55%; background: var(--bg-alt); }
-
-    /* --- CASE STUDIES CAROUSEL --- */
-    .carousel-container { position: relative; }
-    .work-track {
-      display: flex;
-      gap: 2rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      padding-bottom: 1rem;
-    }
-    .work-track::-webkit-scrollbar { display: none; }
-    
-    .work-slide {
-      flex: 0 0 calc(33.333% - 1.33rem);
-      min-width: 320px;
-      scroll-snap-align: start;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-    .work-slide:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--accent-soft);
-    }
-    .work-preview-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border);
-      transition: transform 0.5s ease;
-    }
-    .work-slide:hover .work-preview-img { transform: scale(1.03); }
-    
-    .work-slide-content { padding: 1.5rem; position: relative; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
-    .work-logo-overlay {
-      position: absolute;
-      top: -30px;
-      right: 1.5rem;
-      width: 60px;
-      height: 60px;
-      background: #fff;
-      border-radius: var(--radius-sm);
-      padding: 8px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .work-logo-overlay img { width: 100%; height: 100%; object-fit: contain; }
-    .work-slide-content h3 { font-size: 1.125rem; margin: 0; color: var(--text-dark); padding-right: 60px; }
-    
-    .carousel-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
-    .dots { display: flex; gap: 0.5rem; }
-    .dots button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--border);
-      transition: var(--transition);
-    }
-    .dots button.is-active { background: var(--primary); width: 24px; border-radius: 999px; }
-    .nav-buttons { display: flex; gap: 0.5rem; }
-    .nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .nav-btn:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent-soft); }
-
-    /* --- VIRTUAL PAGE (MODAL) --- */
-    #project-page {
-      position: fixed;
-      inset: 0;
-      background-color: var(--bg-main);
-      z-index: 99999;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-    }
-    #project-page.active { transform: translateX(0); }
-    .project-header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-    }
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      color: var(--text-main);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-    }
-    .btn-back:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent-soft); }
-    
-    .project-content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; width: 100%; }
-    .project-hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
-    .project-branding { display: flex; align-items: flex-end; gap: 1.5rem; margin-top: -50px; margin-bottom: 2rem; padding-left: 2rem; position: relative; }
-    .project-logo-large {
-      width: 100px;
-      height: 100px;
-      background: #fff;
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-    .project-logo-large img { width: 100%; height: 100%; object-fit: contain; }
-    .project-title { font-size: 2.5rem; color: var(--text-dark); background: var(--bg-main); padding: 0.25rem 1rem; border-radius: var(--radius-sm); }
-    .project-description { font-size: 1.125rem; color: var(--text-muted); max-width: 800px; padding: 0 2rem; }
+    .funnel-pill:nth-child(2) { width: 85%; background: var(--accent-soft); color: var(--primary-hover); border-color: transparent; }
+    .funnel-pill:nth-child(3) { width: 70%; }
+    .funnel-pill:nth-child(4) { width: 55%; opacity: 0.8;}
 
     /* --- CONSULT & CTA --- */
     .consult { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .consult-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-sm); }
+    .consult-panel { padding: 3rem; }
     
     .testimonial { display: flex; gap: 1rem; align-items: flex-start; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
     .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); flex-shrink: 0; }
-    .testimonial p { font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem; }
-    .company { font-size: 0.875rem; font-weight: 600; color: var(--text-dark); }
+    .testimonial p { font-style: italic; color: var(--text-main); margin-bottom: 0.5rem; font-weight: 500; }
+    .company { font-size: 0.875rem; font-weight: 700; color: var(--text-muted); }
     
     .cta-box { display: flex; flex-direction: column; gap: 1.5rem; }
-    .cta-card { background: var(--primary); color: #fff; border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-lg); }
-    .cta-card h2 { color: #fff; margin-bottom: 1rem; }
-    .cta-card p { color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; }
+    .cta-card { padding: 3rem; }
+    .cta-card h2 { margin-bottom: 1rem; }
+    .cta-card p { color: var(--text-muted); margin-bottom: 2rem; }
     .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
     .contact-links a {
       display: flex;
       align-items: center;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.1);
+      padding: 1.2rem;
+      background: var(--bg-main);
       border-radius: var(--radius-sm);
-      color: #fff;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-dark);
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
     }
-    .contact-links a:hover { background: #fff; color: var(--primary); }
+    .contact-links a:hover { background: var(--accent-light); border-color: var(--primary); transform: translateX(5px); }
 
     /* --- FOOTER --- */
-    .footer { background-color: var(--text-dark); color: #fff; padding: 4rem 0 2rem; }
+    .footer { background-color: var(--bg-alt); border-top: 1px solid var(--border); padding: 4rem 0 2rem; margin-top: 4rem; }
     .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .footer-brand img { width: 40px; height: 40px; background: #fff; border-radius: 8px; padding: 4px; }
-    .footer-brand strong { font-size: 1.25rem; }
+    .footer-brand img { width: 36px; height: 36px; }
+    body.dark-theme .footer-brand img { filter: brightness(0) invert(1); }
+    .footer-brand strong { font-size: 1.5rem; color: var(--text-dark); }
     .footer p { color: var(--text-muted); font-size: 0.95rem; max-width: 300px; }
     
-    .footer h4 { color: #fff; margin-bottom: 1.25rem; font-size: 1rem; }
+    .footer h4 { color: var(--text-dark); margin-bottom: 1.25rem; font-size: 1rem; }
     .footer ul { display: flex; flex-direction: column; gap: 0.75rem; }
-    .footer ul a { color: var(--text-muted); }
-    .footer ul a:hover { color: #fff; }
+    .footer ul a { color: var(--text-muted); font-weight: 500; }
+    .footer ul a:hover { color: var(--primary); }
     
     .socials { display: flex; gap: 0.75rem; }
     .social {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
       border-radius: 50%;
-      color: #fff;
+      color: var(--text-dark);
       font-size: 0.875rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
     }
-    .social:hover { background: var(--primary); }
+    .social:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); }
     
-    .copyright { text-align: center; color: var(--text-muted); font-size: 0.875rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .copyright { text-align: center; color: var(--text-muted); font-size: 0.875rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 
     /* --- ABOUT US PAGE ADDITIONS --- */
     .ceo-section {
       display: flex;
       align-items: center;
-      gap: 3rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      gap: 4rem;
       padding: 3rem;
-      box-shadow: var(--shadow-sm);
       margin-bottom: 4rem;
     }
     .ceo-img {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--accent-soft);
-      box-shadow: var(--shadow-md);
+      border: 4px solid var(--glass-border);
+      box-shadow: var(--shadow-lg);
       flex-shrink: 0;
     }
     .ceo-info h3 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       margin-bottom: 0.25rem;
-      color: var(--text-dark);
     }
     .ceo-info p {
       color: var(--text-muted);
@@ -786,84 +664,96 @@
       gap: 2rem;
     }
     .office-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
+      padding: 2.5rem 2rem; 
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .office-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-xl);
       border-color: var(--accent-soft);
     }
-    .office-img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border);
-    }
     .office-card h3 {
-      padding: 1.5rem;
       margin: 0;
-      text-align: center;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       color: var(--text-dark);
     }
+    .office-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
 
-    /* --- RESPONSIVE --- */
+    /* --- RESPONSIVE HAMBURGER MENU --- */
     @media (max-width: 992px) {
-      .hero, .approach, .consult { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-copy { order: 2; text-align: center; }
-      .hero-copy p { margin: 0 auto 2rem; }
-      .hero-actions { justify-content: center; }
-      .visual { order: 1; min-height: 400px; margin-bottom: 2rem; }
-      .eyebrow { margin: 0 auto 1.5rem; }
-      
+      .approach, .consult { grid-template-columns: 1fr; gap: 3rem; }
       .cards, .office-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
+      .header-left { gap: 1rem; }
     }
     
     @media (max-width: 768px) {
       .nav-desktop-only { display: none !important; }
-      
       .nav-shell { position: static; }
-      .nav-toggle { display: none !important; } /* Modified per user instructions */
+      .nav-toggle { display: flex !important; }
       .nav {
-        display: flex;
-        gap: 1rem;
+        display: none; 
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-card);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-md);
       }
+      .nav-shell.nav-open .nav { display: flex; }
+      
+      .hero { padding-top: 8rem; }
+      .visual { display: none; }
       
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-      
-      .work-slide { flex: 0 0 85%; min-width: auto; }
-      .project-branding { flex-direction: column; align-items: flex-start; padding-left: 1rem; margin-top: -30px; }
-      .project-title { font-size: 1.75rem; padding: 0; background: none; }
-      .project-description { padding: 0 1rem; }
-      .project-content { padding: 2rem 1rem; }
-
       .ceo-section {
         flex-direction: column;
         text-align: center;
         padding: 2rem 1.5rem;
-        gap: 1.5rem;
+        gap: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <header class="header" aria-label="Site Header">
+  <header class="header" id="siteHeader" aria-label="Site Header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Raazim Tech home">
-        <img src="logo.png" alt="Raazim Tech Official Logo" width="48" height="48" fetchpriority="high" decoding="async" />
-        <div class="brand-copy">
-          <div class="name">Raazim Tech</div>
-          <div class="tag">Systems &amp; Branding</div>
-        </div>
-      </a>
+      <div class="header-left">
+        <a class="brand" href="#top" aria-label="Raazim Tech home">
+          <img src="logo.png" alt="Raazim Tech Official Logo" width="36" height="36" fetchpriority="high" decoding="async" />
+          <div class="brand-copy">
+            <div class="name">Raazim</div>
+            <div class="tag">tech</div>
+          </div>
+        </a>
+        <nav class="nav" id="siteNav" aria-label="Main navigation">
+          <a href="#top">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#expertise" class="nav-desktop-only">Systems</a>
+          <a href="#expertise" class="nav-desktop-only">Branding</a>
+          <a href="#consult" class="nav-desktop-only">Contact</a>
+        </nav>
+      </div>
+      
       <div class="header-actions">
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -875,22 +765,11 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
         </button>
         <div class="nav-shell" id="navShell">
           <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
             <span></span><span></span><span></span>
           </button>
-          <nav class="nav" id="siteNav" aria-label="Main navigation">
-            <a href="#top">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#expertise" class="nav-desktop-only">Systems</a>
-            <a href="#expertise" class="nav-desktop-only">Branding</a>
-            <a href="#cases" class="nav-desktop-only">Case Studies</a>
-            <a href="#consult" class="nav-desktop-only">Contact</a>
-          </nav>
         </div>
       </div>
     </div>
@@ -898,19 +777,17 @@
 
   <!-- HOME VIEW -->
   <main id="top">
-    <section class="wrap hero section-pad" aria-labelledby="hero-heading">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">Integrated Digital Architecture</div>
-        <h1 id="hero-heading">Systems, Sites, &amp; Branding That Scale.</h1>
-        <p>We design, build, and unify your presence across all tech touchpoints to ensure a seamless experience for your users.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#consult">Start a Project</a>
-          <a class="btn secondary" href="#cases">View Case Studies</a>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content reveal">
+        <div class="hero-breadcrumb">
+          Home <span style="margin:0 8px;opacity:0.4;">/</span> <span class="current">Digital Architecture</span>
         </div>
+        <h1 id="hero-heading">Systems, Sites, &amp; Branding That Scale.</h1>
+        <p>We design, build, and unify your presence across all tech touchpoints to ensure a seamless experience for your users. Produce professional-grade systems without piecing together separate tools.</p>
       </div>
       
       <div class="visual reveal" aria-label="Abstract software dashboard illustration">
-        <div class="screen dashboard">
+        <div class="screen dashboard glass">
           <div class="dash-grid">
             <div class="chart">
               <h3>Performance Overview</h3>
@@ -925,15 +802,15 @@
             </div>
           </div>
         </div>
-        <div class="screen palette">
+        <div class="screen palette glass">
           <div class="palette-swatch">
             <div class="a" data-label="Base">Light</div>
-            <div class="b" data-label="Blue">Soft</div>
-            <div class="c" data-label="Deep">Brand</div>
-            <div class="d" data-label="Night">Dark</div>
+            <div class="b" data-label="Grey">Soft</div>
+            <div class="c" data-label="Blue">Brand</div>
+            <div class="d" data-label="Deep">Dark</div>
           </div>
         </div>
-        <div class="screen sidebar">
+        <div class="screen sidebar glass">
           <div class="mini-card">
             <div class="mini-pill"></div>
             <div class="mini-pill"></div>
@@ -953,23 +830,23 @@
           <p>Systems, websites, and branding are designed as one architecture, so each part reinforces the others instead of competing for attention.</p>
         </div>
         <div class="cards">
-          <article class="card reveal">
+          <article class="card glass reveal">
             <div class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
             </div>
             <h3>Systems.</h3>
             <p>Connected digital, robust architecture tailored for enterprise management.</p>
           </article>
-          <article class="card reveal">
+          <article class="card glass reveal">
             <div class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </div>
             <h3>Sites.</h3>
             <p>Design and code interaction focused on fast, high-converting experiences.</p>
           </article>
-          <article class="card reveal">
+          <article class="card glass reveal">
             <div class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
             </div>
             <h3>Branding.</h3>
             <p>Solidify your identity with minimal, modern, and memorable visual language.</p>
@@ -987,21 +864,21 @@
             <p>Every engagement starts with understanding the operating model, then moves into system design, launch execution, and continuous growth.</p>
           </div>
           <div class="approach-list">
-            <div class="step">
+            <div class="step glass">
               <div class="num" aria-hidden="true">1</div>
               <div>
                 <strong>Discover</strong>
                 <span>Audit the product, brand, audience, and technical constraints.</span>
               </div>
             </div>
-            <div class="step">
+            <div class="step glass">
               <div class="num" aria-hidden="true">2</div>
               <div>
                 <strong>Build</strong>
                 <span>Shape the system, website, and identity into one streamlined stack.</span>
               </div>
             </div>
-            <div class="step">
+            <div class="step glass">
               <div class="num" aria-hidden="true">3</div>
               <div>
                 <strong>Launch</strong>
@@ -1019,35 +896,9 @@
       </div>
     </section>
 
-    <section id="cases" class="bg-alt section-pad" aria-labelledby="cases-heading">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">Featured Work</div>
-          <h2 id="cases-heading">Our Selected Case Studies</h2>
-          <p>Explore our integrated systems, websites, and branding projects. Tap any card for an in-depth view of the architecture.</p>
-        </div>
-        
-        <div class="carousel-container reveal">
-          <div class="work-track" id="dynamicWorkTrack"></div>
-          
-          <div class="carousel-controls">
-            <div class="dots" id="dynamicDots" aria-label="Case study pagination"></div>
-            <div class="nav-buttons">
-              <button class="nav-btn" id="dynPrevBtn" aria-label="Previous case study">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-              </button>
-              <button class="nav-btn" id="dynNextBtn" aria-label="Next case study">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="consult" class="wrap section-pad" aria-labelledby="consult-heading">
       <div class="consult">
-        <div class="consult-panel reveal">
+        <div class="consult-panel glass reveal">
           <div class="section-head" style="margin-bottom: 2rem;">
             <div class="eyebrow">Get a Free Consultation</div>
             <h2 id="consult-heading">Bring systems, sites, and branding into one plan.</h2>
@@ -1063,20 +914,20 @@
         </div>
         
         <div class="cta-box reveal">
-          <div class="cta-card">
+          <div class="cta-card glass">
             <h2>Fast First Contact.</h2>
             <p>We evaluate your current systems and brand presence, then propose the most efficient next step for growing your business.</p>
             <div class="contact-links">
               <a href="https://wa.me/252636581295?text=Hi%20Raazim%20Tech!%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20like%20to%20discuss%20my%20project%20with%20you." target="_blank" rel="noopener noreferrer">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 WhatsApp Us
               </a>
               <a href="mailto:raazimtech@gmail.com">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 Email: raazimtech@gmail.com
               </a>
               <a href="tel:+252636581295">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Call: +252 636581295
               </a>
             </div>
@@ -1093,15 +944,15 @@
           <p>Keyword-rich answers help search engines understand what we do and help people find the right service faster.</p>
         </div>
         <div class="cards">
-          <article class="card reveal">
+          <article class="card glass reveal">
             <h3>Website design in Somaliland</h3>
             <p>We build responsive business websites in Somaliland that are fast, clear, and designed to convert visitors into leads.</p>
           </article>
-          <article class="card reveal">
+          <article class="card glass reveal">
             <h3>Branding agency in Hargeisa</h3>
             <p>Raazim Tech creates branding systems, logos, and visual direction for modern companies in Hargeisa and across Somaliland.</p>
           </article>
-          <article class="card reveal">
+          <article class="card glass reveal">
             <h3>Systems integration &amp; architecture</h3>
             <p>We unify websites, internal systems, and brand presentation into one digital architecture so the business feels consistent everywhere.</p>
           </article>
@@ -1110,22 +961,23 @@
     </section>
   </main>
 
-  <!-- ABOUT US VIEW -->
-  <main id="about-view" style="display: none; padding-bottom: 5rem;">
+  <!-- ABOUT US VIEW WITH ENHANCED SEO TEXT AND NO WORKSPACE IMAGES -->
+  <main id="about-view" style="display: none; padding-top: 10rem; padding-bottom: 5rem;">
     <section class="wrap section-pad">
-      <div class="section-head reveal">
+      <div class="section-head reveal" style="max-width: 800px;">
         <div class="eyebrow">About Raazim Tech</div>
         <h2>Driving Digital Excellence in East Africa</h2>
-        <p>We are a dedicated team of digital architects, building systems, modern websites, and distinct brand identities that seamlessly scale your business operations and impact.</p>
+        <p><strong>Raazim Tech was established in 2025</strong> with a clear mission to elevate the digital landscape of Somaliland and the broader East African region. As the premier software company in Hargeisa, we specialize in delivering high-performance digital architecture, custom enterprise software, advanced UI/UX design, and cohesive business branding.</p>
+        <p>Our unified approach ensures that ERP systems, business websites, and brand identities work seamlessly together. We help modern businesses scale efficiently, rank higher in organic search, and build unmatched credibility in competitive markets.</p>
       </div>
 
       <!-- CEO Section -->
-      <div class="ceo-section reveal">
-        <img src="CEO_IMAGE_URL.png" alt="Abdikariim Mohamoud Ibraahim - CEO" class="ceo-img" width="180" height="180" loading="lazy" decoding="async">
+      <div class="ceo-section glass reveal">
+        <img src="CEO_IMAGE_URL.jpg" alt="Cabdikariim Mohamoud - CEO" class="ceo-img" width="200" height="200" loading="lazy" decoding="async">
         <div class="ceo-info" style="display: flex; flex-direction: column;">
-          <h3>Abdikariim Mohamoud Ibraahim</h3>
+          <h3>Cabdikariim Mohamoud</h3>
           <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">Chief Executive Officer</div>
-          <p>Abdikariim leads Raazim Tech with a vision to transform the digital landscape of East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
+          <p>Cabdikariim leads Raazim Tech with a vision to transform the digital landscape of East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
           
           <a href="https://www.linkedin.com/in/abdikariimmohamoud/" target="_blank" rel="noopener noreferrer" class="btn primary" style="margin-top: 1.5rem; width: fit-content; padding: 0.6rem 1.2rem; font-size: 0.95rem;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -1134,23 +986,23 @@
         </div>
       </div>
 
-      <!-- Office Images Section -->
+      <!-- Workspace Section without Images -->
       <div class="section-head reveal" style="margin-top: 5rem;">
         <h2>Our Workspace</h2>
         <p>A look inside the environment where our best strategies, designs, and code come to life.</p>
       </div>
       <div class="office-grid">
-        <article class="office-card reveal">
-          <img src="OFFICE1.png" alt="Office 1" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
+        <article class="office-card glass reveal">
           <h3>Office 1</h3>
+          <p>Our primary collaborative hub where our digital architects build out secure and scalable ERP systems.</p>
         </article>
-        <article class="office-card reveal">
-          <img src="OFFICE2.png" alt="Office 2" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
+        <article class="office-card glass reveal">
           <h3>Office 2</h3>
+          <p>A focused design space dedicated to UI/UX and crafting unified brand experiences for our partners.</p>
         </article>
-        <article class="office-card reveal">
-          <img src="OFFICE3.jpg" alt="Office 3" class="office-img" width="1200" height="800" loading="lazy" decoding="async">
+        <article class="office-card glass reveal">
           <h3>Office 3</h3>
+          <p>Where strategy meets execution, featuring state-of-the-art tech infrastructure for seamless deployment.</p>
         </article>
       </div>
     </section>
@@ -1161,8 +1013,8 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand">
-            <img src="logo.png" alt="Raazim Tech Logo" width="40" height="40" loading="lazy" decoding="async" />
-            <strong>Raazim Tech</strong>
+            <img src="logo.png" alt="Raazim Tech Logo" width="36" height="36" loading="lazy" decoding="async" />
+            <strong>Raazim <span style="color:var(--primary); font-weight:normal;">tech</span></strong>
           </div>
           <p>Integrated architecture for products, websites, and identity systems.</p>
         </div>
@@ -1178,13 +1030,13 @@
           <h4>Social Links</h4>
           <div class="socials" aria-label="Social media profiles">
             <a class="social" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
             </a>
             <a class="social" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
             <a class="social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
           </div>
         </div>
@@ -1194,7 +1046,6 @@
             <li><a href="#top">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#cases">Case Studies</a></li>
             <li><a href="#consult">Contact</a></li>
           </ul>
         </div>
@@ -1203,31 +1054,22 @@
     </div>
   </footer>
 
-  <div id="project-page" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project Details">
-    <div class="project-header">
-      <button class="btn-back" onclick="closeProject()" aria-label="Close project details">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        Back to Home
-      </button>
-    </div>
-    
-    <div class="project-content">
-      <img id="detailPreview" class="project-hero-img" src="" alt="" width="1600" height="900" loading="lazy" decoding="async">
-      <div class="project-branding">
-        <div class="project-logo-large">
-          <img id="detailLogo" src="" alt="" width="100" height="100" loading="lazy" decoding="async">
-        </div>
-        <h2 id="detailTitle" class="project-title"></h2>
-      </div>
-      <p id="detailDesc" class="project-description"></p>
-    </div>
-  </div>
-
   <script>
+    // --- SCROLL HEADER EFFECT ---
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
     // --- THEME TOGGLE LOGIC ---
     const themeToggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('raazim-theme');
     
+    // Default is light (white glassmorphism). If they previously saved dark, apply it.
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-theme');
     }
@@ -1257,12 +1099,10 @@
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // Handle all internal anchor links globally for SPA-style page switching
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         
-        // Target: About Us
         if (href === '#about') {
           e.preventDefault();
           viewHome.style.display = 'none';
@@ -1270,14 +1110,12 @@
           window.scrollTo(0, 0);
           if (window.innerWidth <= 768) closeNav();
         } 
-        // Target: Home or Home-Sections
         else {
           if (viewAbout.style.display === 'block') {
              e.preventDefault();
              viewAbout.style.display = 'none';
              viewHome.style.display = 'block';
              
-             // Allow a tiny delay for display:block to compute layout before native smooth scroll kicks in
              setTimeout(() => {
                const el = document.querySelector(href);
                if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -1292,16 +1130,14 @@
 
     document.addEventListener('click', (event) => {
       if (window.innerWidth > 768) return;
-      if (!navShell.contains(event.target) && !themeToggleBtn.contains(event.target)) closeNav();
+      if (!navShell.contains(event.target) && !themeToggleBtn.contains(event.target) && !navToggle.contains(event.target)) closeNav();
     });
+    
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeNav();
-        closeProject();
-      }
+      if (event.key === 'Escape') closeNav();
     });
 
-    // --- SCROLL REVEAL ANIMATIONS (Performance Optimized) ---
+    // --- SCROLL REVEAL ANIMATIONS ---
     const revealTargets = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -1312,125 +1148,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     revealTargets.forEach((el) => revealObserver.observe(el));
-
-    // --- CASE STUDIES CAROUSEL & MODAL LOGIC ---
-    const projectsData = [
-      {
-        title: "Edux Exam Management System",
-        logo: "Edux exam manamgement system logo.png",
-        preview: "Edux exam manamgement system preview.png",
-        description: "Edux is a comprehensive exam management system designed to streamline the grading and assessment process for educational institutions. It features intuitive dashboards, secure exam handling, and robust analytical reporting to help educators evaluate student performance efficiently."
-      },
-      {
-        title: "Power GYM MS",
-        logo: "power GYM MS logo.png",
-        preview: "Power GYM MS preview.png",
-        description: "A complete management solution tailored specifically for modern fitness centers. Power GYM MS handles membership tracking, subscription renewals, daily attendance monitoring, and staff management to ensure smooth daily operations."
-      },
-      {
-        title: "Basetext IT Exam Prep",
-        logo: "basetext logo.png",
-        preview: "Basetext preview.png",
-        description: "Basetext is an interactive preparation platform created for aspiring IT professionals. It equips users with simulated practice tests, real-time progress tracking, and specialized study materials tailored for major IT certifications."
-      },
-      {
-        title: "School Management System",
-        logo: "school management system logo.jpeg",
-        preview: "school management system preview.png",
-        description: "A unified digital platform handling end-to-end school administration. This system manages admissions, student records, fee collection, academic scheduling, and parent-teacher communications, making the institution entirely paperless."
-      }
-    ];
-
-    const dynWorkTrack = document.getElementById('dynamicWorkTrack');
-    const dynDots = document.getElementById('dynamicDots');
-    
-    // Inject slides into DOM
-    projectsData.forEach((proj, index) => {
-      const slide = document.createElement('article');
-      slide.className = 'work-slide';
-      slide.onclick = () => openProject(index);
-      
-      slide.innerHTML = `
-        <img src="${proj.preview}" alt="${proj.title} preview interface" class="work-preview-img" width="1200" height="800" loading="lazy" decoding="async">
-        <div class="work-slide-content">
-          <div class="work-logo-overlay">
-            <img src="${proj.logo}" alt="${proj.title} logo" width="60" height="60" loading="lazy" decoding="async">
-          </div>
-          <h3>${proj.title}</h3>
-        </div>
-      `;
-      dynWorkTrack.appendChild(slide);
-
-      const dot = document.createElement('button');
-      dot.setAttribute('aria-label', `Go to ${proj.title} slide`);
-      if(index === 0) dot.className = 'is-active';
-      dot.onclick = () => scrollDynTo(index);
-      dynDots.appendChild(dot);
-    });
-
-    const dSlides = document.querySelectorAll('.work-slide');
-    const dDotsList = document.querySelectorAll('#dynamicDots button');
-    let dActive = 0;
-
-    function scrollDynTo(index) {
-      if(dSlides.length === 0) return;
-      dActive = (index + dSlides.length) % dSlides.length; 
-      dynWorkTrack.scrollTo({
-        left: dSlides[dActive].offsetLeft - dynWorkTrack.offsetLeft, 
-        behavior: 'smooth'
-      });
-      updateDots();
-    }
-
-    function updateDots() {
-      dDotsList.forEach((d, i) => d.classList.toggle('is-active', i === dActive));
-    }
-
-    document.getElementById('dynPrevBtn').addEventListener('click', () => scrollDynTo(dActive - 1));
-    document.getElementById('dynNextBtn').addEventListener('click', () => scrollDynTo(dActive + 1));
-
-    // Update dots on manual scroll
-    dynWorkTrack.addEventListener('scroll', () => {
-      const center = dynWorkTrack.scrollLeft + dynWorkTrack.clientWidth / 2;
-      let nearest = 0;
-      let dist = Infinity;
-      
-      dSlides.forEach((slide, i) => {
-        const slideCenter = slide.offsetLeft - dynWorkTrack.offsetLeft + slide.clientWidth / 2;
-        const d = Math.abs(center - slideCenter);
-        if(d < dist) { dist = d; nearest = i; }
-      });
-      
-      if(dActive !== nearest) {
-        dActive = nearest;
-        updateDots();
-      }
-    }, { passive: true });
-
-    // --- MODAL FUNCTIONS ---
-    function openProject(index) {
-      const p = projectsData[index];
-      
-      document.getElementById('detailPreview').src = p.preview;
-      document.getElementById('detailPreview').alt = p.title + " preview interface";
-      document.getElementById('detailLogo').src = p.logo;
-      document.getElementById('detailLogo').alt = p.title + " logo";
-      document.getElementById('detailTitle').textContent = p.title;
-      document.getElementById('detailDesc').textContent = p.description;
-      
-      const projPage = document.getElementById('project-page');
-      projPage.classList.add('active');
-      projPage.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      projPage.scrollTo(0,0);
-    }
-    
-    function closeProject() {
-      const projPage = document.getElementById('project-page');
-      projPage.classList.remove('active');
-      projPage.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
   </script>
 </body>
 </html>
