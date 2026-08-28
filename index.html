@@ -1,1551 +1,437 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Raazim Tech Somaliland | Digital Architecture, Systems & Branding</title>
-  <meta name="description" content="Raazim Tech is the premier software company in Somaliland. We specialize in custom enterprise systems, modern website development, UI/UX design, and unified brand experiences." />
-  <meta name="keywords" content="Raazim Tech, Somaliland web design, software company Somaliland, Hargeisa web developer, Borama tech, ERP systems Somaliland, custom software systems, business branding, UI design, digital agency East Africa" />
-  <meta name="author" content="Raazim Tech" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#F1F5F9" />
-  <link rel="canonical" href="https://www.raazimtech.com/" />
-  
-  <meta name="geo.region" content="SO-WOQ" />
-  <meta name="geo.placename" content="Hargeisa" />
-  <meta name="geo.position" content="9.5600;44.0650" />
-  <meta name="ICBM" content="9.5600, 44.0650" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Raazim Tech" />
-  <meta property="og:title" content="Raazim Tech Somaliland | Enterprise Systems & Digital Branding" />
-  <meta property="og:description" content="Modern custom software systems, high-performance websites, and enterprise branding for growing businesses in Somaliland and East Africa." />
-  <meta property="og:image" content="https://www.raazimtech.com/logo.png" />
-  <meta property="og:image:alt" content="Raazim Tech Official Logo" />
-  <meta property="og:url" content="https://www.raazimtech.com/" />
-  <meta property="og:locale" content="en_US" />
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://www.raazimtech.com/#organization",
-          "name": "Raazim Tech",
-          "url": "https://www.raazimtech.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.raazimtech.com/logo.png",
-            "width": 512,
-            "height": 512
-          },
-          "email": "raazimtech@gmail.com",
-          "telephone": "+252636581295"
-        }
-      ]
-    }
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Cabdikariim Mohamoud",
-      "jobTitle": "CEO and Founder",
-      "image": "https://www.raazimtech.com/cabdikariim-mohamoud-raazim-tech-ceo.webp",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Raazim Tech"
-      },
-      "url": "https://www.raazimtech.com/#about",
-      "sameAs": "https://www.linkedin.com/in/abdikariimmohamoud/"
-    }
-  </script>
-
-  <link rel="icon" type="image/png" href="logo.png" />
-  
-  <link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raazim Tech | Digital Architecture, Systems & Branding</title>
+  <meta name="description" content="Raazim Tech builds custom enterprise systems, high-performance websites, UI/UX experiences and cohesive digital brands in Somaliland and East Africa.">
+  <meta name="keywords" content="Raazim Tech, Somaliland software company, Hargeisa web development, custom software Somaliland, UI UX Somaliland, enterprise systems, digital architecture, web design East Africa">
+  <meta name="author" content="Raazim Tech">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="canonical" href="https://www.raazimtech.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Raazim Tech">
+  <meta property="og:title" content="Raazim Tech | Digital Architecture, Systems & Branding">
+  <meta property="og:description" content="Custom enterprise systems, high-performance websites and cohesive digital experiences for growing businesses.">
+  <meta property="og:image" content="https://www.raazimtech.com/logo.png">
+  <meta property="og:url" content="https://www.raazimtech.com/">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* --- CSS VARIABLES: Light Glassmorphism Default --- */
     :root {
-      --primary: #2563EB;
-      --primary-hover: #1D4ED8;
-      --accent: #3B82F6;
-      --accent-light: rgba(59, 130, 246, 0.15);
-      --accent-soft: rgba(59, 130, 246, 0.25);
-      
-      --text-dark: #0F172A;
-      --text-main: #334155;
-      --text-muted: #64748B;
-      
-      --bg-main: #F8FAFC; 
-      --bg-alt: #F1F5F9;
-      --bg-card: rgba(255, 255, 255, 0.6); 
-      --glass-border: rgba(255, 255, 255, 1);
-      --border: rgba(15, 23, 42, 0.1);
-      
-      /* Added Hero Overlay for Light Mode */
-      --hero-overlay: rgba(248, 250, 252, 0.85);
-      
-      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-      
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 32px;
-      
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --blue:#4e99ed;
+      --blue-strong:#2f7fe0;
+      --ink:#0b0f14;
+      --ink-2:#111821;
+      --paper:#f4f5f3;
+      --white:#fff;
+      --muted:#68717d;
+      --line:rgba(11,15,20,.10);
+      --dark-line:rgba(255,255,255,.13);
+      --radius:28px;
+      --ease:cubic-bezier(.2,.8,.2,1);
     }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font:inherit;border:0;cursor:pointer}
+    .container{width:min(1240px,calc(100% - 40px));margin:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+    .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor}
+    h1,h2,h3{font-family:'Manrope',sans-serif;line-height:1.04;letter-spacing:-.045em}
+    h2{font-size:clamp(2.4rem,5vw,4.7rem)}
+    p{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;font-weight:700;transition:transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease)}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-light{background:#fff;color:#101419;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-dark{background:var(--ink);color:#fff}
+    .arrow{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);font-size:1rem}
 
-    /* --- DARK THEME OVERRIDE --- */
-    body.dark-theme {
-      --primary: #3B82F6;
-      --primary-hover: #60A5FA;
-      
-      --text-dark: #FFFFFF;
-      --text-main: #E5E7EB;
-      --text-muted: #9CA3AF;
-      
-      --bg-main: #0f172a;
-      --bg-alt: #020617;
-      --bg-card: rgba(30, 41, 59, 0.4); 
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --border: rgba(255, 255, 255, 0.1);
+    /* HERO */
+    .hero-shell{padding:14px 14px 0}
+    .hero{min-height:calc(100vh - 28px);min-height:720px;border-radius:30px;overflow:hidden;position:relative;background:#111820 url('hero.jpg') center/cover no-repeat;color:#fff;isolation:isolate}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(4,8,13,.63);z-index:-1}
+    .nav{position:absolute;z-index:10;top:22px;left:28px;right:28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.08rem;white-space:nowrap}
+    .brand img{width:38px;height:38px;object-fit:contain}
+    .nav-pill{display:flex;align-items:center;gap:4px;padding:6px;border:1px solid rgba(255,255,255,.15);background:rgba(10,15,21,.36);backdrop-filter:blur(18px);border-radius:999px}
+    .nav-pill a{padding:9px 14px;border-radius:999px;color:rgba(255,255,255,.82);font-size:.88rem;font-weight:600;transition:.25s}
+    .nav-pill a:hover,.nav-pill a.active{background:rgba(255,255,255,.13);color:#fff}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-link{color:#fff;font-weight:700;font-size:.9rem;padding:10px 12px}
+    .nav-cta{background:#fff;color:#111;padding:11px 17px;border-radius:999px;font-weight:800;font-size:.88rem}
+    .mobile-menu{display:none}
 
-      /* Added Hero Overlay for Dark Mode */
-      --hero-overlay: rgba(15, 23, 42, 0.75);
-      
-      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-    }
+    .hero-content{position:relative;z-index:2;min-height:calc(100vh - 28px);min-height:720px;display:flex;flex-direction:column;justify-content:center;padding:150px 8% 150px}
+    .hero-kicker{font-size:.84rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:20px}
+    .hero-title{font-size:clamp(4.2rem,11.3vw,10.7rem);font-weight:800;text-transform:uppercase;line-height:.79;letter-spacing:-.075em;max-width:1050px;color:#f3f5f5}
+    .hero-title span{display:block;color:rgba(255,255,255,.55)}
+    .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-top:58px;max-width:1050px}
+    .hero-copy{max-width:510px;font-size:1rem;color:rgba(255,255,255,.75)}
+    .hero-copy strong{color:#fff}
+    .hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:34px;margin-left:auto}
+    .hero-stat strong{display:block;font:800 clamp(1.8rem,3vw,2.7rem)/1 'Manrope';letter-spacing:-.06em;color:#fff}
+    .hero-stat span{display:block;margin-top:6px;color:rgba(255,255,255,.58);font-size:.78rem}
+    .hero-card{position:absolute;z-index:3;right:6%;bottom:34px;width:260px;padding:18px;border:1px solid rgba(255,255,255,.17);background:rgba(12,17,23,.58);backdrop-filter:blur(20px);border-radius:22px}
+    .hero-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;color:#fff;font-size:.8rem;font-weight:700}
+    .hero-card-top span:last-child{color:rgba(255,255,255,.45)}
+    .mini-project{height:110px;border-radius:14px;overflow:hidden;background:url('Edux exam manamgement system preview.png') center/cover no-repeat;border:1px solid rgba(255,255,255,.12)}
+    .hero-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;color:rgba(255,255,255,.7);font-size:.74rem}
 
-    /* --- RESET & BASE --- */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background-color var(--transition), color var(--transition);
-      position: relative;
-    }
-    
-    /* Global Ambient Background Orbs */
-    body::before, body::after {
-      content: '';
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: -1;
-      opacity: 0.5;
-      pointer-events: none;
-      transition: background var(--transition);
-    }
-    body::before {
-      top: -10%; left: -10%;
-      width: 50vw; height: 50vw;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent 70%);
-    }
-    body::after {
-      bottom: -10%; right: -10%;
-      width: 40vw; height: 40vw;
-      background: radial-gradient(circle, rgba(200, 70, 40, 0.15), transparent 70%);
-    }
+    /* TRUST STRIP */
+    .trust{padding:34px 0;border-bottom:1px solid var(--line)}
+    .trust-row{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .trust-label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#8a9199}
+    .trust-items{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+    .trust-chip{padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;font-weight:700;background:#fff}
 
-    a { color: inherit; text-decoration: none; transition: color var(--transition); }
-    img { max-width: 100%; height: auto; display: block; }
-    ul { list-style: none; }
-    button { font-family: inherit; border: none; background: none; cursor: pointer; }
+    /* INTRO */
+    .section{padding:110px 0}
+    .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}
+    .intro-title{margin-top:18px;max-width:760px}
+    .intro-title em{font-style:normal;color:var(--blue)}
+    .intro-copy{max-width:490px;font-size:1.05rem}
+    .intro-copy p{margin-bottom:24px}
+    .metric-row{display:flex;gap:35px;margin-top:28px;padding-top:25px;border-top:1px solid var(--line)}
+    .metric strong{display:block;font:800 2rem/1 'Manrope';letter-spacing:-.06em}
+    .metric span{font-size:.75rem;color:var(--muted)}
 
-    /* --- TYPOGRAPHY --- */
-    h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; transition: color var(--transition); }
-    p { margin-bottom: 1rem; }
-    
-    .wrap { width: min(1200px, 90%); margin: 0 auto; }
-    .section-pad { padding: 6rem 0; }
-    .bg-alt { background-color: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    /* SERVICES */
+    .dark-section{background:var(--ink);color:#fff}
+    .dark-section p{color:#aab2bd}
+    .dark-section .eyebrow{color:#78b5ff}
+    .services-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}
+    .services-head h2{max-width:760px}
+    .services-head p{max-width:390px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .service-card{min-height:310px;border:1px solid var(--dark-line);border-radius:22px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;background:#111820;transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease)}
+    .service-card:hover{transform:translateY(-7px);background:#151e28;border-color:rgba(120,181,255,.35)}
+    .service-number{font:700 .78rem 'Manrope';color:#67727f}
+    .service-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(78,153,237,.13);color:#78b5ff;font-size:1.2rem;margin-bottom:25px}
+    .service-card h3{font-size:1.45rem;margin-bottom:9px}
+    .service-card p{font-size:.88rem}
+    .service-link{display:flex;align-items:center;gap:8px;color:#fff;font-size:.82rem;font-weight:700;margin-top:22px}
 
-    /* --- REVEAL ANIMATIONS --- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      will-change: opacity, transform;
-    }
-    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    /* WORK */
+    .work-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:45px}
+    .work-head p{max-width:430px}
+    .work-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+    .work-card{position:relative;min-height:460px;border-radius:24px;overflow:hidden;background:#dfe4e8}
+    .work-card.small{min-height:223px}
+    .work-stack{display:grid;gap:14px}
+    .work-image{position:absolute;inset:0;background-position:center;background-size:cover;transition:transform .6s var(--ease)}
+    .work-card:hover .work-image{transform:scale(1.045)}
+    .work-overlay{position:absolute;inset:0;background:rgba(4,7,11,.22)}
+    .work-info{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;padding:18px;border:1px solid rgba(255,255,255,.18);background:rgba(8,12,17,.6);backdrop-filter:blur(18px);border-radius:18px;color:#fff}
+    .work-info h3{font-size:1.35rem;color:#fff;letter-spacing:-.035em}
+    .work-info p{color:rgba(255,255,255,.68);font-size:.78rem;margin-top:4px}
+    .tag{display:inline-block;margin-bottom:8px;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9ac9ff}
+    .work-card:nth-child(1) .work-image{background-image:url('Edux exam manamgement system preview.png')}
+    .work-card:nth-child(2) .work-image{background-image:url('Power GYM MS preview.png')}
+    .work-card:nth-child(3) .work-image{background-image:url('Basetext preview.png')}
 
-    /* --- GLASSMORPHISM UTILITY --- */
-    .glass {
-      background: var(--bg-card);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-sm);
-      border-radius: var(--radius-md);
-      transition: all var(--transition);
-    }
+    /* SYSTEMS */
+    .systems{background:#e9ecea}
+    .systems-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+    .systems-list{border-top:1px solid var(--line)}
+    .system-item{display:grid;grid-template-columns:70px 1fr;gap:25px;padding:26px 0;border-bottom:1px solid var(--line)}
+    .system-index{font:700 .75rem 'Manrope';color:#9299a1}
+    .system-item h3{font-size:1.35rem;margin-bottom:7px}
+    .system-item p{font-size:.9rem;max-width:570px}
+    .systems-art{min-height:500px;border-radius:28px;overflow:hidden;position:relative;background:#101820 url('background2.png') center/cover no-repeat}
+    .systems-art::after{content:'';position:absolute;inset:0;background:rgba(7,13,19,.38)}
+    .art-card{position:absolute;z-index:2;left:28px;right:28px;bottom:28px;padding:22px;border:1px solid rgba(255,255,255,.16);background:rgba(10,15,21,.62);backdrop-filter:blur(18px);border-radius:20px;color:#fff}
+    .art-card strong{display:block;font:800 2.2rem/1 'Manrope';letter-spacing:-.06em}
+    .art-card span{color:rgba(255,255,255,.62);font-size:.8rem}
 
-    /* --- BUTTONS --- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.875rem 1.75rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all var(--transition);
-      text-align: center;
-      gap: 0.5rem;
-    }
-    .btn.primary {
-      background-color: var(--primary);
-      color: #fff;
-      box-shadow: var(--shadow-md);
-    }
-    .btn.primary:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
+    /* PRICING */
+    .pricing-head{text-align:center;max-width:720px;margin:0 auto 48px}
+    .pricing-head h2{margin:16px 0}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .price-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;min-height:370px;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+    .price-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(14,20,26,.08)}
+    .price-card.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .price-card.featured p,.price-card.featured li{color:#aeb6c0}
+    .price-name{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+    .price{font:800 3rem/1 'Manrope';letter-spacing:-.07em;margin:22px 0 8px}
+    .price-note{font-size:.86rem}
+    .price-list{margin:28px 0;display:grid;gap:11px}
+    .price-list li{font-size:.83rem;color:#606873;display:flex;gap:9px}
+    .price-list li::before{content:'✓';color:var(--blue);font-weight:900}
+    .price-card .btn{margin-top:auto}
 
-    /* --- HEADER & NAVIGATION --- */
-    .header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 50;
-      background: transparent;
-      transition: background-color var(--transition), box-shadow var(--transition);
-    }
-    .header.scrolled {
-      position: fixed;
-      background: var(--bg-card);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-sm);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 90px;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-    .brand-copy {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    .brand-copy .name {
-      font-weight: 700;
-      color: var(--text-dark);
-      transition: color var(--transition);
-    }
-    .brand-copy .tag {
-      font-weight: 400;
-      color: var(--primary);
-    }
-    
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      color: var(--text-dark);
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .theme-toggle svg { width: 20px; height: 20px; }
-    body.dark-theme .moon-icon { display: none; }
-    body.dark-theme .sun-icon { display: block; }
-    .sun-icon { display: none; }
-    .moon-icon { display: block; }
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
+    .about-photo{min-height:560px;border-radius:28px;overflow:hidden;background:#d7dbde url('CEO_IMAGE_URL.jpg') center/cover no-repeat}
+    .about-copy h2{margin:16px 0 22px}
+    .about-copy>p{max-width:620px;font-size:1.03rem}
+    .about-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+    .about-point{padding:18px;border:1px solid var(--line);border-radius:17px;background:#fff}
+    .about-point strong{display:block;font-size:1.4rem;font-family:'Manrope';letter-spacing:-.05em}
+    .about-point span{font-size:.75rem;color:var(--muted)}
+    .linkedin{margin-top:25px;color:var(--blue);font-weight:800;font-size:.88rem}
 
-    .nav-shell { position: relative; }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .nav a {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .nav a:hover { color: var(--primary); }
-    
-    .nav-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 6px;
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      color: var(--text-dark);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px);
-    }
-    .nav-toggle span {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: currentColor;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
+    /* PROCESS */
+    .process{background:#fff}
+    .process-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}
+    .process-head p{max-width:400px}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .process-item{padding:28px 24px 20px 0;border-right:1px solid var(--line);margin-right:24px}
+    .process-item:last-child{border-right:0;margin-right:0}
+    .process-no{font:800 2.5rem/1 'Manrope';color:#d3d8dc;letter-spacing:-.06em}
+    .process-item h3{font-size:1.25rem;margin:28px 0 8px}
+    .process-item p{font-size:.84rem}
 
-    /* --- HERO SECTION --- */
-    .hero {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 10rem 1rem 4rem;
-      text-align: center;
-      overflow: hidden;
-      
-      background-image: url('hero.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: scroll;
-    }
+    /* TESTIMONIALS */
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:45px}
+    .quote{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote-mark{font:800 3rem/1 'Manrope';color:var(--blue);height:35px}
+    .quote p{font-size:.93rem;color:#3f4750}
+    .quote footer{font-size:.78rem;font-weight:800}
+    .quote footer span{display:block;color:#8b929a;font-weight:500;margin-top:2px}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--hero-overlay); 
-      z-index: 1;
-      transition: background var(--transition);
-    }
+    /* FAQ + CONTACT */
+    .contact-wrap{background:var(--ink);border-radius:30px;color:#fff;padding:70px}
+    .contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:80px}
+    .contact-wrap p{color:#aeb6c0}
+    .contact-title{font-size:clamp(2.7rem,5vw,5rem);margin:16px 0 20px}
+    .contact-details{display:grid;gap:10px;margin-top:30px}
+    .contact-details a{display:block;padding:14px 0;border-bottom:1px solid var(--dark-line);font-weight:700;color:#fff}
+    .faq{border-top:1px solid var(--dark-line)}
+    .faq-item{border-bottom:1px solid var(--dark-line)}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff;text-align:left;background:transparent;padding:19px 0;font-weight:700}
+    .faq-q span:last-child{font-size:1.3rem;color:#78b5ff}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+    .faq-a p{padding:0 35px 20px 0;font-size:.84rem}
+    .faq-item.open .faq-a{max-height:160px}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 900px;
-      
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 4rem 2rem;
-      box-shadow: var(--shadow-xl);
-      transition: all var(--transition);
-    }
-    
-    .hero-breadcrumb {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      color: var(--text-muted);
-      backdrop-filter: blur(12px);
-      transition: all var(--transition);
-    }
-    .hero-breadcrumb .current { color: var(--text-dark); font-weight: 800; }
+    footer{padding:35px 0 45px}
+    .footer-row{display:flex;justify-content:space-between;gap:25px;align-items:center;border-top:1px solid var(--line);padding-top:28px}
+    .footer-brand{font-weight:800}
+    .footer-links{display:flex;gap:20px;color:#68717d;font-size:.8rem}
+    .footer-copy{font-size:.76rem;color:#9299a1}
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      color: var(--text-dark);
-      transition: color var(--transition);
-    }
-    .hero p {
-      font-size: 1.125rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.7;
-      color: var(--text-main);
-      transition: color var(--transition);
-    }
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
 
-    /* Abstract Visual aligned below */
-    .visual {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 800px;
-      height: 300px;
-      margin: 4rem auto 0;
+    @media(max-width:1050px){
+      .nav-pill{display:none}.nav-actions .nav-link{display:none}.mobile-menu{display:block;background:rgba(10,15,21,.5);color:#fff;border:1px solid rgba(255,255,255,.16);width:43px;height:43px;border-radius:50%}
+      .hero-content{padding-left:7%;padding-right:7%}.hero-card{right:4%;bottom:28px;width:230px}.hero-bottom{padding-right:250px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}.systems-grid,.about-grid,.contact-grid{grid-template-columns:1fr 1fr;gap:45px}
     }
-    .screen {
-      position: absolute;
-      padding: 1.5rem;
+    @media(max-width:760px){
+      .container{width:min(100% - 28px,1240px)}.hero-shell{padding:7px 7px 0}.hero,.hero-content{min-height:780px}.hero{border-radius:23px}.nav{top:16px;left:17px;right:17px}.brand img{width:34px;height:34px}.brand{font-size:1rem}.nav-cta{display:none}
+      .hero-content{justify-content:flex-start;padding:155px 24px 35px}.hero-kicker{font-size:.7rem}.hero-title{font-size:clamp(3.5rem,18vw,6.2rem);line-height:.82}.hero-bottom{display:block;padding:0;margin-top:35px}.hero-copy{font-size:.92rem;max-width:430px}.hero-stats{margin-top:38px;gap:18px}.hero-stat strong{font-size:1.75rem}.hero-stat span{font-size:.68rem}.hero-card{position:absolute;right:18px;left:18px;bottom:18px;width:auto}.mini-project{height:85px}
+      .trust{padding:25px 0}.trust-row{display:block}.trust-items{justify-content:flex-start;margin-top:13px}.trust-chip{font-size:.72rem}
+      .section{padding:75px 0}.intro-grid,.systems-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.intro-title{font-size:clamp(2.5rem,11vw,4rem)}.metric-row{gap:18px}.metric strong{font-size:1.65rem}
+      .services-head,.work-head,.process-head{display:block}.services-head p,.work-head p,.process-head p{margin-top:18px}.service-grid{grid-template-columns:1fr}.service-card{min-height:250px}.work-grid{grid-template-columns:1fr}.work-card{min-height:340px}.work-card.small{min-height:260px}.systems-art{min-height:350px}.price-grid,.quote-grid{grid-template-columns:1fr}.price-card{min-height:340px}.about-photo{min-height:430px}.about-points{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.process-item{border-right:0;border-bottom:1px solid var(--line);margin-right:0;padding-right:15px}.process-item:nth-child(odd){border-right:1px solid var(--line);margin-right:15px}.contact-wrap{padding:38px 24px;border-radius:23px}.footer-row{display:block}.footer-links{margin:16px 0}.footer-copy{margin-top:15px}
     }
-    .screen.dashboard {
-      width: 70%;
-      height: 250px;
-      top: 0;
-      left: 15%;
-      z-index: 2;
-    }
-    .screen.palette {
-      width: 40%;
-      height: 120px;
-      bottom: 0;
-      right: 5%;
-      z-index: 3;
-    }
-    .screen.sidebar {
-      width: 35%;
-      height: 180px;
-      top: 40px;
-      left: 5%;
-      z-index: 1;
-    }
-    
-    .dash-grid { display: flex; flex-direction: column; gap: 1rem; height: 100%; }
-    .chart { background: var(--bg-alt); border-radius: var(--radius-sm); padding: 1rem; flex: 1; border: 1px solid var(--border); }
-    .chart h3 { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 0.05em; }
-    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-    .metric { background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem; }
-    .metric strong { display: block; font-size: 1.125rem; color: var(--text-dark); }
-    .metric span { font-size: 0.7rem; color: var(--text-muted); }
-    
-    .bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 40px; margin-bottom: 1rem; }
-    .bars span { flex: 1; background: var(--border); border-radius: 4px 4px 0 0; }
-    .bars span:nth-child(1){ height: 40%; } .bars span:nth-child(2){ height: 70%; } .bars span:nth-child(3){ height: 50%; } .bars span:nth-child(4){ height: 90%; } .bars span:nth-child(5){ height: 60%; background: var(--primary); }
-
-    .palette-swatch { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; height: 100%; }
-    .palette-swatch div { border-radius: var(--radius-sm); position: relative; display: flex; align-items: flex-end; padding: 0.5rem; font-size: 0.65rem; font-weight: 600; box-shadow: var(--shadow-sm); transition: all var(--transition); }
-    
-    .palette-swatch .a { background: var(--text-dark); color: var(--bg-main); }
-    .palette-swatch .b { background: var(--text-muted); color: #ffffff; }
-    .palette-swatch .c { background: var(--primary-hover); color: #ffffff; }
-    .palette-swatch .d { background: var(--primary); color: #ffffff; }
-
-    .mini-card { display: flex; flex-direction: column; gap: 0.75rem; }
-    .mini-pill { height: 12px; background: var(--border); border-radius: 999px; }
-    .mini-pill:nth-child(1){ width: 90%; background: var(--accent-soft); }
-    .mini-pill:nth-child(2){ width: 70%; }
-    .mini-pill:nth-child(3){ width: 50%; }
-    .mini-pill:nth-child(4){ width: 80%; }
-    .mini-card .caption { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
-
-    /* --- SECTION HEADERS --- */
-    .section-head { margin-bottom: 3rem; max-width: 600px; }
-    .section-head h2 { font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: 1rem; }
-    .section-head p { color: var(--text-muted); font-size: 1.125rem; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      background-color: var(--accent-light);
-      color: var(--primary);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    /* --- EXPERTISE CARDS --- */
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .card {
-      padding: 2.5rem 2rem;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--accent-soft);
-    }
-    .card .icon {
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent-light);
-      color: var(--primary);
-      border-radius: var(--radius-sm);
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-    .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-    .card p { color: var(--text-muted); margin: 0; }
-
-    /* --- APPROACH / FUNNEL --- */
-    .approach { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-    .approach-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .step {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1.5rem;
-    }
-    .step .num {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 800;
-      border-radius: 50%;
-      box-shadow: var(--shadow-sm);
-    }
-    .step strong { display: block; font-size: 1.125rem; margin-bottom: 0.25rem; color: var(--text-dark); }
-    .step span { color: var(--text-muted); font-size: 0.95rem; }
-    
-    .funnel { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    .funnel-pill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 70px;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px);
-      border-radius: 999px;
-      font-weight: 800;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      box-shadow: var(--shadow-md);
-      transition: transform var(--transition);
-    }
-    .funnel-pill:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
-    .funnel-pill:nth-child(1) { width: 100%; background: var(--primary); color: #fff; border-color: var(--primary); }
-    .funnel-pill:nth-child(2) { width: 85%; background: var(--accent-soft); color: var(--primary-hover); border-color: transparent; }
-    .funnel-pill:nth-child(3) { width: 70%; }
-    .funnel-pill:nth-child(4) { width: 55%; opacity: 0.8;}
-
-    /* --- CONSULT & CTA --- */
-    .consult { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .consult-panel { padding: 3rem; }
-    
-    .testimonial { display: flex; gap: 1rem; align-items: flex-start; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-    .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); flex-shrink: 0; }
-    .testimonial p { font-style: italic; color: var(--text-main); margin-bottom: 0.5rem; font-weight: 500; }
-    .company { font-size: 0.875rem; font-weight: 700; color: var(--text-muted); }
-    
-    .cta-box { display: flex; flex-direction: column; gap: 1.5rem; }
-    .cta-card { padding: 3rem; }
-    .cta-card h2 { margin-bottom: 1rem; }
-    .cta-card p { color: var(--text-muted); margin-bottom: 2rem; }
-    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
-    .contact-links a {
-      display: flex;
-      align-items: center;
-      padding: 1.2rem;
-      background: var(--bg-main);
-      border-radius: var(--radius-sm);
-      color: var(--text-dark);
-      font-weight: 600;
-      border: 1px solid var(--border);
-      transition: var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-    .contact-links a:hover { background: var(--accent-light); border-color: var(--primary); transform: translateX(5px); }
-
-    /* --- FOOTER --- */
-    .footer { background-color: var(--bg-alt); border-top: 1px solid var(--border); padding: 4rem 0 2rem; margin-top: 4rem; }
-    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-    .footer-brand img { width: 36px; height: 36px; }
-    body.dark-theme .footer-brand img { filter: brightness(0) invert(1); }
-    .footer-brand strong { font-size: 1.5rem; color: var(--text-dark); }
-    .footer p { color: var(--text-muted); font-size: 0.95rem; max-width: 300px; }
-    
-    .footer h4 { color: var(--text-dark); margin-bottom: 1.25rem; font-size: 1rem; }
-    .footer ul { display: flex; flex-direction: column; gap: 0.75rem; }
-    .footer ul a { color: var(--text-muted); font-weight: 500; }
-    .footer ul a:hover { color: var(--primary); }
-    
-    .socials { display: flex; gap: 0.75rem; }
-    .social {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      border-radius: 50%;
-      color: var(--text-dark);
-      font-size: 0.875rem;
-      transition: var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-    .social:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); }
-    
-    .copyright { text-align: center; color: var(--text-muted); font-size: 0.875rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-
-    /* --- ABOUT US PAGE ADDITIONS --- */
-    .ceo-section {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      padding: 3rem;
-      margin-bottom: 4rem;
-    }
-    .ceo-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--glass-border);
-      box-shadow: var(--shadow-lg);
-      flex-shrink: 0;
-    }
-    .ceo-info h3 {
-      font-size: 2rem;
-      margin-bottom: 0.25rem;
-    }
-    .ceo-info p {
-      color: var(--text-muted);
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .office-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .office-card {
-      overflow: hidden;
-      padding: 2.5rem 2rem; 
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .office-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--accent-soft);
-    }
-    .office-card h3 {
-      margin: 0;
-      font-size: 1.25rem;
-      color: var(--text-dark);
-    }
-    .office-card p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* --- WEBSITE PRICING --- */
-    .pricing-section {
-      background: var(--bg-main);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-head {
-      max-width: 760px;
-      text-align: center;
-      margin: 0 auto 3.5rem;
-    }
-
-    .pricing-head .eyebrow { margin-bottom: 1.25rem; }
-    .pricing-head h2 { font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1rem; }
-    .pricing-head p { max-width: 650px; margin: 0 auto; color: var(--text-muted); font-size: 1.05rem; }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      max-width: 1140px;
-      margin: 0 auto;
-      align-items: stretch;
-    }
-
-    .pricing-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 590px;
-      padding: 0 0 1.5rem;
-      overflow: hidden;
-      border-radius: 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-md);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .pricing-card.featured {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 60px rgba(37, 99, 235, 0.2);
-    }
-
-    .pricing-card.featured:hover { transform: translateY(-14px); }
-
-    .pricing-card-top {
-      padding: 2rem 1.9rem 1.8rem;
-      min-height: 230px;
-      color: #fff;
-      position: relative;
-    }
-
-    .pricing-card:nth-child(1) .pricing-card-top { background: #2563EB; }
-    .pricing-card:nth-child(2) .pricing-card-top { background: #7C3AED; }
-    .pricing-card:nth-child(3) .pricing-card-top { background: #EA580C; }
-
-    body.dark-theme .pricing-card:nth-child(1) { border-color: rgba(37, 99, 235, 0.5); }
-    body.dark-theme .pricing-card:nth-child(2) { border-color: rgba(124, 58, 237, 0.5); }
-    body.dark-theme .pricing-card:nth-child(3) { border-color: rgba(234, 88, 12, 0.5); }
-
-    .pricing-badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.45rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.18);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(8px);
-      font-size: 0.7rem;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .pricing-icon {
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: rgba(255,255,255,0.16);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
-      margin-bottom: 1.4rem;
-    }
-
-    .pricing-card h3 {
-      color: #fff;
-      font-size: 1.55rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .pricing-description {
-      color: rgba(255,255,255,0.88);
-      min-height: 50px;
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .pricing-value {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.35rem;
-      margin-top: 1.4rem;
-    }
-
-    .pricing-value .currency {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.82);
-      padding-bottom: 0.42rem;
-    }
-
-    .pricing-value .amount {
-      font-size: clamp(2.8rem, 4vw, 4rem);
-      line-height: 0.9;
-      font-weight: 800;
-      letter-spacing: -0.06em;
-      color: #fff;
-    }
-
-    .pricing-card-body {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 1.5rem 1.9rem 0;
-    }
-
-    .pricing-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.7rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .pricing-stat {
-      padding: 0.9rem;
-      border-radius: 14px;
-      background: var(--bg-main);
-      border: 1px solid var(--border);
-    }
-
-    .pricing-stat span {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.18rem;
-    }
-
-    .pricing-stat strong { display: block; color: var(--text-dark); font-size: 1rem; }
-
-    .pricing-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin: 0 0 1.7rem;
-      flex: 1;
-    }
-
-    .pricing-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      color: var(--text-main);
-      font-size: 0.92rem;
-    }
-
-    .pricing-list svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .pricing-card:nth-child(1) .pricing-list svg { color: #2563EB; }
-    .pricing-card:nth-child(2) .pricing-list svg { color: #7C3AED; }
-    .pricing-card:nth-child(3) .pricing-list svg { color: #EA580C; }
-
-    .pricing-cta { width: 100%; }
-
-    .pricing-card:nth-child(1) .pricing-cta { background: #2563EB; }
-    .pricing-card:nth-child(2) .pricing-cta { background: #7C3AED; }
-    .pricing-card:nth-child(3) .pricing-cta { background: #EA580C; }
-
-    .pricing-card .pricing-cta:hover { filter: brightness(1.08); }
-
-    @media (max-width: 900px) {
-      .pricing-grid { grid-template-columns: 1fr; max-width: 560px; }
-      .pricing-card, .pricing-card.featured { min-height: auto; transform: none; }
-      .pricing-card.featured:hover, .pricing-card:hover { transform: translateY(-6px); }
-    }
-
-    /* --- RESPONSIVE HAMBURGER MENU --- */
-    @media (max-width: 992px) {
-      .approach, .consult { grid-template-columns: 1fr; gap: 3rem; }
-      .cards, .office-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-      .header-left { gap: 1rem; }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-desktop-only { display: none !important; }
-      .nav-shell { position: static; }
-      .nav-toggle { display: flex !important; }
-      
-      .nav {
-        display: flex; 
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        background: var(--bg-card);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        padding: 2rem;
-        flex-direction: column;
-        gap: 1.5rem;
-        border-bottom: 1px solid var(--glass-border);
-        box-shadow: var(--shadow-md);
-        z-index: 40;
-        /* Animation setup */
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-15px);
-        transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                    visibility 0.4s;
-        pointer-events: none;
-      }
-      .nav.nav-open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
-      } 
-      
-      .hero { padding-top: 8rem; }
-      .visual { display: none; }
-      
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .ceo-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 2rem;
-      }
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .nav, .nav-toggle span {
-        transition: none !important;
-      }
-    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.work-image,.service-card,.btn{transition:none}}
   </style>
 </head>
 <body>
-  <script>
-    // PREVENT DARK MODE FLASH BEFORE RENDER
-    (function() {
-      var savedTheme = localStorage.getItem('raazim-theme');
-      if (!savedTheme) {
-        localStorage.setItem('raazim-theme', 'dark');
-        savedTheme = 'dark';
-      }
-      if (savedTheme === 'light') {
-        document.body.classList.remove('dark-theme');
-      } else {
-        document.body.classList.add('dark-theme');
-      }
-    })();
-  </script>
+  <div class="hero-shell" id="home">
+    <header class="hero">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#home"><img src="logo.png" alt="Raazim Tech logo"><span>Raazim Tech</span></a>
+        <div class="nav-pill">
+          <a class="active" href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-link" href="mailto:raazimtech@gmail.com">Let's talk</a>
+          <a class="nav-cta" href="https://wa.me/252636581295" target="_blank" rel="noopener">Start a project</a>
+          <button class="mobile-menu" aria-label="Open navigation">☰</button>
+        </div>
+      </nav>
 
-  <header class="header" id="siteHeader" aria-label="Site Header">
-    <div class="wrap header-inner">
-      <div class="header-left">
-        <a class="brand" href="#top" aria-label="Raazim Tech home">
-          <img src="logo.png" alt="Raazim Tech Official Logo" width="36" height="36" fetchpriority="high" decoding="async" />
-          <div class="brand-copy">
-            <div class="name">Raazim</div>
-            <div class="tag">tech</div>
+      <div class="hero-content">
+        <div class="hero-kicker reveal">Digital architecture · Somaliland · East Africa</div>
+        <h1 class="hero-title reveal">BUILD<span>BETTER</span>DIGITAL</h1>
+        <div class="hero-bottom reveal">
+          <div class="hero-copy">
+            We design and build <strong>custom systems, high-performance websites and cohesive digital experiences</strong> that help businesses operate better and look better.
+            <div class="hero-buttons">
+              <a class="btn btn-light" href="#contact">Start a project <span class="arrow">↗</span></a>
+              <a class="btn" style="color:#fff;border:1px solid rgba(255,255,255,.25)" href="#work">Explore our work</a>
+            </div>
           </div>
-        </a>
-        <nav class="nav" id="siteNav" aria-label="Main navigation">
-          <a href="#top">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#expertise" class="nav-desktop-only">Systems</a>
-          <a href="#expertise" class="nav-desktop-only">Branding</a>
-          <a href="#pricing" class="nav-desktop-only">Pricing</a>
-          <a href="#consult" class="nav-desktop-only">Contact</a>
-        </nav>
-      </div>
-      
-      <div class="header-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">
-          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <div class="nav-shell" id="navShell">
-          <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
-            <span></span><span></span><span></span>
-          </button>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>50+</strong><span>Projects delivered</span></div>
+            <div class="hero-stat"><strong>3–7</strong><span>Day typical launch</span></div>
+            <div class="hero-stat"><strong>100%</strong><span>Mobile-first builds</span></div>
+          </div>
         </div>
       </div>
+
+      <div class="hero-card reveal">
+        <div class="hero-card-top"><span>Recent build</span><span>01 / 04</span></div>
+        <div class="mini-project" role="img" aria-label="Edux exam management system preview"></div>
+        <div class="hero-card-foot"><span>Edux Exam Management</span><span>↗</span></div>
+      </div>
+    </header>
+  </div>
+
+  <section class="trust">
+    <div class="container trust-row">
+      <span class="trust-label">Built for growing businesses</span>
+      <div class="trust-items"><span class="trust-chip">Enterprise Systems</span><span class="trust-chip">Web Platforms</span><span class="trust-chip">UI / UX</span><span class="trust-chip">Brand Identity</span></div>
     </div>
-  </header>
+  </section>
 
-  <!-- HOME VIEW -->
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content reveal">
-        <div class="hero-breadcrumb">
-          Home <span style="margin:0 8px;opacity:0.4;">/</span> <span class="current">Digital Architecture</span>
+  <main>
+    <section class="section">
+      <div class="container intro-grid">
+        <div class="reveal">
+          <span class="eyebrow">What we do</span>
+          <h2 class="intro-title">Technology that feels <em>simple.</em> Engineering that scales.</h2>
         </div>
-        <h1 id="hero-heading">Systems, Sites, &amp; Branding That Scale.</h1>
-        <p>We design, build, and unify your presence across all tech touchpoints to ensure a seamless experience for your users. Produce professional-grade systems without piecing together separate tools.</p>
-      </div>
-      
-      <div class="visual reveal" aria-label="Abstract software dashboard illustration">
-        <div class="screen dashboard glass">
-          <div class="dash-grid">
-            <div class="chart">
-              <h3>Performance Overview</h3>
-              <div class="bars" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <div class="metric-row">
-                <div class="metric"><strong>99%</strong><span>Uptime</span></div>
-                <div class="metric"><strong>8.4x</strong><span>Reach</span></div>
-                <div class="metric"><strong>34k</strong><span>Leads</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="screen palette glass">
-          <div class="palette-swatch">
-            <div class="a" data-label="Base">Light</div>
-            <div class="b" data-label="Grey">Soft</div>
-            <div class="c" data-label="Blue">Brand</div>
-            <div class="d" data-label="Deep">Dark</div>
-          </div>
-        </div>
-        <div class="screen sidebar glass">
-          <div class="mini-card">
-            <div class="mini-pill"></div>
-            <div class="mini-pill"></div>
-            <div class="mini-pill"></div>
-            <div class="mini-pill"></div>
-            <div class="caption">Unified operating systems scaling seamlessly.</div>
+        <div class="intro-copy reveal">
+          <p>Raazim Tech was established in 2025 with a clear mission: elevate the digital landscape of Somaliland and the broader East African region.</p>
+          <p>We combine engineering, performance and visual design so a business does not have to choose between software that works and a brand that looks premium.</p>
+          <div class="metric-row">
+            <div class="metric"><strong>95+</strong><span>Performance focus</span></div>
+            <div class="metric"><strong>SEO</strong><span>Ready architecture</span></div>
+            <div class="metric"><strong>∞</strong><span>Scalable thinking</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="expertise" class="bg-alt section-pad" aria-labelledby="expertise-heading">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">Our Expertise</div>
-          <h2 id="expertise-heading">Three core capabilities, one cohesive digital stack.</h2>
-          <p>Systems, websites, and branding are designed as one architecture, so each part reinforces the others instead of competing for attention.</p>
-        </div>
-        <div class="cards">
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            </div>
-            <h3>Systems.</h3>
-            <p>Connected digital, robust architecture tailored for enterprise management.</p>
-          </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <h3>Sites.</h3>
-            <p>Design and code interaction focused on fast, high-converting experiences.</p>
-          </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            </div>
-            <h3>Branding.</h3>
-            <p>Solidify your identity with minimal, modern, and memorable visual language.</p>
-          </article>
+    <section class="section dark-section" id="services">
+      <div class="container">
+        <div class="services-head reveal"><div><span class="eyebrow">Capabilities</span><h2 style="margin-top:16px">One team for the whole digital stack.</h2></div><p>From the first screen to the database behind it, we build coherent digital products instead of disconnected pieces.</p></div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div><span class="service-number">01</span><div class="service-icon">⌘</div><h3>Systems Engineering</h3><p>Secure backends, robust databases and internal management platforms including EMS, SMS and ERP systems.</p></div><a class="service-link" href="#contact">Build a system →</a></article>
+          <article class="service-card reveal"><div><span class="service-number">02</span><div class="service-icon">◈</div><h3>Web Development</h3><p>Fast, responsive websites and business platforms built with modern standards, clean code and SEO-ready structure.</p></div><a class="service-link" href="#contact">Build a website →</a></article>
+          <article class="service-card reveal"><div><span class="service-number">03</span><div class="service-icon">✦</div><h3>UI / UX Design</h3><p>Clear interfaces, thoughtful journeys and design systems that make complex products feel natural to use.</p></div><a class="service-link" href="#contact">Design a product →</a></article>
+          <article class="service-card reveal"><div><span class="service-number">04</span><div class="service-icon">↗</div><h3>Performance & SEO</h3><p>Frontend optimization, accessibility, metadata and lightweight assets that improve speed, discoverability and conversion.</p></div><a class="service-link" href="#contact">Optimize a site →</a></article>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="pricing-section section-pad" aria-labelledby="pricing-heading">
-      <div class="wrap">
-        <div class="pricing-head reveal">
-          <div class="eyebrow">Website Pricing</div>
-          <h2 id="pricing-heading">Professional websites. Clear pricing. Fast delivery.</h2>
-          <p>Choose the website package that fits your business. Every tier is built with a clean, responsive experience and a focused delivery timeline.</p>
+    <section class="section" id="work">
+      <div class="container">
+        <div class="work-head reveal"><div><span class="eyebrow">Selected work</span><h2 style="margin-top:16px">Products built to do real work.</h2></div><p>Our portfolio includes education systems, operational software, business websites and digital experiences designed around real user needs.</p></div>
+        <div class="work-grid">
+          <article class="work-card reveal"><div class="work-image"></div><div class="work-overlay"></div><div class="work-info"><span class="tag">Education · Software</span><h3>Edux Exam Management</h3><p>Streamlined grading workflows, academic reporting and institutional operations.</p></div></article>
+          <div class="work-stack">
+            <article class="work-card small reveal"><div class="work-image"></div><div class="work-overlay"></div><div class="work-info"><span class="tag">Operations · Software</span><h3>Power GYM MS</h3><p>Membership tracking, check-ins and operational dashboards.</p></div></article>
+            <article class="work-card small reveal"><div class="work-image"></div><div class="work-overlay"></div><div class="work-info"><span class="tag">Training · Platform</span><h3>Basetext IT Prep</h3><p>Interactive testing engine for IT certification preparation.</p></div></article>
+          </div>
         </div>
+        <div style="margin-top:14px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff" class="reveal"><strong style="font-family:Manrope;font-size:1.2rem">School Management System</strong><p style="margin-top:5px;font-size:.86rem">End-to-end administration, student data handling and institutional analytics.</p></div>
+      </div>
+    </section>
 
-        <div class="pricing-grid">
-          <article class="pricing-card glass reveal">
-            <div class="pricing-card-top">
-            <div class="pricing-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="14" rx="2"></rect>
-                <path d="M8 21h8M12 18v3"></path>
-              </svg>
-            </div>
-            <h3>Starter Website</h3>
-            <p class="pricing-description">A polished online presence for businesses that need a focused, professional website.</p>
-
-            <div class="pricing-value" aria-label="80 US dollars">
-              <span class="currency">USD</span>
-              <span class="amount">$80</span>
-            </div>
-
-            </div>
-
-            <div class="pricing-card-body">
-            <div class="pricing-meta">
-              <div class="pricing-stat">
-                <span>Website</span>
-                <strong>4 Pages</strong>
-              </div>
-              <div class="pricing-stat">
-                <span>Delivery</span>
-                <strong>4 Days</strong>
-              </div>
-            </div>
-
-            <ul class="pricing-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Modern responsive design</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Mobile-friendly experience</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Fast, clean front-end build</span></li>
-            </ul>
-
-            <a class="btn primary pricing-cta" href="https://wa.me/252636581295?text=Hi%20Raazim%20Tech!%20I'd%20like%20to%20order%20the%20Starter%20Website%20package.%20Price:%20%2480%20USD.%20Website:%204%20pages.%20Delivery:%204%20days.%20Please%20send%20me%20the%20next%20steps." target="_blank" rel="noopener noreferrer">Choose Starter</a>
-            </div>
-          </article>
-
-          <article class="pricing-card glass featured reveal">
-            <div class="pricing-card-top">
-            <div class="pricing-badge">Most Popular</div>
-            <div class="pricing-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 5h16v14H4z"></path>
-                <path d="M8 9h8M8 13h5"></path>
-              </svg>
-            </div>
-            <h3>Business Website</h3>
-            <p class="pricing-description">More room for your services, trust-building content, and a stronger business presentation.</p>
-
-            <div class="pricing-value" aria-label="120 US dollars">
-              <span class="currency">USD</span>
-              <span class="amount">$120</span>
-            </div>
-
-            </div>
-
-            <div class="pricing-card-body">
-            <div class="pricing-meta">
-              <div class="pricing-stat">
-                <span>Website</span>
-                <strong>8 Pages</strong>
-              </div>
-              <div class="pricing-stat">
-                <span>Delivery</span>
-                <strong>1 Week</strong>
-              </div>
-            </div>
-
-            <ul class="pricing-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Modern responsive design</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Up to 8 custom pages</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Mobile, tablet &amp; desktop ready</span></li>
-            </ul>
-
-            <a class="btn primary pricing-cta" href="https://wa.me/252636581295?text=Hi%20Raazim%20Tech!%20I'd%20like%20to%20order%20the%20Business%20Website%20package.%20Price:%20%24120%20USD.%20Website:%208%20pages.%20Delivery:%201%20week.%20Please%20send%20me%20the%20next%20steps." target="_blank" rel="noopener noreferrer">Choose Business</a>
-            </div>
-          </article>
-
-          <article class="pricing-card glass reveal">
-            <div class="pricing-card-top">
-            <div class="pricing-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v18M3 12h18"></path>
-                <path d="M5 5h14v14H5z"></path>
-              </svg>
-            </div>
-            <h3>Custom Website</h3>
-            <p class="pricing-description">A larger website for brands that need the freedom to grow without a fixed page limit.</p>
-
-            <div class="pricing-value" aria-label="200 US dollars">
-              <span class="currency">USD</span>
-              <span class="amount">$200</span>
-            </div>
-
-            </div>
-
-            <div class="pricing-card-body">
-            <div class="pricing-meta">
-              <div class="pricing-stat">
-                <span>Website</span>
-                <strong>Any Pages</strong>
-              </div>
-              <div class="pricing-stat">
-                <span>Delivery</span>
-                <strong>10 Days</strong>
-              </div>
-            </div>
-
-            <ul class="pricing-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>No fixed page limit</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Fully responsive experience</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg><span>Flexible structure for growing brands</span></li>
-            </ul>
-
-            <a class="btn primary pricing-cta" href="https://wa.me/252636581295?text=Hi%20Raazim%20Tech!%20I'd%20like%20to%20order%20the%20Custom%20Website%20package.%20Price:%20%24200%20USD.%20Website:%20any%20number%20of%20pages.%20Delivery:%2010%20days.%20Please%20send%20me%20the%20next%20steps." target="_blank" rel="noopener noreferrer">Choose Custom</a>
-            </div>
-          </article>
+    <section class="section systems" id="systems">
+      <div class="container systems-grid">
+        <div class="reveal"><span class="eyebrow">Our approach</span><h2 style="margin:16px 0 28px">Everything should work together.</h2><p style="max-width:500px">We bridge engineering and design through clean architecture, reusable UI components and a shared visual language. That means fewer compromises as your product grows.</p></div>
+        <div class="systems-list">
+          <div class="system-item reveal"><span class="system-index">01</span><div><h3>Performance first</h3><p>Fast loading pages, optimized assets and responsive layouts are part of the build—not an afterthought.</p></div></div>
+          <div class="system-item reveal"><span class="system-index">02</span><div><h3>Maintainable code</h3><p>Clean HTML, CSS, JavaScript and scalable system architecture make future changes easier and safer.</p></div></div>
+          <div class="system-item reveal"><span class="system-index">03</span><div><h3>Unified visual identity</h3><p>UI components, design tokens and brand decisions work together so every touchpoint feels intentional.</p></div></div>
+          <div class="system-item reveal"><span class="system-index">04</span><div><h3>Business outcomes</h3><p>We care about the actual problem: better operations, clearer communication, stronger conversion and a better customer experience.</p></div></div>
         </div>
       </div>
     </section>
 
-    <section class="wrap section-pad" aria-labelledby="approach-heading">
-      <div class="approach">
-        <div class="approach-copy reveal">
-          <div class="section-head">
-            <div class="eyebrow">Our Approach</div>
-            <h2 id="approach-heading">A clear funnel from discovery to scale.</h2>
-            <p>Every engagement starts with understanding the operating model, then moves into system design, launch execution, and continuous growth.</p>
-          </div>
-          <div class="approach-list">
-            <div class="step glass">
-              <div class="num" aria-hidden="true">1</div>
-              <div>
-                <strong>Discover</strong>
-                <span>Audit the product, brand, audience, and technical constraints.</span>
-              </div>
-            </div>
-            <div class="step glass">
-              <div class="num" aria-hidden="true">2</div>
-              <div>
-                <strong>Build</strong>
-                <span>Shape the system, website, and identity into one streamlined stack.</span>
-              </div>
-            </div>
-            <div class="step glass">
-              <div class="num" aria-hidden="true">3</div>
-              <div>
-                <strong>Launch</strong>
-                <span>Deploy polished experiences with clear performance and conversion goals.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="funnel reveal" aria-label="Process funnel illustration">
-          <div class="funnel-pill">Discover</div>
-          <div class="funnel-pill">Build</div>
-          <div class="funnel-pill">Launch</div>
-          <div class="funnel-pill">Scale</div>
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="pricing-head reveal"><span class="eyebrow">Simple starting points</span><h2>Choose the level that fits.</h2><p>Need something more advanced? Custom systems and integrations are scoped around your requirements.</p></div>
+        <div class="price-grid">
+          <article class="price-card reveal"><span class="price-name">Starter</span><div class="price">$199</div><p class="price-note">Single-page website</p><ul class="price-list"><li>Responsive mobile + desktop</li><li>Fast loading and performance tweaks</li><li>Basic SEO and metadata</li><li>Contact form or WhatsApp setup</li><li>One round of small edits</li></ul><a class="btn btn-dark" href="https://wa.me/252636581295" target="_blank" rel="noopener">Start Starter</a></article>
+          <article class="price-card featured reveal"><span class="price-name">Pro</span><div class="price">$499</div><p class="price-note">Multi-page website</p><ul class="price-list"><li>Everything in Starter</li><li>Home, Services, About and Contact</li><li>Richer brand story and structure</li><li>Better SEO architecture</li><li>Polished interactions and sections</li></ul><a class="btn btn-light" href="https://wa.me/252636581295" target="_blank" rel="noopener">Start Pro</a></article>
+          <article class="price-card reveal"><span class="price-name">Custom</span><div class="price">Talk</div><p class="price-note">Tailored solutions</p><ul class="price-list"><li>Custom features and integrations</li><li>Advanced design direction</li><li>Enterprise systems</li><li>Backend and database architecture</li><li>Scoped around your goals and budget</li></ul><a class="btn btn-dark" href="https://wa.me/252636581295" target="_blank" rel="noopener">Discuss Custom</a></article>
         </div>
       </div>
     </section>
 
-    <section id="consult" class="wrap section-pad" aria-labelledby="consult-heading">
-      <div class="consult">
-        <div class="consult-panel glass reveal">
-          <div class="section-head" style="margin-bottom: 2rem;">
-            <div class="eyebrow">Get a Free Consultation</div>
-            <h2 id="consult-heading">Bring systems, sites, and branding into one plan.</h2>
-            <p>If the goal is a tighter product story, a more credible web presence, or a cleaner technical foundation, we can map the path and deliver the first version with clarity.</p>
-          </div>
-          <div class="testimonial">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <p>"They built our systems. They are the best at unified strategy."</p>
-              <div class="company">Enterprise Partner</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cta-box reveal">
-          <div class="cta-card glass">
-            <h2>Fast First Contact.</h2>
-            <p>We evaluate your current systems and brand presence, then propose the most efficient next step for growing your business.</p>
-            <div class="contact-links">
-              <a href="https://wa.me/252636581295?text=Hi%20Raazim%20Tech!%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20like%20to%20discuss%20my%20project%20with%20you." target="_blank" rel="noopener noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                WhatsApp Us
-              </a>
-              <a href="mailto:raazimtech@gmail.com">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Email: raazimtech@gmail.com
-              </a>
-              <a href="tel:+252636581295">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:12px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Call: +252 636581295
-              </a>
-            </div>
-          </div>
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal" role="img" aria-label="Raazim Tech CEO"></div>
+        <div class="about-copy reveal"><span class="eyebrow">About Raazim Tech</span><h2>Built in Somaliland. Designed for bigger possibilities.</h2><p>Raazim Tech is a software and digital technology company focused on high-performance digital architecture, custom enterprise software, advanced UI/UX design and cohesive business branding.</p><p style="margin-top:15px">We value clean code, open collaboration and technical precision. The goal is simple: build digital tools that genuinely solve operational problems for growing businesses.</p><div class="about-points"><div class="about-point"><strong>50+</strong><span>Projects delivered</span></div><div class="about-point"><strong>3–7 days</strong><span>Typical landing delivery</span></div><div class="about-point"><strong>100%</strong><span>Mobile-first builds</span></div><div class="about-point"><strong>2025</strong><span>Company established</span></div></div><a class="linkedin" href="https://www.linkedin.com/in/abdikariimmohamoud/" target="_blank" rel="noopener">Meet Cabdikariim Mohamoud · CEO & Founder ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <div class="process-head reveal"><div><span class="eyebrow">Our process</span><h2 style="margin-top:16px">Clear from idea to launch.</h2></div><p>No mystery handoffs. We discover, design, build and test with the business goal visible at every stage.</p></div>
+        <div class="process-grid">
+          <div class="process-item reveal"><span class="process-no">01</span><h3>Discover</h3><p>We learn your goals, audience, constraints and brand voice.</p></div>
+          <div class="process-item reveal"><span class="process-no">02</span><h3>Design</h3><p>We craft clean interfaces and clear user journeys before the build gets complicated.</p></div>
+          <div class="process-item reveal"><span class="process-no">03</span><h3>Build</h3><p>We develop fast, responsive and SEO-ready pages or systems with maintainable code.</p></div>
+          <div class="process-item reveal"><span class="process-no">04</span><h3>Launch</h3><p>We test, optimize and ship with confidence, then support the product after launch.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="bg-alt section-pad" aria-labelledby="faq-heading">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="eyebrow">SEO FAQ</div>
-          <h2 id="faq-heading">Frequently searched questions</h2>
-          <p>Keyword-rich answers help search engines understand what we do and help people find the right service faster.</p>
+    <section class="section">
+      <div class="container">
+        <div class="reveal"><span class="eyebrow">Client words</span><h2 style="margin-top:16px;max-width:760px">Good software should make people say, “that just works.”</h2></div>
+        <div class="quote-grid">
+          <article class="quote reveal"><div class="quote-mark">“</div><p>RT Solutions delivered exactly what we needed—fast, clean, and professional.</p><footer>Ayaan Omar<span>Star Bus</span></footer></article>
+          <article class="quote reveal"><div class="quote-mark">“</div><p>Beautiful UI and a smooth experience from start to finish.</p><footer>Hodan Ali<span>Ardaa Cafe</span></footer></article>
+          <article class="quote reveal"><div class="quote-mark">“</div><p>They understood our vision and turned it into a modern site.</p><footer>Ahmed Yusuf<span>Raazim Bus</span></footer></article>
         </div>
-        <div class="cards">
-          <article class="card glass reveal">
-            <h3>Website design in Somaliland</h3>
-            <p>We build responsive business websites in Somaliland that are fast, clear, and designed to convert visitors into leads.</p>
-          </article>
-          <article class="card glass reveal">
-            <h3>Branding agency in Hargeisa</h3>
-            <p>Raazim Tech creates branding systems, logos, and visual direction for modern companies in Hargeisa and across Somaliland.</p>
-          </article>
-          <article class="card glass reveal">
-            <h3>Systems integration &amp; architecture</h3>
-            <p>We unify websites, internal systems, and brand presentation into one digital architecture so the business feels consistent everywhere.</p>
-          </article>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="contact-wrap reveal">
+        <div class="contact-grid">
+          <div><span class="eyebrow">Let's build</span><h2 class="contact-title">Have a problem worth solving?</h2><p>Tell us what you are building, what is not working, or what you want to improve. We will help turn it into a clear digital plan.</p><div class="contact-details"><a href="mailto:raazimtech@gmail.com">raazimtech@gmail.com ↗</a><a href="https://wa.me/252636581295" target="_blank" rel="noopener">WhatsApp · +252 63 658 1295 ↗</a></div></div>
+          <div><div class="faq">
+            <div class="faq-item"><button class="faq-q"><span>How long does a website take?</span><span>+</span></button><div class="faq-a"><p>Typical small sites or landing pages launch in 3–7 days; larger projects vary by scope.</p></div></div>
+            <div class="faq-item"><button class="faq-q"><span>Do you offer support after launch?</span><span>+</span></button><div class="faq-a"><p>Yes. We provide ongoing support, updates and performance checks.</p></div></div>
+            <div class="faq-item"><button class="faq-q"><span>Can I request changes?</span><span>+</span></button><div class="faq-a"><p>Absolutely. We scope changes, estimate the work and apply them promptly.</p></div></div>
+            <div class="faq-item"><button class="faq-q"><span>Do you provide hosting?</span><span>+</span></button><div class="faq-a"><p>We can recommend and set up hosting or work with your preferred provider.</p></div></div>
+            <div class="faq-item"><button class="faq-q"><span>How do payments work?</span><span>+</span></button><div class="faq-a"><p>Payments are invoiced per project; details are agreed before work begins.</p></div></div>
+          </div></div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ABOUT US VIEW -->
-  <main id="about-view" style="display: none; padding-top: 10rem; padding-bottom: 5rem;">
-    <section class="wrap section-pad">
-      <div class="section-head reveal" style="max-width: 800px;">
-        <div class="eyebrow">About Raazim Tech</div>
-        <h2>Driving Digital Excellence in East Africa</h2>
-        <p><strong>Raazim Tech was established in 2025</strong> with a clear mission to elevate the digital landscape of Somaliland and the broader East African region. As the premier software company in Hargeisa, we specialize in delivering high-performance digital architecture, custom enterprise software, advanced UI/UX design, and cohesive business branding.</p>
-        <p>Our unified approach ensures that ERP systems, business websites, and brand identities work seamlessly together. We help modern businesses scale efficiently, rank higher in organic search, and build unmatched credibility in competitive markets.</p>
-      </div>
-
-      <!-- CEO Section -->
-      <div class="ceo-section glass reveal">
-        <img src="CEO_IMAGE_URL.jpg" alt="Cabdikariim Mohamoud, CEO and Founder of Raazim Tech in Somaliland" class="ceo-img" width="200" height="200" loading="lazy" decoding="async">
-        <div class="ceo-info" style="display: flex; flex-direction: column;">
-          <h3>Cabdikariim Mohamoud</h3>
-          <div class="eyebrow" style="margin-bottom: 0.75rem; font-size: 0.7rem;">CEO & Founder of Raazim Tech</div>
-          <p>Cabdikariim Mohamoud leads Raazim Tech with a vision to transform the digital landscape of Somaliland and East Africa. Bringing extensive expertise in custom software architecture, systems integration, and business strategy, he ensures every technological solution we build drives measurable performance, efficiency, and sustainable growth for our partners.</p>
-          
-          <a href="https://www.linkedin.com/in/abdikariimmohamoud/" target="_blank" rel="noopener noreferrer" class="btn primary" style="margin-top: 1.5rem; width: fit-content; padding: 0.6rem 1.2rem; font-size: 0.95rem;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <!-- Workspace Section without Images -->
-      <div class="section-head reveal" style="margin-top: 5rem;">
-        <h2>Our Workspace</h2>
-        <p>A look inside the environment where our best strategies, designs, and code come to life.</p>
-      </div>
-      <div class="office-grid">
-        <article class="office-card glass reveal">
-          <h3>Office 1</h3>
-          <p>Our primary collaborative hub where our digital architects build out secure and scalable ERP systems.</p>
-        </article>
-        <article class="office-card glass reveal">
-          <h3>Office 2</h3>
-          <p>A focused design space dedicated to UI/UX and crafting unified brand experiences for our partners.</p>
-        </article>
-        <article class="office-card glass reveal">
-          <h3>Office 3</h3>
-          <p>Where strategy meets execution, featuring state-of-the-art tech infrastructure for seamless deployment.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" aria-label="Site Footer">
-    <div class="wrap">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-brand">
-            <img src="logo.png" alt="Raazim Tech Logo" width="36" height="36" loading="lazy" decoding="async" />
-            <strong>Raazim <span style="color:var(--primary); font-weight:normal;">tech</span></strong>
-          </div>
-          <p>Integrated architecture for products, websites, and identity systems.</p>
-        </div>
-        <div>
-          <h4>Contact Us</h4>
-          <ul>
-            <li><a href="mailto:raazimtech@gmail.com">raazimtech@gmail.com</a></li>
-            <li><a href="tel:+252636581295">+252 636581295</a></li>
-            <li>Hargeisa, Somaliland</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Social Links</h4>
-          <div class="socials" aria-label="Social media profiles">
-            <a class="social" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
-            </a>
-            <a class="social" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a class="social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-          </div>
-        </div>
-        <div>
-          <h4>Sitemap</h4>
-          <ul>
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#consult">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">&copy; 2026 Raazim Tech. Built for systems, sites, and branding.</div>
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">Raazim Tech</div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="footer-copy">© 2026 Raazim Tech. Website by Raazim Tech.</div>
     </div>
   </footer>
 
   <script>
-    // --- SCROLL HEADER EFFECT ---
-    const header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    const observer = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));
+      if(!open)item.classList.add('open');
+      btn.querySelector('span:last-child').textContent=open?'+':'−';
+      document.querySelectorAll('.faq-q span:last-child').forEach(s=>{if(s!==btn.querySelector('span:last-child'))s.textContent='+'});
+    }));
+
+    const mobile=document.querySelector('.mobile-menu');
+    const nav=document.querySelector('.nav-pill');
+    mobile.addEventListener('click',()=>{
+      const open=nav.style.display==='flex';
+      nav.style.display=open?'none':'flex';
+      nav.style.position='absolute';nav.style.top='58px';nav.style.left='0';nav.style.right='0';nav.style.flexDirection='column';nav.style.alignItems='stretch';nav.style.borderRadius='20px';nav.style.padding='10px';
     });
-
-    // --- THEME TOGGLE LOGIC ---
-    const themeToggleBtn = document.getElementById('themeToggle');
-    
-    themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      if (document.body.classList.contains('dark-theme')) {
-        localStorage.setItem('raazim-theme', 'dark');
-      } else {
-        localStorage.setItem('raazim-theme', 'light');
-      }
-    });
-
-    // --- NAVIGATION LOGIC & VIEW SWITCHING ---
-    const navToggle = document.getElementById('navToggle');
-    const siteNav = document.getElementById('siteNav');
-    const viewHome = document.getElementById('top');
-    const viewAbout = document.getElementById('about-view');
-
-    function closeNav() {
-      siteNav.classList.remove('nav-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = siteNav.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        if (href === '#about') {
-          e.preventDefault();
-          viewHome.style.display = 'none';
-          viewAbout.style.display = 'block';
-          window.scrollTo(0, 0);
-          if (window.innerWidth <= 768) closeNav();
-        } 
-        else {
-          if (viewAbout.style.display === 'block') {
-             e.preventDefault();
-             viewAbout.style.display = 'none';
-             viewHome.style.display = 'block';
-             
-             setTimeout(() => {
-               const el = document.querySelector(href);
-               if (el) el.scrollIntoView({ behavior: 'smooth' });
-             }, 10);
-          }
-          if (window.innerWidth <= 768 && siteNav.classList.contains('nav-open')) {
-              closeNav();
-          }
-        }
-      });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-      if (window.innerWidth > 768) return;
-      if (!siteNav.contains(event.target) && !themeToggleBtn.contains(event.target) && !navToggle.contains(event.target)) {
-        closeNav();
-      }
-    });
-    
-    // Close on Escape key
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeNav();
-    });
-
-    // --- SCROLL REVEAL ANIMATIONS ---
-    const revealTargets = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    revealTargets.forEach((el) => revealObserver.observe(el));
+    document.querySelectorAll('.nav-pill a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=1050)nav.style.display='none'}));
   </script>
 </body>
 </html>
