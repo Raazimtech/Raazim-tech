@@ -168,7 +168,7 @@ main>.hero .buttons{margin-top:25px}
 .project img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:15px;background:#e9eef3}
 .project h3{font-size:1.5rem;margin:7px 0 8px}
 .project p{font-size:.9rem}
-.project .tag{display:block;margin:0;color:var(--rt-blue-dark);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:none;border:0;padding:0}
+.project .tag{display:none!important}
 .project:first-child .tag{color:#8dbcf0}
 .project-link{display:inline-block;margin-top:18px;font-size:.85rem;font-weight:800}
 .systems{background:#e8edf2}
@@ -185,7 +185,7 @@ main>.hero .buttons{margin-top:25px}
 .price p{font-size:.87rem}
 .price.featured p{color:#bdc9d7}
 .price ul{margin:22px 0;display:grid;gap:10px;list-style:none;font-size:.86rem}
-.price li:before{content:"";display:inline-block;width:6px;height:6px;margin:0 10px 2px 0;border-radius:0;background:var(--rt-blue)}
+.price li:before{display:none!important;content:none!important}
 .price .btn{margin-top:auto}
 .cta{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:42px;border-radius:12px;background:var(--rt-blue);color:#fff}
 .cta h2{max-width:700px;color:#fff}
