@@ -117,7 +117,7 @@ main>.hero .hero-copy{max-width:690px;color:#c3ceda;font-size:1.03rem}
 main>.hero .eyebrow{color:#8dbcf0}
 .portrait{position:relative;width:min(100%,410px);margin-left:auto;overflow:hidden;border:1px solid #ffffff24;border-radius:12px;background:#152437}
 .portrait img{display:block;width:100%;height:clamp(360px,42vw,500px);object-fit:cover;object-position:center 25%}
-.portrait-caption{display:grid;gap:3px;padding:16px 18px;background:#152437;color:#fff}
+.portrait-caption{position:static;left:auto;right:auto;bottom:auto;display:grid;gap:3px;padding:16px 18px;border-radius:0;background:#152437;color:#fff;backdrop-filter:none}
 .portrait-caption strong{font:800 1rem Manrope,sans-serif}
 .portrait-caption span{color:#b9c6d4;font-size:.82rem}
 main>.hero .buttons{margin-top:25px}
