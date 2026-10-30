@@ -139,6 +139,8 @@ main>.hero .buttons{margin-top:25px}
 .hero-title span{color:#a6c9ee}
 .hero-copy,.hero-copy strong{color:#f3f7fb}
 .hero-bottom{margin-top:45px}
+.hero-shell .stats .stat:first-child strong{font-size:2.4rem!important}
+.hero-shell .stats .stat:first-child strong:after{content:none!important}
 .floating-note{border:1px solid #ffffff30;border-radius:10px;background:rgba(8,19,31,.9);backdrop-filter:none}
 .floating-note strong{font-size:1.1rem}
 .floating-note span{color:#d6e0ea}
@@ -226,7 +228,7 @@ main>.hero .buttons{margin-top:25px}
   .nav-talk,.nav-cta{display:none}
   .services{grid-template-columns:repeat(2,minmax(0,1fr))}
   .section .intro{grid-template-columns:1fr;gap:35px}
-  .main>.hero .hero-grid{gap:35px}
+  main>.hero .hero-grid{gap:35px}
 }
 @media(max-width:900px){
   .hero-shell .nav-pill{display:none}
@@ -236,7 +238,7 @@ main>.hero .buttons{margin-top:25px}
   .hero-shell .nav-cta{display:none}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .section .split{grid-template-columns:1fr;gap:25px}
-  .main>.hero .hero-grid{grid-template-columns:1fr 300px}
+  main>.hero .hero-grid{grid-template-columns:1fr 300px}
   .footer-showcase{grid-template-columns:1fr;gap:25px}
   .footer-cta{justify-content:flex-start}
 }
