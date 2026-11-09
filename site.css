@@ -281,5 +281,6 @@ main>.hero .buttons{margin-top:25px}
 
 
 /* Sticky navigation: keep the existing navbar design unchanged */
-body>.wrap:has(>nav.nav){position:sticky;top:0;z-index:1000;padding-top:10px;background:var(--rt-paper)}
+body>.wrap:has(>nav.nav)>.nav{position:sticky;top:10px;z-index:1000}
+body>.top{position:sticky;top:0;z-index:1000}
 .hero-shell .nav{position:fixed;z-index:1000}
