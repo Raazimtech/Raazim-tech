@@ -278,3 +278,8 @@ main>.hero .buttons{margin-top:25px}
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
+
+
+/* Sticky navigation: keep the existing navbar design unchanged */
+body>.wrap:has(>nav.nav){position:sticky;top:0;z-index:1000;padding-top:10px;background:var(--rt-paper)}
+.hero-shell .nav{position:fixed;z-index:1000}
