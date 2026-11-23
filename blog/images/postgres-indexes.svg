@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">PostgreSQL indexes and query performance</title>
+<desc id="desc">A database table connected to a compact index structure and a highlighted lookup path.</desc>
+<rect width="1200" height="675" rx="28" fill="#f4f6f8"/>
+<circle cx="1000" cy="120" r="170" fill="#e4effa"/>
+<circle cx="150" cy="570" r="210" fill="#eaf1f7"/>
+<rect x="105" y="125" width="425" height="410" rx="22" fill="#fff" stroke="#d7e0ea" stroke-width="3"/>
+<text x="150" y="185" fill="#0b1725" font-family="Arial,sans-serif" font-size="29" font-weight="700">TABLE</text>
+<g fill="#f4f6f8" stroke="#dce3eb" stroke-width="2">
+<rect x="145" y="215" width="345" height="54" rx="9"/><rect x="145" y="283" width="345" height="54" rx="9"/><rect x="145" y="351" width="345" height="54" rx="9"/><rect x="145" y="419" width="345" height="54" rx="9"/>
+</g>
+<g fill="#526174" font-family="Arial,sans-serif" font-size="19">
+<text x="170" y="249">student_id</text><text x="365" y="249">created_at</text>
+<text x="170" y="317">student_id</text><text x="365" y="317">created_at</text>
+<text x="170" y="385">student_id</text><text x="365" y="385">created_at</text>
+<text x="170" y="453">student_id</text><text x="365" y="453">created_at</text>
+</g>
+<path d="M530 330 H655" stroke="#4d97e6" stroke-width="8" stroke-linecap="round"/><path d="M635 308 L660 330 L635 352" fill="none" stroke="#4d97e6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="680" y="125" width="420" height="410" rx="22" fill="#0b1725"/>
+<text x="725" y="185" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="700">B-TREE INDEX</text>
+<g fill="#173b5f" stroke="#4d97e6" stroke-width="3">
+<rect x="810" y="220" width="160" height="62" rx="12"/>
+<rect x="725" y="355" width="145" height="62" rx="12"/>
+<rect x="925" y="355" width="145" height="62" rx="12"/>
+</g>
+<g stroke="#4d97e6" stroke-width="5" fill="none" stroke-linecap="round">
+<path d="M890 282 V315 L798 355"/><path d="M890 315 L998 355"/>
+</g>
+<rect x="925" y="355" width="145" height="62" rx="12" fill="#1f5d91" stroke="#8fc7ff" stroke-width="4"/>
+<g fill="#fff" font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+<text x="890" y="259">KEYS</text><text x="797" y="394">RANGE A</text><text x="998" y="394">MATCH</text>
+</g>
+<path d="M998 418 V470" stroke="#8fc7ff" stroke-width="4" stroke-linecap="round"/>
+<circle cx="998" cy="485" r="13" fill="#8fc7ff"/>
+<text x="600" y="615" fill="#0b1725" font-family="Arial,sans-serif" font-size="27" font-weight="700" text-anchor="middle">Find the rows you need. Measure before and after.</text>
+</svg>
