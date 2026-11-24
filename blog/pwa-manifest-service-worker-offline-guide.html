@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1725">
+<title>How to Build a PWA: Manifest, Service Worker & Offline Support | Raazim Tech</title><meta name="description" content="Learn how to make a website installable and offline-ready with a web app manifest, service worker, Cache API, practical code, and a safe testing checklist."><meta name="author" content="Raazim Tech Editorial"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://raazimtech.github.io/Raazim-tech/blog/pwa-manifest-service-worker-offline-guide.html"><link rel="icon" href="../logo.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Raazim Tech"><meta property="og:title" content="How to Build a Progressive Web App: Manifest, Service Worker, and Offline Support"><meta property="og:description" content="Learn how to make a website installable and offline-ready with a web app manifest, service worker, Cache API, practical code, and a safe testing checklist."><meta property="og:url" content="https://raazimtech.github.io/Raazim-tech/blog/pwa-manifest-service-worker-offline-guide.html"><meta property="og:image" content="https://raazimtech.github.io/Raazim-tech/blog/images/pwa-architecture.svg"><meta property="og:image:alt" content="PWA architecture showing the web app, manifest, service worker, local cache, and network"><meta property="article:published_time" content="2026-11-24"><meta property="article:modified_time" content="2026-11-24"><meta property="article:section" content="Web Development"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Build a Progressive Web App: Manifest, Service Worker, and Offline Support"><meta name="twitter:description" content="Learn how to make a website installable and offline-ready with a web app manifest, service worker, Cache API, practical code, and a safe testing checklist."><meta name="twitter:image" content="https://raazimtech.github.io/Raazim-tech/blog/images/pwa-architecture.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><style>
+:root{--ink:#0b1725;--paper:#f4f6f8;--white:#fff;--blue:#4d97e6;--muted:#657284;--line:#dce3eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "DM Sans",Arial,sans-serif}a{color:inherit;text-decoration:none}img{max-width:100%}h1,h2,h3{font-family:Manrope,"DM Sans",Arial,sans-serif;line-height:1.12;letter-spacing:-.04em}p{color:var(--muted)}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{position:sticky;top:0;z-index:1000;background:rgba(244,246,248,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.brand img{width:38px;height:38px;object-fit:contain}.links{display:flex;align-items:center;gap:20px;font-size:.88rem;font-weight:700}.links a{color:#526174}.links a:hover,.links a.active{color:var(--ink)}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:8px;background:var(--ink);color:#fff;font-size:.88rem;font-weight:800}.eyebrow{color:#2876c8;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero{padding:74px 0 55px}.hero h1{max-width:850px;margin:14px 0 18px;font-size:clamp(3rem,7vw,5.7rem)}.lead{max-width:740px;font-size:1.08rem}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}.search{flex:1;min-width:220px;padding:13px 15px;border:1px solid var(--line);border-radius:8px;background:#fff;font:inherit}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 30px}.filter{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#526174;font-size:.82rem;font-weight:700;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);border-color:var(--ink);color:#fff}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0 72px}.card{display:flex;flex-direction:column;align-items:flex-start;min-height:290px;padding:26px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #0b17250d}.card h2{margin:12px 0;font-size:1.55rem}.card p{margin:0 0 20px}.meta{display:flex;gap:12px;flex-wrap:wrap;color:#7a8795;font-size:.78rem}.read{margin-top:auto;padding-top:22px;color:#1c5e9d;font-size:.86rem;font-weight:800}.empty{display:none;padding:30px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}.footer{padding:28px 0;background:#07111d;color:#fff}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer p{margin:5px 0 0;color:#aab8c7;font-size:.84rem}.article-hero{padding:65px 0 34px;border-bottom:1px solid var(--line)}.article-hero h1{max-width:900px;margin:14px 0 20px;font-size:clamp(2.6rem,6vw,4.8rem)}.article-cover{margin:28px auto 0;max-width:1000px}.article-cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line)}.article-cover figcaption{margin-top:8px;color:#7a8795;font-size:.78rem;text-align:right}.article-meta{display:flex;gap:15px;flex-wrap:wrap;color:#718092;font-size:.82rem}.article-layout{display:grid;grid-template-columns:minmax(0,760px) 250px;gap:65px;padding:45px 0 85px;align-items:start}.article-body{min-width:0}.article-body p{margin:0 0 18px}.article-body h2{margin:42px 0 14px;font-size:clamp(1.65rem,3vw,2.15rem)}.article-body h3{margin:25px 0 9px;font-size:1.25rem}.article-body ul,.article-body ol{padding-left:22px;margin:0 0 22px;color:#455468}.article-body li{margin:8px 0}.article-body a{color:#1767ae;text-decoration:underline;text-underline-offset:3px}.article-body code{padding:2px 5px;border-radius:4px;background:#e8eef5;font-size:.9em}.article-body pre{overflow:auto;padding:18px;border-radius:9px;background:#0b1725;color:#e9f1fa;font-size:.86rem;line-height:1.6}.article-body pre code{padding:0;background:none;color:inherit}.callout{margin:25px 0;padding:20px 22px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;background:#eaf3fc}.callout p{margin:5px 0 0}.toc{position:sticky;top:20px;padding:20px;border:1px solid var(--line);border-radius:10px;background:#fff}.toc strong{display:block;margin-bottom:12px}.toc a{display:block;padding:6px 0;color:#526174;font-size:.83rem}.toc a:hover{color:#1767ae}.sources{margin-top:45px;padding-top:25px;border-top:1px solid var(--line)}.sources h2{margin-top:0}.sources li{overflow-wrap:anywhere}.related{padding:34px 0 65px;border-top:1px solid var(--line)}.related h2{font-size:1.8rem}.related a{display:inline-block;margin:7px 14px 0 0;color:#1767ae;font-weight:700}.crumb{padding-top:20px;color:#7a8795;font-size:.8rem}.crumb a{color:#1767ae}@media(max-width:800px){.links{display:none}.article-layout{grid-template-columns:1fr;gap:25px}.toc{position:static;order:-1}.grid{grid-template-columns:1fr}.hero{padding:55px 0 40px}.article-hero{padding:45px 0 28px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:1.3rem;cursor:pointer}.nav-panel{display:none;position:absolute;top:calc(100% + 8px);right:0;z-index:1100;width:min(320px,calc(100vw - 32px));max-height:75vh;overflow-y:auto;padding:9px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 18px 45px rgba(11,23,37,.15)}.nav-panel.open{display:grid}.nav-panel a{padding:12px;border-radius:7px;color:var(--ink);font-weight:700}.nav-panel a:hover{background:#edf4fb}@media(max-width:800px){.menu-toggle{display:inline-flex}.nav-panel{right:0}.nav{position:sticky}}</style></head>
+<body><div class="wrap"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="../index.html"><img src="../logo.png" alt="Raazim Tech logo" width="38" height="38"><span>Raazim Tech</span></a><div class="links"><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../projects.html">Projects</a><a href="../pricing.html">Pricing</a><a class="active" href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div><a class="btn" href="https://wa.me/252636581295">Let's talk</a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">☰</button><div class="nav-panel" id="mobileNav" aria-label="Mobile navigation"><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../projects.html">Projects</a><a href="../pricing.html">Pricing</a><a href="index.html">Blog</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="https://wa.me/252636581295">Let's Talk on WhatsApp ↗</a></div></nav></div>
+<div class="wrap"><div class="crumb"><a href="index.html">Blog</a> / Web Development</div><header class="article-hero"><span class="eyebrow">Web Development</span><h1>How to Build a Progressive Web App: Manifest, Service Worker, and Offline Support</h1><p class="lead">Learn how to make a website installable and offline-ready with a web app manifest, service worker, Cache API, practical code, and a safe testing checklist.</p><div class="article-meta"><span>Raazim Tech Editorial</span><span>November 24, 2026</span><span>11 min read</span></div></header>
+<figure class="article-cover"><img src="images/pwa-architecture.svg" alt="Progressive Web App architecture connecting a web app, manifest, service worker, local cache, and network" width="1200" height="675" fetchpriority="high" decoding="async"><figcaption>A PWA combines a web app, install metadata, and an optional offline layer</figcaption></figure>
+<main class="article-layout"><article class="article-body">
+<p>A website can work perfectly well in a browser and still feel more like an app when people return to it. A <strong>Progressive Web App (PWA)</strong> uses standard web technologies to provide an installable experience and, when deliberately engineered, useful behavior during unreliable or missing network connections.</p>
+<p>One distinction matters from the beginning: an install icon does not automatically make a website work offline. A web app manifest describes how the app should appear and launch. A service worker and a deliberate caching strategy provide custom offline behavior. This guide builds those pieces separately, with plain HTML, CSS, and JavaScript.</p>
+
+<h2 id="pwa-basics">What is a Progressive Web App?</h2>
+<p>A PWA is a website enhanced with capabilities that supported browsers and operating systems can expose as an app-like experience. Depending on the platform, users may install it, launch it from an icon, and open it in a standalone window. It is still a web application: it is delivered through web technologies and remains subject to browser support and web-platform limits.</p>
+<p>Think of the architecture as three layers:</p>
+<ul>
+<li><strong>The web app:</strong> HTML, CSS, JavaScript, routes, and application data.</li>
+<li><strong>The manifest:</strong> the app name, icons, launch URL, and display preferences.</li>
+<li><strong>The service worker and caches:</strong> an optional layer that can intercept requests and return selected resources when the network is unavailable.</li>
+</ul>
+<p>These layers solve different problems. A manifest does not cache files. A service worker does not create a polished app icon by itself. You need to design and test installation and offline behavior independently.</p>
+
+<h2 id="manifest">1. Create a web app manifest</h2>
+<p>A web app manifest is a JSON file linked from your HTML. It gives the browser information needed to present the site as an installable app. If your application has multiple pages, link the same manifest from every page that should participate in the app experience.</p>
+<p>Create <code>manifest.webmanifest</code> in the app's public root:</p>
+<pre><code>{
+  "id": "./",
+  "name": "Field Notes",
+  "short_name": "Field Notes",
+  "description": "A simple offline-ready notes app",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#163a5f",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}</code></pre>
+<p>Replace the sample name, description, colors, and icon paths with real assets. The files must exist at the URLs you declare; placeholder paths are not production assets.</p>
+<p>Link the manifest from the document's <code>&lt;head&gt;</code>:</p>
+<pre><code>&lt;link rel="manifest" href="./manifest.webmanifest"&gt;</code></pre>
+<h3>Manifest fields worth understanding</h3>
+<ul>
+<li><strong><code>name</code> and <code>short_name</code>:</strong> the full and compact app names.</li>
+<li><strong><code>start_url</code>:</strong> the recommended page opened when the installed app launches. Keep it on the same origin as the page linking to the manifest.</li>
+<li><strong><code>scope</code>:</strong> the URL paths that belong to the app-like experience. Set it deliberately and use a trailing slash for directory scopes.</li>
+<li><strong><code>display</code>:</strong> <code>standalone</code> requests an app-style window on platforms that support it.</li>
+<li><strong><code>icons</code>:</strong> provide real icons at the declared sizes. Chromium-based browsers document 192px and 512px icons among their installability requirements.</li>
+<li><strong><code>theme_color</code> and <code>background_color</code>:</strong> influence browser and launch presentation where supported.</li>
+</ul>
+<p>Installability differs by browser and operating system. MDN's current guide describes the manifest and HTTPS requirements for browser-promoted installation and explicitly notes that a service worker is not a universal installability requirement. The installation flow on iOS is different from Chromium's install prompt. Do not promise every visitor the same button or app-store-style experience; check the <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable">MDN PWA installability guide</a>.</p>
+
+<h2 id="https">2. Use HTTPS and plan your URL paths</h2>
+<p>Service workers are available only in secure contexts. Production sites should use HTTPS; local development can use <code>localhost</code> or <code>127.0.0.1</code>. Opening an HTML file directly from disk is not a substitute for testing through a local web server.</p>
+<p>Pay attention to deployment paths. If your site lives at <code>https://example.com/my-app/</code>, a root-relative worker path such as <code>/sw.js</code> points to the domain root, not necessarily to your project. Relative paths such as <code>./sw.js</code> are often safer for a project deployed in a subdirectory, as long as the manifest and worker are stored where the page expects them.</p>
+<p>A service worker normally controls pages in the directory where its script lives and below. Put the worker at the level you intend to control. The <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register">MDN registration reference</a> explains the default scope and secure-context restrictions.</p>
+
+<h2 id="register">3. Register the service worker</h2>
+<p>A service worker is a separate script that the browser can start when it needs to handle an event. Once active, it can intercept eligible requests from pages within its scope and return a response from the network or Cache API. It does not run continuously like a server process, so do not rely on its global variables surviving between events.</p>
+<p>Register it from your page after load:</p>
+<pre><code>if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then((registration) => {
+        console.log("Service worker scope:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}</code></pre>
+<p>The script path is resolved relative to the page. Keep <code>sw.js</code> in the directory that should be controlled unless you have a specific reason to configure a narrower or broader scope.</p>
+
+<h2 id="caching-strategies">4. Choose a caching strategy for each resource</h2>
+<p>Offline support is not the same as saving every response. Every cached response is a freshness decision: the app may show it again later even if the server has changed. Different resources need different strategies.</p>
+<table>
+<thead><tr><th>Resource</th><th>Useful starting strategy</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Versioned CSS, JavaScript, icons</td><td>Cache first</td><td>Fast when filenames change with releases</td></tr>
+<tr><td>HTML navigation</td><td>Network first with offline fallback</td><td>Prefer current pages while handling outages</td></tr>
+<tr><td>Frequently changing API data</td><td>Network first or network only</td><td>Stale data may mislead users</td></tr>
+<tr><td>Private account or payment data</td><td>Do not cache by default</td><td>A shared device or stale response can expose sensitive information</td></tr>
+</tbody>
+</table>
+<p>These are starting points, not universal rules. A read-only reference app can tolerate more cached content than a booking or payment workflow. The <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching">MDN caching guide</a> explains cache-first, network-first, and stale-while-revalidate strategies and the trade-off between responsiveness and freshness.</p>
+
+<h2 id="worker-example">5. Build a small service worker</h2>
+<p>This example precaches a small app shell, uses the network for page navigation, and returns an offline page when navigation fails. It uses cache-first for same-origin static assets. It deliberately does not intercept POST requests or cache API responses.</p>
+<p>Create <code>sw.js</code> next to the app's main HTML file. Change the asset list to files that really exist in your project:</p>
+<pre><code>const CACHE_PREFIX = "field-notes-";
+const CACHE_NAME = "field-notes-v1";
+
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./offline.html"
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys
+          .filter((key) =>
+            key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME
+          )
+          .map((key) => caches.delete(key))
+      )
+    ).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  const request = event.request;
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request).catch(async () => {
+        const cache = await caches.open(CACHE_NAME);
+        return (await cache.match("./offline.html")) || Response.error();
+      })
+    );
+    return;
+  }
+
+  const isStaticAsset = ["style", "script", "image", "font"]
+    .includes(request.destination);
+
+  if (!isStaticAsset) return;
+
+  event.respondWith(
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      const cached = await cache.match(request);
+      if (cached) return cached;
+
+      const response = await fetch(request);
+      if (response.ok) {
+        await cache.put(request, response.clone());
+      }
+      return response;
+    })()
+  );
+});</code></pre>
+<div class="callout"><strong>Keep the precache list accurate.</strong><p><code>cache.addAll()</code> fails if a listed resource cannot be fetched successfully. If you rename <code>app.js</code> or forget to deploy <code>offline.html</code>, the worker installation can fail. Start with a short list of essential files and verify every URL.</p></div>
+<p>This example uses network-first for navigation because HTML often changes more frequently than versioned app-shell assets. Static assets are cached first for responsiveness. When the app shell changes, increment <code>CACHE_NAME</code> so the new worker can populate a new cache. The activation handler removes only old caches with this app's prefix; avoid deleting every cache on an origin that may host other applications.</p>
+
+<h2 id="offline-data">6. Decide what “offline” means for your product</h2>
+<p>A cached interface can open while offline, but that does not mean every feature works. If a dashboard depends on a server request for its data, the interface may load while the dashboard remains empty. Write down which user tasks must work without a connection before you promise offline support.</p>
+<ul>
+<li><strong>Static app shell:</strong> cache the HTML, CSS, JavaScript, icons, and offline page needed to start the interface.</li>
+<li><strong>Read-only content:</strong> cache only content that can safely be shown later. Display a last-updated time when freshness matters.</li>
+<li><strong>User-created records:</strong> use a structured local store such as IndexedDB when records must remain available offline.</li>
+<li><strong>Server-dependent actions:</strong> show that an action is waiting to sync, and handle retries and duplicate submissions safely.</li>
+</ul>
+<p>Offline writes require more design than a fetch handler. Consider conflicts, deleted records, authentication expiry, duplicate requests, and shared devices. A queued payment or booking must never appear completed merely because it was saved locally. Keep the server as the source of truth and show a pending state until the server confirms success.</p>
+<p>Browser storage is not permanent backup. Users can clear site data, and browsers can evict stored data under storage pressure. Never keep the only copy of important business records in a browser cache.</p>
+
+<h2 id="updates">7. Plan for service-worker updates</h2>
+<p>A newly downloaded service worker can wait while pages controlled by the previous worker remain open. This helps avoid replacing a worker in the middle of a session, but it also means users may not see a release immediately.</p>
+<ol>
+<li>Change the cache version when the app shell changes.</li>
+<li>Keep the install list aligned with files in the new release.</li>
+<li>Delete only the previous caches owned by this application.</li>
+<li>Test an existing installation updating to the new version, not just a clean first visit.</li>
+<li>If you add an update banner, explain what will happen before asking a user to reload.</li>
+</ol>
+<p>Do not blindly call <code>skipWaiting()</code> and force a reload without considering unsaved work. An immediate update may be right for a small static app, but an editor or form may need to let the user finish first.</p>
+
+<h2 id="testing">8. Test installability and offline behavior separately</h2>
+<p>Use a real HTTPS deployment or a local development server. Then test the two capabilities as separate checklists.</p>
+<h3>Installability checks</h3>
+<ul>
+<li>Open the manifest in browser developer tools and confirm it loads without a JSON error.</li>
+<li>Check the name, start URL, scope, display mode, and icon files.</li>
+<li>Confirm HTTPS outside local development.</li>
+<li>Try the browser's own installation flow on the devices your audience uses.</li>
+<li>Launch the installed app and verify the expected page and display mode.</li>
+</ul>
+<h3>Offline checks</h3>
+<ul>
+<li>Visit the site online once so the worker can install and precache its app shell.</li>
+<li>Wait until the worker is activated and controls the page.</li>
+<li>Simulate offline mode in developer tools, then reload and navigate.</li>
+<li>Confirm the offline page appears when a navigation cannot reach the network.</li>
+<li>Check that static assets load from cache while live-data features fail gracefully.</li>
+<li>Deploy a new version and test cache cleanup and the update experience.</li>
+</ul>
+<p>Testing only the install prompt proves little about offline reliability. Testing only with a warm cache can hide a broken first-install path. Test a fresh browser profile, an existing installation, a slow connection, and a fully offline reload.</p>
+
+<h2 id="mistakes">Common PWA mistakes</h2>
+<ul>
+<li><strong>Caching every request:</strong> this can store stale or private data and make debugging difficult.</li>
+<li><strong>Using cache-first for changing HTML or API data:</strong> visitors may keep seeing outdated information.</li>
+<li><strong>Using root-relative paths on a subdirectory deployment:</strong> the manifest, worker, icons, or start URL may point outside the project.</li>
+<li><strong>Forgetting cache version changes:</strong> old CSS or JavaScript may remain in use after a release.</li>
+<li><strong>Assuming offline means fully functional:</strong> network-dependent features still need explicit offline behavior.</li>
+<li><strong>Assuming every browser installs the same way:</strong> support differs, so keep the normal website experience usable too.</li>
+</ul>
+
+<h2 id="faq">Progressive Web Apps: common questions</h2>
+<h3>Does a PWA always need a service worker?</h3>
+<p>No. A manifest is central to the installable web-app experience, but a service worker is not a universal installability requirement. It is commonly used when you want custom offline behavior and request caching.</p>
+<h3>Can a PWA work completely offline?</h3>
+<p>Only if you deliberately make the required interface and data available offline. A service worker can serve cached resources, but it cannot make an unavailable server, remote API, or online payment provider work without a connection.</p>
+<h3>Can I build a PWA with plain HTML, CSS, and JavaScript?</h3>
+<p>Yes. A manifest, service worker, and Cache API are browser features. You do not need React, Vue, or another frontend framework to create an installable, offline-aware web app.</p>
+<h3>Will a PWA install on every phone?</h3>
+<p>No. Installation support and the installation flow depend on the browser and operating system. Keep the website usable in a normal browser and test the exact devices your audience uses.</p>
+<h3>Is a PWA the same as a native app?</h3>
+<p>No. A PWA can provide an app-like launch and selected device integrations, but browser APIs and platform behavior differ. Verify deep operating-system, background, and hardware requirements before choosing a PWA architecture.</p>
+
+<h2 id="conclusion">A practical way to start</h2>
+<p>Do not turn a simple website into a complex offline platform just to add an install button. Start with a correct manifest and a reliable install experience. Add a service worker when you have a clear reason to cache the app shell or support specific offline tasks. Then test the first visit, repeat visit, offline state, and update path on the devices your users actually have.</p>
+<p>For related implementation topics, read our <a href="ai-coding-agents-2026.html">guide to reliable AI-assisted development</a>, our <a href="supabase-vs-firebase-2026.html">Supabase vs Firebase backend comparison</a>, and the <a href="website-security-checklist-2026.html">website security checklist</a>. If you need a responsive website or web application designed around real users, explore <a href="../services.html">Raazim Tech's web development services</a>.</p>
+
+<div class="sources"><h2>Sources and further reading</h2><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable">MDN: Making PWAs installable</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest">MDN: Web application manifest</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register">MDN: ServiceWorkerContainer.register()</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching">MDN: Caching for Progressive Web Apps</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation">MDN: Offline and background operation</a></li>
+<li><a href="https://web.dev/learn/pwa/serving">web.dev: Serving and caching strategies for PWAs</a></li>
+</ul></div>
+<p><a href="index.html">← Back to Raazim Tech Insights</a></p></article><aside class="toc"><strong>In this article</strong>
+<a href="#pwa-basics">What is a PWA?</a><a href="#manifest">1. Create a web app manifest</a><a href="#https">2. Use HTTPS and plan URL paths</a><a href="#register">3. Register a service worker</a><a href="#caching-strategies">4. Choose a caching strategy</a><a href="#worker-example">5. Build a service worker</a><a href="#offline-data">6. Decide what works offline</a><a href="#updates">7. Plan for updates</a><a href="#testing">8. Test installability and offline behavior</a><a href="#mistakes">Common mistakes</a><a href="#faq">Common questions</a><a href="#conclusion">A practical way to start</a></aside></main>
+<section class="related"><h2>Explore more insights</h2><a href="postgresql-indexes-explained.html">PostgreSQL Indexes</a><a href="ai-coding-agents-2026.html">AI Coding Agents</a><a href="secure-ai-agents.html">AI Agent Security</a><a href="supabase-vs-firebase-2026.html">Supabase vs Firebase</a><a href="website-security-checklist-2026.html">Website Security Checklist</a></section></div>
+<footer class="footer"><div class="wrap footer-row"><div><strong>Raazim Tech</strong><p>Technology, knowledge and practical ideas.</p></div><div><a href="../index.html">Main website</a> · <a href="../contact.html">Contact</a></div></div></footer>
+<script>(()=>{const init=()=>{const button=document.querySelector('.menu-toggle');const panel=document.querySelector('#mobileNav');if(!button||!panel||button.dataset.menuReady==='true')return;button.dataset.menuReady='true';const setOpen=open=>{button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');button.textContent=open?'×':'☰';panel.classList.toggle('open',open);panel.setAttribute('aria-hidden',String(!open));panel.querySelectorAll('a').forEach(a=>a.tabIndex=open?0:-1)};setOpen(false);button.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();setOpen(button.getAttribute('aria-expanded')!=='true')});panel.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('click',e=>{if(!panel.contains(e.target)&&!button.contains(e.target))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false);button.focus()}})};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://raazimtech.github.io/Raazim-tech/blog/pwa-manifest-service-worker-offline-guide.html"},"headline":"How to Build a Progressive Web App: Manifest, Service Worker, and Offline Support","description":"Learn how to make a website installable and offline-ready with a web app manifest, service worker, Cache API, practical code, and a safe testing checklist.","image":["https://raazimtech.github.io/Raazim-tech/blog/images/pwa-architecture.svg"],"datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@type":"Organization","name":"Raazim Tech Editorial","url":"https://raazimtech.github.io/Raazim-tech/"},"publisher":{"@type":"Organization","name":"Raazim Tech","url":"https://raazimtech.github.io/Raazim-tech/","logo":{"@type":"ImageObject","url":"https://raazimtech.github.io/Raazim-tech/logo.png"}},"articleSection":"Web Development","keywords":["Progressive Web App","how to build a PWA","PWA manifest","service worker","offline web app","Cache API","web development"],"wordCount":2300,"inLanguage":"en","isPartOf":{"@type":"Blog","name":"Raazim Tech Insights","url":"https://raazimtech.github.io/Raazim-tech/blog/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://raazimtech.github.io/Raazim-tech/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://raazimtech.github.io/Raazim-tech/blog/"},{"@type":"ListItem","position":3,"name":"Progressive Web Apps","item":"https://raazimtech.github.io/Raazim-tech/blog/pwa-manifest-service-worker-offline-guide.html"}]}</script></body></html>
