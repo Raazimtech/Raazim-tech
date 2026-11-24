@@ -125,7 +125,7 @@ main>.hero .buttons{margin-top:25px}
 /* Home page hero and its existing photography */
 .hero-shell .hero{min-height:720px;position:relative;overflow:hidden;background-color:var(--rt-ink);color:#fff}
 .hero-shell .hero:after{background:rgba(3,10,18,.68)}
-.hero-shell .nav{position:absolute;z-index:40;top:20px;left:50%;right:auto;width:min(1240px,calc(100% - 48px));transform:translateX(-50%);padding:10px 14px;border:1px solid #ffffff35;border-radius:10px;background:rgba(8,19,31,.72);box-shadow:none;backdrop-filter:blur(12px)}
+.hero-shell .nav{position:fixed;z-index:40;top:20px;left:50%;right:auto;width:min(1240px,calc(100% - 48px));transform:translateX(-50%);padding:10px 14px;border:1px solid #ffffff35;border-radius:10px;background:rgba(8,19,31,.72);box-shadow:none;backdrop-filter:blur(12px)}
 .hero-shell .brand{color:#fff}
 .hero-shell .nav-pill a{color:#e3ebf4}
 .hero-shell .nav-pill a:hover,.hero-shell .nav-pill a.active{background:#ffffff20;color:#fff}
