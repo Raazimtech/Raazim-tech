@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-.case-wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.case-wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
 .case-hero{padding:78px 0 62px;border-bottom:1px solid #dce3eb}
 .case-kicker{color:#2876c8;font-size:.74rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
 .case-hero h1{max-width:900px;margin:17px 0 20px;font:800 clamp(3rem,7vw,6rem)/.99 Manrope,sans-serif;letter-spacing:-.07em;color:#0b1725}
@@ -66,16 +66,16 @@
 </script>
 </head>
 <body>
-<div class="case-wrap">
+<div class="wrap case-wrap">
 <nav class="nav" aria-label="Primary navigation">
 <a class="brand" href="index.html"><img src="logo.png" alt="Raazim Tech logo"><span>Raazim Tech</span></a>
 <div class="links">
-<a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="active" href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a>
+<a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="active" href="case-studies.html" aria-current="page">Case Studies</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
 </div>
-<a class="btn" href="https://wa.me/252636581295">Let's talk</a>
+<a class="btn" href="start-project.html">Start a Project</a>
 <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
-<div class="nav-panel" id="mobileNav" aria-label="Mobile navigation">
-<a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/252636581295">Let's Talk on WhatsApp</a>
+<div class="nav-panel" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+<a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="case-studies.html" aria-current="page">Case Studies</a><a href="start-project.html">Start a Project</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/252636581295">Let's Talk on WhatsApp ↗</a>
 </div>
 </nav>
 <header class="case-hero">
@@ -136,7 +136,7 @@
 </div>
 <footer class="footer"><div class="case-wrap"><div class="footer-row"><div><strong>Raazim Tech</strong><p>Websites and digital experiences built around real business needs.</p></div><div class="footer-links"><a href="projects.html">Projects</a><a href="case-studies.html">Case Studies</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div></div></footer>
 <script>
-(()=>{const b=document.querySelector('.menu-toggle'),p=document.querySelector('.nav-panel');if(!b||!p)return;const close=()=>{p.classList.remove('open');b.setAttribute('aria-expanded','false')};b.addEventListener('click',()=>{const open=!p.classList.contains('open');p.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open))});p.addEventListener('click',e=>{if(e.target.closest('a'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',()=>{if(window.innerWidth>900)close()})})();
+(()=>{const button=document.querySelector('.menu-toggle'),panel=document.querySelector('#mobileNav');if(!button||!panel)return;const setOpen=open=>{button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');button.textContent=open?'×':'☰';panel.classList.toggle('open',open);panel.setAttribute('aria-hidden',String(!open))};setOpen(false);button.addEventListener('click',()=>setOpen(button.getAttribute('aria-expanded')!=='true'));panel.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('click',e=>{if(!panel.contains(e.target)&&!button.contains(e.target))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false);button.focus()}});window.addEventListener('resize',()=>{if(window.matchMedia('(min-width: 901px)').matches)setOpen(false)})})();
 </script>
 </body>
 </html>
