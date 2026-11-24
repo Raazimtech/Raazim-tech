@@ -25,7 +25,7 @@ p{color:var(--rt-muted)}
 /* Navigation shared by every page */
 .top{padding:18px 0 0;background:var(--rt-paper)}
 .wrap>.nav,.top .nav{
-  position:relative;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  position:sticky;top:0;z-index:10000;display:flex;align-items:center;justify-content:space-between;gap:18px;
   width:100%;margin:0 auto;padding:12px 16px;border:1px solid var(--rt-line);border-radius:12px;
   background:#fff;box-shadow:0 5px 18px rgba(11,23,37,.035);backdrop-filter:none
 }
