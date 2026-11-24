@@ -133,7 +133,22 @@ function send(){if(!validStep())return;const d=getData();const body=message();if
 next.addEventListener('click',()=>{if(current===steps.length-1){send();return;}if(!validStep())return;if(current===4){buildReview();}showStep(current+1);});
 back.addEventListener('click',()=>{if(current>0)showStep(current-1);});
 form.querySelectorAll('input[name="contactMethod"]').forEach(el=>el.addEventListener('change',()=>{const whatsapp=selected('contactMethod')==='WhatsApp';document.getElementById('whatsappField').hidden=!whatsapp;document.getElementById('emailField').hidden=whatsapp;document.getElementById('phone').required=whatsapp;document.getElementById('email').required=!whatsapp;}));
-form.querySelectorAll('input[name="service"]').forEach(el=>el.addEventListener('change',()=>{const service=selected('service');const featureIntro=document.getElementById('featureIntro');featureIntro.textContent=service==='E-commerce website'?'Select the store features you may need.':'Select the features you may need. You can explain anything specific in the next step.';}));
+const featureSets={
+'Business website':['Mobile-friendly design','SEO setup','Contact form','WhatsApp integration','Service / product catalog','Photo gallery','Location map','Blog / news'],
+'E-commerce website':['Product catalog','Shopping cart','Online payments','Order management','Customer accounts','Inventory management','WhatsApp ordering','Delivery information'],
+'Web application / SaaS':['User accounts','Admin dashboard','User roles and permissions','Database / data management','Reports and analytics','Notifications','Payment integration','API integration'],
+'UI/UX design':['Website interface design','Mobile app interface design','Wireframes and prototypes','Design system','User journey mapping','Usability review'],
+'Website redesign':['Modern visual redesign','Mobile-friendly layout','Content restructuring','SEO improvements','Performance improvements','New features'],
+'Other / not sure yet':['Mobile-friendly design','Contact form','WhatsApp integration','SEO setup','Admin dashboard','User accounts','Not sure - need guidance']
+};
+function renderFeatures(){
+ const service=selected('service')||'Other / not sure yet';
+ const options=featureSets[service]||featureSets['Other / not sure yet'];
+ const box=document.getElementById('featureChoices');
+ box.innerHTML=options.map((label,i)=>{const id='dynamicFeature'+i;return '<div class="choice"><input type="checkbox" name="features" id="'+id+'" value="'+label.replace(/&/g,'&amp;')+'"><label for="'+id+'">'+label.replace(/&/g,'&amp;')+'</label></div>';}).join('');
+ document.getElementById('featureIntro').textContent='Select all the features relevant to your '+service.toLowerCase()+'. You can explain anything specific in the next step.';
+}
+form.querySelectorAll('input[name="service"]').forEach(el=>el.addEventListener('change',renderFeatures));
 document.getElementById('menuToggle').addEventListener('click',()=>{const b=document.getElementById('menuToggle'),p=document.getElementById('mobileNav'),open=!p.classList.contains('open');p.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close navigation':'Open navigation');b.textContent=open?'×':'☰';});
 document.getElementById('mobileNav').addEventListener('click',e=>{if(e.target.closest('a')){document.getElementById('mobileNav').classList.remove('open');document.getElementById('menuToggle').setAttribute('aria-expanded','false');document.getElementById('menuToggle').textContent='☰';}});
 showStep(0);
