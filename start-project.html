@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101820">
+<title>Start a Project | Raazim Tech</title>
+<meta name="description" content="Tell Raazim Tech about your website, software or design project. Share your goals, required features, budget and timeline, then send your brief by WhatsApp or email.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://raazimtech.github.io/Raazim-tech/start-project.html">
+<link rel="icon" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start a Project | Raazim Tech">
+<meta property="og:description" content="Share your project brief with Raazim Tech and choose whether to send it by WhatsApp or email.">
+<meta property="og:url" content="https://raazimtech.github.io/Raazim-tech/start-project.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101820;--blue:#287bd0;--muted:#687583;--line:#dfe5eb;--paper:#f4f6f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px;background:rgba(244,246,248,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}.brand img{width:38px;height:38px;object-fit:contain}.links{display:flex;align-items:center;gap:15px;font-size:.85rem;font-weight:700}.links a{color:#526174}.links a:hover,.links a.active{color:var(--ink)}.nav-cta{padding:11px 16px;border-radius:8px;background:var(--ink);color:#fff;font-size:.86rem;font-weight:800}.menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 12px;font-size:1.2rem}.nav-panel{display:none;position:absolute;top:calc(100% + 8px);right:0;width:min(320px,calc(100vw - 36px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 45px #10182020}.nav-panel.open{display:grid}.nav-panel a{padding:11px;border-radius:7px;font-weight:700}.nav-panel a:hover{background:#edf4fb}
+.hero{padding:62px 0 35px}.eyebrow{color:var(--blue);font-size:.73rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero h1{max-width:800px;margin:14px 0;font:800 clamp(2.8rem,6vw,5.2rem)/1.02 Manrope,sans-serif;letter-spacing:-.065em}.hero p{max-width:680px;margin:0;color:var(--muted);font-size:1.05rem}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px;align-items:start;padding:22px 0 80px}.form-card,.side-card{background:#fff;border:1px solid var(--line);border-radius:14px}.form-card{padding:clamp(22px,4vw,42px)}.side-card{padding:24px;position:sticky;top:96px}.progress-top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:12px}.progress-label{font-size:.78rem;font-weight:800;color:#536174}.progress-count{font-size:.78rem;color:#7a8795;font-weight:700}.progress{height:6px;border-radius:99px;background:#e9eef3;overflow:hidden}.progress span{display:block;height:100%;width:16.666%;background:var(--blue);transition:width .2s ease}.step{display:none;padding-top:30px}.step.active{display:block}.step h2{margin:0 0 8px;font:800 clamp(1.6rem,3vw,2.2rem)/1.15 Manrope,sans-serif;letter-spacing:-.045em}.step-intro{margin:0 0 25px;color:var(--muted);font-size:.92rem}.field{margin:19px 0}.field label,.field legend{display:block;margin-bottom:8px;font-weight:800;font-size:.88rem}.field small{display:block;margin-top:6px;color:#7a8795;font-size:.78rem}.field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid #d8e0e8;border-radius:8px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #287bd018}.field textarea{min-height:115px;resize:vertical}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice label{display:flex;align-items:center;gap:10px;min-height:58px;padding:13px;border:1px solid #dce3eb;border-radius:9px;background:#fff;cursor:pointer;font-size:.87rem;font-weight:700;transition:.15s}.choice label:before{content:'';width:17px;height:17px;flex:0 0 17px;border:1px solid #b8c4d0;border-radius:5px;background:#fff}.choice input:checked+label{border-color:var(--blue);background:#f1f7fd;color:#174f82}.choice input:checked+label:before{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 4px #fff}.choice input:focus-visible+label{outline:3px solid #287bd033;outline-offset:2px}.radio-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.radio-choice input{position:absolute;opacity:0}.radio-choice label{display:flex;gap:10px;align-items:center;padding:15px;border:1px solid #dce3eb;border-radius:9px;cursor:pointer;font-weight:800}.radio-choice label:before{content:'';width:17px;height:17px;border:1px solid #aab7c4;border-radius:50%}.radio-choice input:checked+label{border-color:var(--blue);background:#f1f7fd}.radio-choice input:checked+label:before{border:5px solid var(--blue)}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;border:1px solid var(--ink);border-radius:8px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}.btn.secondary{background:#fff;color:var(--ink);border-color:var(--line)}.btn:disabled{opacity:.4;cursor:not-allowed}.error{display:none;margin-top:14px;padding:11px 13px;border-radius:8px;background:#fff1f0;color:#a52b25;font-size:.85rem}.error.show{display:block}.side-card h3{margin:0 0 10px;font:800 1.15rem Manrope,sans-serif}.side-card p{margin:0 0 17px;color:var(--muted);font-size:.87rem}.side-list{display:grid;gap:13px}.side-item{display:flex;gap:10px;align-items:flex-start;font-size:.83rem;color:#536174}.side-item strong{display:block;color:var(--ink)}.side-num{display:grid;place-items:center;width:25px;height:25px;flex:0 0 25px;border-radius:50%;background:#edf4fb;color:#1767ae;font-size:.75rem;font-weight:800}.privacy{margin-top:18px;padding-top:17px;border-top:1px solid var(--line);color:#7a8795;font-size:.77rem}.review{padding:16px;border:1px solid var(--line);border-radius:9px;background:#f8fafc}.review-row{padding:10px 0;border-bottom:1px solid var(--line)}.review-row:last-child{border:0}.review-row small{display:block;color:#7a8795;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.review-row strong{display:block;margin-top:3px;font-size:.9rem;white-space:pre-wrap;overflow-wrap:anywhere}.footer{padding:28px 0;background:var(--ink);color:#fff}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{margin:4px 0 0;color:#b8c2ce;font-size:.83rem}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.side-card{position:static}.links{display:none}.menu-toggle{display:inline-flex}.nav-cta{display:none}}@media(max-width:560px){.wrap{width:calc(100% - 28px)}.hero{padding:45px 0 20px}.choice-grid{grid-template-columns:1fr}.radio-row{grid-template-columns:1fr}.form-card{padding:20px}.actions .btn{flex:1}.side-card{padding:20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav" aria-label="Primary navigation">
+<a class="brand" href="index.html"><img src="logo.png" alt="Raazim Tech logo"><span>Raazim Tech</span></a>
+<div class="links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a></div>
+<a class="nav-cta" href="#projectForm">Start a Project</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation">☰</button>
+<div class="nav-panel" id="mobileNav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="case-studies.html">Case Studies</a><a href="pricing.html">Pricing</a><a href="news/">Tech News</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+</nav>
+<header class="hero"><span class="eyebrow">Project inquiry · Raazim Tech</span><h1>Let's understand what you're building.</h1><p>Share a few details about your business and what you need. We'll use your brief to understand the scope before we discuss the next steps.</p></header>
+<main class="layout">
+<section class="form-card" id="projectForm">
+<div class="progress-top"><span class="progress-label" id="progressLabel">Project type</span><span class="progress-count" id="progressCount">Step 1 of 6</span></div>
+<div class="progress" role="progressbar" aria-label="Form progress" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" id="progressBar"><span id="progressFill"></span></div>
+<form id="inquiryForm" novalidate>
+<section class="step active" data-title="Project type">
+<h2>What are you looking to build?</h2><p class="step-intro">Choose the service that best matches your project.</p>
+<div class="choice-grid">
+<div class="choice"><input type="radio" name="service" id="svc1" value="Business website" required><label for="svc1">Business website</label></div>
+<div class="choice"><input type="radio" name="service" id="svc2" value="E-commerce website"><label for="svc2">E-commerce website</label></div>
+<div class="choice"><input type="radio" name="service" id="svc3" value="Web application / SaaS"><label for="svc3">Web application / SaaS</label></div>
+<div class="choice"><input type="radio" name="service" id="svc4" value="UI/UX design"><label for="svc4">UI/UX design</label></div>
+<div class="choice"><input type="radio" name="service" id="svc5" value="Website redesign"><label for="svc5">Website redesign</label></div>
+<div class="choice"><input type="radio" name="service" id="svc6" value="Other / not sure yet"><label for="svc6">Other / not sure yet</label></div>
+</div>
+</section>
+<section class="step" data-title="Business details">
+<h2>Tell us about the business.</h2><p class="step-intro">A little context helps us understand who the project is for.</p>
+<div class="field"><label for="business">Business or brand name</label><input id="business" name="business" autocomplete="organization" placeholder="e.g. Your company name" required></div>
+<div class="field"><label for="industry">What industry are you in?</label><select id="industry" name="industry" required><option value="">Choose an industry</option><option>Retail / Clothing</option><option>Food / Hospitality</option><option>Transport / Logistics</option><option>Education</option><option>Healthcare</option><option>Professional services</option><option>Technology</option><option>Other</option></select></div>
+<div class="field"><label for="website">Existing website or social page <span style="font-weight:400;color:#7a8795">(optional)</span></label><input id="website" name="website" type="url" placeholder="https://"></div>
+</section>
+<section class="step" data-title="Features">
+<h2>What should the project include?</h2><p class="step-intro" id="featureIntro">Select all the features you may need. You can explain anything specific in the next step.</p>
+<div class="choice-grid" id="featureChoices">
+<div class="choice"><input type="checkbox" name="features" id="feat1" value="Mobile-friendly design"><label for="feat1">Mobile-friendly design</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat2" value="Contact form"><label for="feat2">Contact form</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat3" value="WhatsApp integration"><label for="feat3">WhatsApp integration</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat4" value="SEO setup"><label for="feat4">SEO setup</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat5" value="Online payments"><label for="feat5">Online payments</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat6" value="Product / service catalog"><label for="feat6">Product / service catalog</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat7" value="Admin dashboard"><label for="feat7">Admin dashboard</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat8" value="User accounts"><label for="feat8">User accounts</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat9" value="Booking / ordering"><label for="feat9">Booking / ordering</label></div>
+<div class="choice"><input type="checkbox" name="features" id="feat10" value="Not sure - need guidance"><label for="feat10">Not sure - need guidance</label></div>
+</div>
+</section>
+<section class="step" data-title="Scope and timing">
+<h2>Let's talk scope and timing.</h2><p class="step-intro">These are starting estimates, not fixed quotes. We'll confirm the scope with you.</p>
+<div class="field"><label for="budget">Estimated budget (USD)</label><select id="budget" name="budget" required><option value="">Choose a budget range</option><option>Under $100</option><option>$100 - $200</option><option>$200 - $500</option><option>$500 - $1,000</option><option>$1,000+</option><option>Not sure yet - advise me</option></select></div>
+<div class="field"><label for="timeline">When would you like to start or launch?</label><select id="timeline" name="timeline" required><option value="">Choose a timeline</option><option>As soon as possible</option><option>Within 2-4 weeks</option><option>Within 1-3 months</option><option>Flexible / still planning</option></select></div>
+<div class="field"><label for="details">Tell us a little more about the project</label><textarea id="details" name="details" placeholder="What are you trying to achieve? What should the website or system help people do?" required></textarea><small>Please avoid sharing passwords or confidential information.</small></div>
+</section>
+<section class="step" data-title="Your details">
+<h2>How can we reach you?</h2><p class="step-intro">Choose one way for us to receive your project brief. Your message will open in the app you select, ready for you to send.</p>
+<div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" required></div>
+<div class="field"><label for="contactMethod">Preferred contact method</label><div class="radio-row">
+<div class="radio-choice"><input type="radio" name="contactMethod" id="methodWhatsapp" value="WhatsApp" checked><label for="methodWhatsapp">WhatsApp</label></div>
+<div class="radio-choice"><input type="radio" name="contactMethod" id="methodEmail" value="Email"><label for="methodEmail">Email</label></div>
+</div></div>
+<div class="field" id="whatsappField"><label for="phone">Your WhatsApp number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Include your country code, e.g. +252..."><small>Include your country code so we can reach you.</small></div>
+<div class="field" id="emailField" hidden><label for="email">Your email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><small>We'll use this address to reply to your project inquiry.</small></div>
+</section>
+<section class="step" data-title="Review and send">
+<h2>Review your project brief.</h2><p class="step-intro">Check the details below. When you send, your WhatsApp or email app will open with the message prepared. Nothing is stored on this website.</p>
+<div class="review" id="reviewSummary"></div>
+<div class="field"><label for="confirmMethod">Send this inquiry using</label><p id="chosenMethod" style="margin:0;color:#536174;font-weight:700"></p></div>
+</section>
+<div class="error" id="formError" role="alert"></div>
+<div class="actions"><button class="btn secondary" type="button" id="backBtn" disabled>Back</button><button class="btn" type="button" id="nextBtn">Continue</button></div>
+</form>
+</section>
+<aside class="side-card"><h3>A clear brief makes a better start.</h3><p>There are no commitments at this stage. This helps us understand your needs before we discuss a suitable solution.</p>
+<div class="side-list"><div class="side-item"><span class="side-num">1</span><div><strong>Tell us the goal</strong>What you're building and who it's for.</div></div><div class="side-item"><span class="side-num">2</span><div><strong>Set expectations</strong>Features, budget and timeline.</div></div><div class="side-item"><span class="side-num">3</span><div><strong>Send your brief</strong>Choose WhatsApp or email.</div></div></div>
+<div class="privacy">No account. No database. No third-party form service. Your message is handed to the email or WhatsApp app you choose, and you send it yourself.</div>
+</aside>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>Raazim Tech</strong><p>Websites and digital solutions built around real business needs.</p></div><div><a href="index.html">Back to Raazim Tech ↗</a></div></div></footer>
+</div>
+<script>
+(()=> {
+const form=document.getElementById('inquiryForm');
+const steps=[...document.querySelectorAll('.step')];
+const labels=steps.map(s=>s.dataset.title);
+const progressFill=document.getElementById('progressFill');
+const progressCount=document.getElementById('progressCount');
+const progressLabel=document.getElementById('progressLabel');
+const progressBar=document.getElementById('progressBar');
+const back=document.getElementById('backBtn');
+const next=document.getElementById('nextBtn');
+const error=document.getElementById('formError');
+let current=0;
+const val=name=>{const el=form.elements[name];return el?(el.value||'').trim():''};
+const selected=name=>{const el=form.querySelector('input[name="'+name+'"]:checked');return el?el.value:''};
+const checked=name=>[...form.querySelectorAll('input[name="'+name+'"]:checked')].map(x=>x.value);
+function showStep(n){current=n;steps.forEach((s,i)=>s.classList.toggle('active',i===n));progressFill.style.width=((n+1)/steps.length*100)+'%';progressCount.textContent='Step '+(n+1)+' of '+steps.length;progressLabel.textContent=labels[n];progressBar.setAttribute('aria-valuenow',String(n+1));back.disabled=n===0;next.textContent=n===steps.length-1?'Open message to send':'Continue';error.classList.remove('show');if(n===steps.length-1)buildReview();document.getElementById('projectForm').scrollIntoView({behavior:'smooth',block:'start'});}
+function fail(message){error.textContent=message;error.classList.add('show');error.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function validStep(){const active=steps[current];const required=[...active.querySelectorAll('[required]')].filter(el=>!el.disabled && !el.closest('[hidden]'));for(const el of required){if(el.type==='radio'){if(!active.querySelector('input[name="'+el.name+'"]:checked')){fail('Please choose an option before continuing.');return false;}continue;}if(!el.value.trim() || !el.checkValidity()){el.reportValidity();fail('Please complete the required fields before continuing.');return false;}}if(current===0&&!selected('service')){fail('Choose the type of project you need.');return false;}if(current===4){if(selected('contactMethod')==='WhatsApp'&&!val('phone')){fail('Add your WhatsApp number, including country code.');return false;}if(selected('contactMethod')==='Email'&&!val('email')){fail('Add the email address where we can reach you.');return false;}}return true;}
+function getData(){return {service:selected('service'),business:val('business'),industry:val('industry'),website:val('website')||'Not provided',features:checked('features').join(', ')||'To be discussed',budget:val('budget'),timeline:val('timeline'),details:val('details'),name:val('name'),method:selected('contactMethod'),phone:val('phone'),email:val('email')};}
+function message(){const d=getData();return ['RAAZIM TECH - NEW PROJECT INQUIRY','', 'Name: '+d.name,'Business: '+d.business,'Industry: '+d.industry,'Project type: '+d.service,'Existing link: '+d.website,'Required features: '+d.features,'Estimated budget: '+d.budget,'Timeline: '+d.timeline,'', 'Project details:',d.details,'','Preferred contact: '+d.method,(d.method==='WhatsApp'?'WhatsApp: '+d.phone:'Email: '+d.email)].join('\n');}
+function buildReview(){const d=getData();const rows=[['Project type',d.service],['Business',d.business],['Industry',d.industry],['Existing link',d.website],['Features',d.features],['Budget',d.budget],['Timeline',d.timeline],['Project details',d.details],['Name',d.name],['Contact method',d.method],['Contact',d.method==='WhatsApp'?d.phone:d.email]];document.getElementById('reviewSummary').innerHTML=rows.map(([k,v])=>'<div class="review-row"><small>'+escapeHtml(k)+'</small><strong>'+escapeHtml(v)+'</strong></div>').join('');document.getElementById('chosenMethod').textContent=d.method==='WhatsApp'?'WhatsApp to +252 63 6581295':'Email to raazimtech@gmail.com';}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function send(){if(!validStep())return;const d=getData();const body=message();if(d.method==='WhatsApp'){const url='https://wa.me/252636581295?text='+encodeURIComponent(body);window.location.href=url;}else{const subject=encodeURIComponent('Project Inquiry - '+d.business);const url='mailto:raazimtech@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);window.location.href=url;}}
+next.addEventListener('click',()=>{if(current===steps.length-1){send();return;}if(!validStep())return;if(current===4){buildReview();}showStep(current+1);});
+back.addEventListener('click',()=>{if(current>0)showStep(current-1);});
+form.querySelectorAll('input[name="contactMethod"]').forEach(el=>el.addEventListener('change',()=>{const whatsapp=selected('contactMethod')==='WhatsApp';document.getElementById('whatsappField').hidden=!whatsapp;document.getElementById('emailField').hidden=whatsapp;document.getElementById('phone').required=whatsapp;document.getElementById('email').required=!whatsapp;}));
+form.querySelectorAll('input[name="service"]').forEach(el=>el.addEventListener('change',()=>{const service=selected('service');const featureIntro=document.getElementById('featureIntro');featureIntro.textContent=service==='E-commerce website'?'Select the store features you may need.':'Select the features you may need. You can explain anything specific in the next step.';}));
+document.getElementById('menuToggle').addEventListener('click',()=>{const b=document.getElementById('menuToggle'),p=document.getElementById('mobileNav'),open=!p.classList.contains('open');p.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close navigation':'Open navigation');b.textContent=open?'×':'☰';});
+document.getElementById('mobileNav').addEventListener('click',e=>{if(e.target.closest('a')){document.getElementById('mobileNav').classList.remove('open');document.getElementById('menuToggle').setAttribute('aria-expanded','false');document.getElementById('menuToggle').textContent='☰';}});
+showStep(0);
+})();
+</script>
+</body>
+</html>
