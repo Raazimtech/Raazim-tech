@@ -310,3 +310,9 @@ nav.nav .links a[href="start-project.html"],nav.nav .nav-panel a[href="start-pro
 nav.nav .links a[href="saas.html"],nav.nav .nav-panel a[href="saas.html"],nav.nav .nav-pill a[href="saas.html"]{order:5}
 nav.nav .links a[href="case-studies.html"],nav.nav .nav-panel a[href="case-studies.html"],nav.nav .nav-pill a[href="case-studies.html"]{order:6}
 nav.nav .links a[href="pricing.html"],nav.nav .nav-panel a[href="pricing.html"],nav.nav .nav-pill a[href="pricing.html"]{order:7}
+
+nav.nav .links a[href="news/"],nav.nav .nav-panel a[href="news/"],nav.nav .nav-pill a[href="news/"]{order:8}
+nav.nav .links a[href="blog/"],nav.nav .nav-panel a[href="blog/"],nav.nav .nav-pill a[href="blog/"]{order:9}
+nav.nav .links a[href="about.html"],nav.nav .nav-panel a[href="about.html"],nav.nav .nav-pill a[href="about.html"]{order:10}
+nav.nav .links a[href="contact.html"],nav.nav .nav-panel a[href="contact.html"],nav.nav .nav-pill a[href="contact.html"]{order:11}
+nav.nav .nav-panel a[href*="wa.me"]{order:12}
