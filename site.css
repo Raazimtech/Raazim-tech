@@ -301,3 +301,12 @@ body>.nav-shell{padding:12px max(14px,calc((100% - 1180px)/2));}
 @media(prefers-reduced-motion:reduce){
   .nav-panel{transition:none!important}
 }
+
+/* Keep the primary navigation order consistent on every page. */
+nav.nav .links a[href="index.html"],nav.nav .nav-panel a[href="index.html"],nav.nav .nav-pill a[href="#home"]{order:1}
+nav.nav .links a[href="services.html"],nav.nav .nav-panel a[href="services.html"],nav.nav .nav-pill a[href="services.html"]{order:2}
+nav.nav .links a[href="projects.html"],nav.nav .nav-panel a[href="projects.html"],nav.nav .nav-pill a[href="projects.html"]{order:3}
+nav.nav .links a[href="start-project.html"],nav.nav .nav-panel a[href="start-project.html"],nav.nav .nav-pill a[href="start-project.html"]{order:4}
+nav.nav .links a[href="saas.html"],nav.nav .nav-panel a[href="saas.html"],nav.nav .nav-pill a[href="saas.html"]{order:5}
+nav.nav .links a[href="case-studies.html"],nav.nav .nav-panel a[href="case-studies.html"],nav.nav .nav-pill a[href="case-studies.html"]{order:6}
+nav.nav .links a[href="pricing.html"],nav.nav .nav-panel a[href="pricing.html"],nav.nav .nav-pill a[href="pricing.html"]{order:7}
