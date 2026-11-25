@@ -1,6 +1,6 @@
 :root{--footer-blue:#4d97e6;--footer-deep:#07111d;--footer-ink:#0b1725}
 .footer{position:relative;overflow:hidden;padding:0 0 24px;background:#07111d;color:#fff}
-.footer::before{display:block!important;content:'RAAZIM TECH'!important;position:absolute;z-index:0;top:38%;left:50%;transform:translate(-50%,-50%);width:max-content;max-width:none;font:800 clamp(4rem,14vw,13rem)/1 Manrope,sans-serif;letter-spacing:.055em;white-space:nowrap;color:rgba(255,255,255,.045);filter:blur(2.5px);pointer-events:none;user-select:none}.footer::after{display:none!important;content:none!important}
+.footer::before{display:block!important;content:'RAAZIM TECH'!important;position:absolute;z-index:0;top:88%;left:50%;transform:translate(-50%,-50%);width:max-content;max-width:none;font:800 clamp(4rem,14vw,13rem)/1 Manrope,sans-serif;letter-spacing:.055em;white-space:nowrap;color:rgba(255,255,255,.045);filter:blur(2.5px);pointer-events:none;user-select:none}.footer::after{display:none!important;content:none!important}
 .footer .container{position:relative;z-index:1}
 .footer-showcase{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:50px;padding:72px 0 55px}
 .footer-kicker{display:inline-block;margin-bottom:18px;color:#8dbcf0;font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
