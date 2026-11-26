@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1725">
+<title>How to Handle Webhook Retries Without Duplicating Work | Raazim Tech</title>
+<meta name="description" content="Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.">
+<meta name="author" content="Raazim Tech Editorial">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html">
+<link rel="icon" href="../logo.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Raazim Tech">
+<meta property="og:title" content="How to Handle Webhook Retries Without Duplicating Work">
+<meta property="og:description" content="Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.">
+<meta property="og:url" content="https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html">
+<meta property="og:image" content="https://raazimtech.github.io/Raazim-tech/blog/images/webhook-inbox-flow.svg">
+<meta property="og:image:alt" content="Webhook delivery flow: verify the request, store it in a durable inbox, then process it with an idempotent worker">
+<meta property="article:published_time" content="2026-11-26">
+<meta property="article:modified_time" content="2026-11-26">
+<meta property="article:section" content="Database &amp; Backend">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Handle Webhook Retries Without Duplicating Work">
+<meta name="twitter:description" content="Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.">
+<meta name="twitter:image" content="https://raazimtech.github.io/Raazim-tech/blog/images/webhook-inbox-flow.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b1725;--paper:#f4f6f8;--blue:#4d97e6;--muted:#657284;--line:#dce3eb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 "DM Sans",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.15;letter-spacing:-.035em}
+.skip{position:absolute;left:-9999px;top:8px;padding:10px 14px;background:#fff;border:1px solid var(--line);z-index:2000}
+.skip:focus{left:12px}
+.nav{position:sticky;top:0;z-index:1000;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);background:rgba(244,246,248,.97);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand img{width:38px;height:38px;object-fit:contain}
+.links{display:flex;gap:18px;font-size:.86rem;font-weight:700;color:#526174}
+.links a:hover,.links a[aria-current="page"]{color:var(--ink)}
+.menu{display:none;padding:10px 13px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.crumb{padding:25px 0 0;color:#718092;font-size:.82rem}
+.crumb a{color:#1767ae}
+.hero{padding:48px 0 36px;border-bottom:1px solid var(--line)}
+.label{color:#2876c8;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{max-width:950px;margin:16px 0;font-size:clamp(2.6rem,6vw,4.8rem)}
+.dek{max-width:850px;color:#526174;font-size:1.12rem}
+.meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;color:#718092;font-size:.82rem}
+.cover{margin:28px auto 0}
+.cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);border-radius:14px}
+.layout{display:grid;grid-template-columns:minmax(0,760px) 250px;gap:65px;padding:42px 0 80px;align-items:start}
+.body{min-width:0}
+.body p{margin:0 0 20px;color:#465568}
+.body h2{margin:40px 0 13px;font-size:clamp(1.6rem,3vw,2.1rem)}
+.body h3{margin:25px 0 9px;font-size:1.2rem}
+.body ul,.body ol{padding-left:22px;color:#465568}
+.body li{margin:8px 0}
+.body a{color:#1767ae;text-decoration:underline;text-underline-offset:3px}
+.body code{padding:2px 5px;border-radius:4px;background:#e8eef5;font-size:.9em}
+.body pre{overflow:auto;padding:18px;border-radius:9px;background:#0b1725;color:#e9f1fa;font-size:.83rem;line-height:1.6}
+.body pre code{padding:0;background:none;color:inherit}
+.body table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.92rem}
+.body th,.body td{padding:11px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}
+.body th{background:#eaf3fc;color:#0b1725}
+.callout{margin:26px 0;padding:20px 22px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;background:#eaf3fc}
+.callout strong{display:block;margin-bottom:4px}
+.callout p{margin:0}
+.side{position:sticky;top:100px;padding:20px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.side strong{display:block;margin-bottom:10px}
+.side a{display:block;padding:7px 0;color:#526174;font-size:.84rem}
+.side a:hover{color:#1767ae}
+.sources{margin-top:44px;padding-top:25px;border-top:1px solid var(--line)}
+.sources h2{margin-top:0}
+.sources li{overflow-wrap:anywhere}
+.related{padding:25px 0 65px;border-top:1px solid var(--line)}
+.related a{display:inline-block;margin:8px 16px 0 0;color:#1767ae;font-weight:700}
+.footer{padding:28px 0;background:#07111d;color:#fff}
+.footer p{margin:5px 0 0;color:#aab8c7;font-size:.84rem}
+@media(max-width:900px){.links{display:none}.menu{display:block}.layout{grid-template-columns:1fr;gap:25px}.side{position:static;order:-1}}
+@media(max-width:600px){.wrap{width:calc(100% - 28px)}.hero{padding:38px 0 26px}.layout{padding:30px 0 60px}.hero h1{font-size:clamp(2.4rem,11vw,3.7rem)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"How to Handle Webhook Retries Without Duplicating Work",
+  "description":"Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.",
+  "image":"https://raazimtech.github.io/Raazim-tech/blog/images/webhook-inbox-flow.svg",
+  "datePublished":"2026-11-26",
+  "dateModified":"2026-11-26",
+  "author":{"@type":"Organization","name":"Raazim Tech"},
+  "publisher":{"@type":"Organization","name":"Raazim Tech","url":"https://raazimtech.github.io/Raazim-tech/","logo":{"@type":"ImageObject","url":"https://raazimtech.github.io/Raazim-tech/logo.png"}},
+  "mainEntityOfPage":"https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html",
+  "articleSection":"Database & Backend",
+  "keywords":["reliable webhook handling","webhook retries","duplicate webhook events","idempotency","PostgreSQL webhook inbox","event-driven architecture"],
+  "wordCount":2662,"inLanguage":"en"
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to article</a>
+<nav class="nav">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:18px">
+    <a class="brand" href="../"><img src="../logo.png" alt="Raazim Tech logo">Raazim Tech</a>
+    <div class="links"><a href="../">Home</a><a href="../news/">Tech News</a><a href="./" aria-current="page">Blog</a><a href="../about.html">About</a><a href="../start-project.html">Start a Project</a></div>
+    <a class="menu" href="./">Blog index</a>
+  </div>
+</nav>
+<main id="article" class="wrap">
+  <div class="crumb"><a href="./">Blog</a> / Database &amp; Backend</div>
+  <header class="hero">
+    <span class="label">Database &amp; Backend</span>
+    <h1>How to Handle Webhook Retries Without Duplicating Work</h1>
+    <p class="dek">A webhook can be delivered twice, arrive late, or time out after your database has already changed. Build a receiver that can survive all three without double-fulfilling an order or silently losing an event.</p>
+    <div class="meta"><span>November 26, 2026</span><span>12 min read</span><span>By Raazim Tech</span></div>
+    <figure class="cover"><img src="images/webhook-inbox-flow.svg" alt="Webhook delivery flow: verify the request, store it in a durable inbox, then process it with an idempotent worker" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+  </header>
+  <div class="layout">
+    <article class="body">
+      <p>A customer pays for an order. Your payment provider sends a successful-payment event. Your server updates the order, but the response gets lost before the provider receives it. The provider cannot know whether your code finished, so it tries again.</p>
+      <p>If the second request runs the same business action again, you might send two fulfilment requests, add account credit twice, or create duplicate records. If you mark the event as handled before the database write is safe, a crash can lose the work instead. The hard part of webhooks is not receiving JSON. It is making the effect safe when delivery and processing fail at awkward moments.</p>
+      <div class="callout"><strong>The design rule</strong><p>Assume a valid event can be delivered more than once. Verify it, store it durably, acknowledge it, and make the business operation idempotent.</p></div>
+
+      <h2 id="why-retries">Why webhook retries are normal</h2>
+      <p>A webhook is an HTTP message sent by one system to notify another system that something happened. The sender and receiver do not share a transaction. A network timeout does not tell the sender whether your database committed the change; it only tells the sender that it did not receive a timely response.</p>
+      <p>That uncertainty creates retries. Stripe documents automatic retries for live-mode events for up to three days, using exponential backoff. It also warns that events are not guaranteed to arrive in the order they were generated. GitHub takes a different approach: its documentation says failed deliveries are not automatically redelivered, so an operator must request a redelivery when needed. These are provider-specific policies, not a universal webhook standard.</p>
+      <p>Design your receiver for at-least-once delivery even if a provider usually sends each event once. The goal is not to force the network to deliver exactly once. The goal is to make repeated delivery harmless.</p>
+
+      <h2 id="four-failure-modes">Four failure modes to design around</h2>
+      <ol>
+        <li><strong>Duplicate delivery:</strong> the sender retries after a timeout, or an operator replays an event.</li>
+        <li><strong>Crash after acceptance:</strong> your server stores or partly processes the event, then exits before returning a successful response.</li>
+        <li><strong>Worker failure:</strong> your endpoint acknowledges the event, but a background worker crashes halfway through processing it.</li>
+        <li><strong>Out-of-order delivery:</strong> a newer state change reaches your app before an older one.</li>
+      </ol>
+      <p>A reliable design gives each failure a safe path: a unique event key, durable storage, retryable processing, and business rules that do not depend on arrival order.</p>
+
+      <h2 id="verify-first">1. Verify the request before trusting the payload</h2>
+      <p>Webhook URLs are public HTTP endpoints. Anyone who discovers one can send it a POST request. Do not trust a payload because it looks like a provider event or contains a familiar customer ID.</p>
+      <ul>
+        <li>Use the provider's signature verification library where possible.</li>
+        <li>Verify the signature against the exact raw request body, before JSON parsing or transformation.</li>
+        <li>Keep the signing secret in server-side environment configuration or a secret manager, never in frontend code or a repository.</li>
+        <li>Use HTTPS in production and subscribe only to event types the integration actually needs.</li>
+      </ul>
+      <p>For example, Stripe requires the original request body for signature verification. If Express parses the JSON first, the body may no longer match the bytes that were signed. GitHub signs payloads with HMAC-SHA256 in the <code>X-Hub-Signature-256</code> header and recommends a constant-time comparison rather than ordinary string equality.</p>
+      <p>Signature verification answers, “Did this request come from someone who knows the signing secret, and has the signed content remained intact?” It does not answer, “Have I already performed this business action?” You still need deduplication and idempotency.</p>
+
+      <h2 id="durable-inbox">2. Store the event in a durable inbox before acknowledging it</h2>
+      <p>Do not run slow work inside the HTTP request. Sending email, provisioning an account, generating a document, or calling another API can take longer than the provider's timeout. GitHub asks receivers to return a 2xx response within 10 seconds; Stripe also recommends returning success quickly before complex logic.</p>
+      <p>But “respond quickly” does not mean “put the event in an in-memory array and hope the process stays alive.” If the server acknowledges an event and then restarts, an in-memory queue disappears. The event has been acknowledged but not safely retained.</p>
+      <p>Use a durable queue or a database-backed inbox. The receiver should:</p>
+      <ol>
+        <li>Read the raw body and verify the provider signature.</li>
+        <li>Validate the event envelope and identify its provider event ID.</li>
+        <li>Insert the event into durable storage with a unique key.</li>
+        <li>Return 2xx only after that insert or queue operation commits.</li>
+      </ol>
+      <p>If the database or queue is unavailable, return a failure response so the provider can retry according to its documented policy. If the insert succeeds but the response is lost, the retry hits the same unique key and becomes a harmless duplicate.</p>
+
+      <h3>A small PostgreSQL inbox table</h3>
+      <p>This schema is a starting point for a single provider account. If one database receives events from multiple accounts or endpoints, include a source or account identifier in the unique key too.</p>
+      <pre><code>CREATE TABLE webhook_inbox (
+  provider       text NOT NULL,
+  event_id       text NOT NULL,
+  event_type     text NOT NULL,
+  payload        jsonb NOT NULL,
+  status         text NOT NULL DEFAULT 'pending'
+                 CHECK (status IN (
+                   'pending', 'processing', 'processed', 'failed'
+                 )),
+  attempts       integer NOT NULL DEFAULT 0,
+  received_at    timestamptz NOT NULL DEFAULT now(),
+  available_at   timestamptz NOT NULL DEFAULT now(),
+  locked_until   timestamptz,
+  processed_at   timestamptz,
+  last_error     text,
+  PRIMARY KEY (provider, event_id)
+);</code></pre>
+      <p>The primary key is the first deduplication boundary. PostgreSQL's <code>ON CONFLICT DO NOTHING</code> lets concurrent attempts race safely against that unique constraint: only one insert wins. A process-local Set or cache is not a replacement because it is lost on restart and is not shared by multiple server instances.</p>
+
+      <h3>Example: accept a Stripe event in Express</h3>
+      <p>This example uses Stripe snapshot events, the Stripe Node SDK, Express, and the <code>pg</code> package. Mount this route before any global <code>express.json()</code> middleware so the raw body remains available. If you configure Stripe thin events, use the matching event parser and payload format from the current Stripe documentation.</p>
+      <pre><code>import express from "express";
+import Stripe from "stripe";
+import pg from "pg";
+
+const app = express();
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const pool = new pg.Pool({
+  connectionString: process.env.DATABASE_URL
+});
+
+app.post(
+  "/webhooks/stripe",
+  express.raw({ type: "application/json" }),
+  async (req, res) => {
+    let event;
+
+    try {
+      event = stripe.webhooks.constructEvent(
+        req.body,
+        req.headers["stripe-signature"],
+        process.env.STRIPE_WEBHOOK_SECRET
+      );
+    } catch {
+      return res.status(400).send("Invalid webhook signature");
+    }
+
+    try {
+      await pool.query(
+        "INSERT INTO webhook_inbox " +
+        "(provider, event_id, event_type, payload) " +
+        "VALUES ($1, $2, $3, $4::jsonb) " +
+        "ON CONFLICT (provider, event_id) DO NOTHING",
+        ["stripe", event.id, event.type, JSON.stringify(event)]
+      );
+
+      return res.sendStatus(200);
+    } catch (error) {
+      console.error("Webhook intake failed", {
+        eventId: event.id
+      });
+      return res.sendStatus(500);
+    }
+  }
+);
+
+// Register normal JSON routes after the raw webhook route.
+app.use(express.json());</code></pre>
+      <p>A duplicate insert is not an error here: the endpoint returns 200 because the same event is already safely stored. A failed database write returns 500, because acknowledging an event that was not retained would create a silent-loss window. Do not log the signing secret or dump full payment payloads into ordinary application logs.</p>
+
+      <h2 id="worker">3. Let a worker process the inbox</h2>
+      <p>A worker reads pending rows, claims one with a short lease, and processes it outside the request path. In PostgreSQL, <code>SELECT ... FOR UPDATE SKIP LOCKED</code> is a useful building block when several workers poll the same table: one worker can claim a row without waiting for another worker that has already locked it.</p>
+      <p>Use a lease such as <code>locked_until</code> so a row claimed by a worker that crashes can become eligible again after the lease expires. Increase the lease or renew it for long-running work. Keep the retry schedule in your database rather than sleeping inside an HTTP request.</p>
+      <p>A worker should follow a state model like this:</p>
+      <table>
+        <thead><tr><th>State</th><th>Meaning</th><th>Next action</th></tr></thead>
+        <tbody>
+          <tr><td><code>pending</code></td><td>Accepted and waiting</td><td>Eligible for a worker</td></tr>
+          <tr><td><code>processing</code></td><td>Claimed under a lease</td><td>Finish, or reclaim after lease expiry</td></tr>
+          <tr><td><code>processed</code></td><td>Business transaction committed</td><td>Never apply the same effect again</td></tr>
+          <tr><td><code>failed</code></td><td>Retry limit reached or event needs intervention</td><td>Inspect, fix, then replay deliberately</td></tr>
+        </tbody>
+      </table>
+      <p>For a change that lives in your own database, wrap the business update and the inbox status change in the same database transaction. If the transaction rolls back, neither is committed. If it commits, both are committed. A worker crash before the commit leaves the event eligible for retry; a crash after the commit sees the processed state on the next attempt.</p>
+      <p>For an external action, such as sending an email or calling a shipping API, a database transaction cannot include the remote system. Use an outbox table: write the intended external action in the same transaction as your local business change, then let a separate dispatcher send it. Give each outbox action a stable idempotency key when the receiving API supports one.</p>
+
+      <h2 id="business-idempotency">4. Protect the business operation, not just the event ID</h2>
+      <p>Deduplicating by provider event ID handles a repeated delivery of the same event. It does not cover every duplicate business outcome. Stripe notes that, in some cases, two separate Event objects can refer to the same underlying object and event type.</p>
+      <p>That is why the business database needs its own uniqueness boundary. If an order should be fulfilled once, make the order ID unique in the fulfilment record. If an invoice should grant account credit once, record the invoice ID in a credit-ledger table with a unique constraint. Apply the insert and balance change in one transaction.</p>
+      <pre><code>CREATE TABLE order_fulfilments (
+  order_id       text PRIMARY KEY,
+  created_at     timestamptz NOT NULL DEFAULT now()
+);
+
+-- In the same transaction as the fulfilment state change:
+INSERT INTO order_fulfilments (order_id)
+VALUES ($1)
+ON CONFLICT (order_id) DO NOTHING;</code></pre>
+      <p>Only perform the fulfilment action when the insert actually created a row. In production, keep the uniqueness check and the local state transition inside one transaction. Do not check first in one query and insert later in another: two concurrent workers can both pass the check.</p>
+      <div class="callout"><strong>Two layers, two questions</strong><p>The inbox key asks, “Have I accepted this provider event?” The business key asks, “Has this order, invoice, or entitlement already received this effect?” For high-value actions, both checks matter.</p></div>
+
+      <h2 id="ordering">5. Do not assume events arrive in order</h2>
+      <p>Network retries, parallel workers, and provider behavior can change arrival order. Stripe explicitly says event delivery order is not guaranteed. It also warns that different events can share the same second-level <code>created</code> timestamp, so that field is not a reliable sequence number.</p>
+      <p>Prefer one of these strategies:</p>
+      <ul>
+        <li><strong>Read current state:</strong> when an event arrives, retrieve the latest object from the provider API before making a state-sensitive decision.</li>
+        <li><strong>Use monotonic transitions:</strong> design your local state machine so an older event cannot move a completed order back to pending.</li>
+        <li><strong>Use provider sequence numbers:</strong> if the provider supplies a documented version or sequence field, use it instead of guessing from timestamps.</li>
+        <li><strong>Serialize per business object:</strong> when order matters, process events for the same subscription or order sequentially while allowing unrelated objects to run concurrently.</li>
+      </ul>
+      <p>Do not globally serialize every event unless you have a measured reason. It creates a bottleneck. Most systems need ordering only within a specific account, order, subscription, or other business entity.</p>
+
+      <h2 id="recovery">6. Make retries and recovery visible</h2>
+      <p>Use bounded retries with backoff for temporary failures. A malformed payload, invalid signature, or unsupported event is not the same as a temporary database outage; do not retry permanent failures forever. After a configured number of attempts, move the event to a failed or dead-letter state and alert someone who can investigate it.</p>
+      <p>Record enough metadata to answer operational questions: provider, event ID, event type, received time, attempt count, processing duration, status, and a short sanitized error. Avoid storing unnecessary personal data and never log signing secrets, access tokens, or full payment details.</p>
+      <p>Build a replay tool that requeues a stored event without deleting its history. Replay should pass through the same idempotency checks as a normal delivery. Also run reconciliation for important records: compare your local order or subscription state with the provider's source of truth, because webhook delivery alone is not a complete audit process.</p>
+      <p>Provider recovery rules differ. Stripe currently documents live-mode automatic retries for up to three days and manual resend windows of up to 15 days in the Dashboard or 30 days with the CLI. GitHub documents manual redelivery for deliveries from the past three days and says it does not automatically redeliver failed deliveries. Check the provider's current documentation rather than assuming its retry policy matches another service.</p>
+
+      <h2 id="testing">A failure-focused test checklist</h2>
+      <ul>
+        <li>Send the same valid event twice and confirm the business effect occurs once.</li>
+        <li>Send the same event concurrently to two application instances.</li>
+        <li>Commit the inbox insert, then simulate the HTTP response being lost.</li>
+        <li>Stop a worker after it claims an event and confirm the expired lease makes it recoverable.</li>
+        <li>Force a database failure before the inbox insert and confirm the endpoint does not acknowledge the event.</li>
+        <li>Deliver two state changes out of order and confirm the local state does not move backwards.</li>
+        <li>Replay a failed event and verify the original event history remains visible.</li>
+        <li>Send a payload with an invalid signature and confirm it never reaches the worker.</li>
+      </ul>
+      <p>Test the awkward moments between steps, not just the happy path. A handler that works once in a local test has not proved that it can survive a timeout, process restart, duplicate request, or partial failure.</p>
+
+      <h2 id="when-to-use">Do you need a queue for every webhook?</h2>
+      <p>No. A low-risk webhook that triggers a quick cache refresh may not need a separate message broker. It still needs signature verification and a clear duplicate policy. For payments, order fulfilment, access provisioning, credits, inventory, or any event that can change money or customer entitlements, a durable inbox and idempotent worker are usually worth the extra structure.</p>
+      <p>Start with a database-backed inbox if your application already depends on PostgreSQL and traffic is modest. Move to a dedicated queue when you need independent scaling, higher throughput, richer routing, or operational features that your database-backed worker no longer handles comfortably. A queue does not remove the need for idempotency; it only changes how work is buffered and delivered.</p>
+
+      <h2 id="conclusion">The reliable pattern</h2>
+      <p>Webhook reliability is not about preventing every retry. You cannot control the sender's network, your process lifetime, or the moment a remote service times out. You can control what your application does when the same event comes back.</p>
+      <p>Verify the signature, persist the event under a unique key, acknowledge only after durable acceptance, process it with a retryable worker, and protect the business effect with its own uniqueness constraint or idempotency key. Treat ordering as a separate problem and make failed events visible. That turns webhook handling from a fragile request handler into a recoverable workflow.</p>
+      <p>If your application uses PostgreSQL, our guide to <a href="postgresql-indexes-explained.html">PostgreSQL indexes and query performance</a> explains another important part of keeping data workflows healthy. For a broader backend decision, see <a href="supabase-vs-firebase-2026.html">Supabase vs Firebase</a>. Our <a href="api-security-checklist-small-businesses-2026.html">API security checklist</a> covers authentication, authorization, validation, and rate limits. If you are building a customer-facing platform, explore <a href="../saas.html">Raazim Tech's SaaS development work</a> and <a href="../services.html">web development services</a>.</p>
+
+      <section class="sources" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sources and further reading</h2>
+        <ul>
+          <li><a href="https://docs.stripe.com/webhooks">Stripe: Receive events in your webhook endpoint</a></li>
+          <li><a href="https://docs.stripe.com/events/manage-webhook-endpoints">Stripe: Manage webhook endpoints, retries, and undelivered events</a></li>
+          <li><a href="https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks">GitHub: Best practices for using webhooks</a></li>
+          <li><a href="https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries">GitHub: Validating webhook deliveries</a></li>
+          <li><a href="https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/redelivering-webhooks">GitHub: Redelivering webhooks</a></li>
+          <li><a href="https://www.postgresql.org/docs/current/sql-insert.html">PostgreSQL: INSERT and ON CONFLICT</a></li>
+        </ul>
+      </section>
+    </article>
+    <aside class="side" aria-label="On this page">
+      <strong>In this article</strong>
+      <a href="#why-retries">Why retries happen</a>
+      <a href="#four-failure-modes">Four failure modes</a>
+      <a href="#verify-first">1. Verify the request</a>
+      <a href="#durable-inbox">2. Store a durable inbox</a>
+      <a href="#worker">3. Process with a worker</a>
+      <a href="#business-idempotency">4. Protect business effects</a>
+      <a href="#ordering">5. Handle event ordering</a>
+      <a href="#recovery">6. Recover failed events</a>
+      <a href="#testing">Test checklist</a>
+      <a href="#when-to-use">When to add a queue</a>
+      <a href="#conclusion">Conclusion</a>
+    </aside>
+  </div>
+</main>
+<section class="related wrap">
+  <h2>Explore more insights</h2>
+  <a href="api-security-checklist-small-businesses-2026.html">API Security</a>
+  <a href="postgresql-indexes-explained.html">PostgreSQL Indexes</a>
+  <a href="supabase-vs-firebase-2026.html">Supabase vs Firebase</a>
+  <a href="secure-ai-agents.html">AI Agent Security</a>
+</section>
+<footer class="footer">
+  <div class="wrap"><strong>Raazim Tech</strong><p>Websites, software and digital solutions. <a href="./" style="color:#fff">Explore more articles</a> · <a href="../" style="color:#fff">Main website</a></p></div>
+</footer>
+</body>
+</html>
