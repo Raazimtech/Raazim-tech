@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Drupal installer security update</title>
+  <desc id="desc">An original illustration showing a website installer endpoint, a security alert and patched Drupal core versions.</desc>
+  <rect width="1200" height="630" fill="#0b1725"/>
+  <rect x="54" y="54" width="1092" height="522" rx="26" fill="#13263b" stroke="#29445f" stroke-width="2"/>
+  <text x="96" y="116" fill="#9fc7ef" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="4">RAAZIM TECH  /  SECURITY UPDATE</text>
+  <text x="96" y="182" fill="#ffffff" font-family="Arial,sans-serif" font-size="48" font-weight="700">Drupal Core</text>
+  <text x="96" y="224" fill="#c4d2e0" font-family="Arial,sans-serif" font-size="25">Installer access bypass</text>
+  <rect x="96" y="278" width="450" height="178" rx="16" fill="#0d1b2b" stroke="#3b5876" stroke-width="2"/>
+  <rect x="96" y="278" width="450" height="42" rx="16" fill="#203b56"/>
+  <circle cx="124" cy="299" r="7" fill="#ff786d"/>
+  <circle cx="149" cy="299" r="7" fill="#f5c56b"/>
+  <circle cx="174" cy="299" r="7" fill="#72c99a"/>
+  <text x="124" y="368" fill="#a8c8e8" font-family="Arial,sans-serif" font-size="19">PUBLIC ENDPOINT</text>
+  <text x="124" y="415" fill="#ffffff" font-family="monospace" font-size="28">/core/install.php</text>
+  <path d="M600 355 H676" stroke="#79b8ed" stroke-width="5" stroke-linecap="round"/>
+  <path d="M660 339 L678 355 L660 371" fill="none" stroke="#79b8ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M785 256 L866 286 V353 C866 413 832 454 785 478 C738 454 704 413 704 353 V286 Z" fill="#203c59" stroke="#f18b7f" stroke-width="5"/>
+  <path d="M785 302 V369" stroke="#ff9b8e" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="785" cy="402" r="8" fill="#ff9b8e"/>
+  <rect x="912" y="256" width="182" height="58" rx="12" fill="#173e35" stroke="#58b88c" stroke-width="2"/>
+  <text x="1003" y="293" text-anchor="middle" fill="#b6f0d2" font-family="Arial,sans-serif" font-size="22" font-weight="700">PATCHED</text>
+  <text x="912" y="357" fill="#ffffff" font-family="Arial,sans-serif" font-size="19" font-weight="700">FIXED CORE</text>
+  <text x="912" y="395" fill="#c6d7e7" font-family="monospace" font-size="19">10.6.23</text>
+  <text x="912" y="427" fill="#c6d7e7" font-family="monospace" font-size="19">11.3.23</text>
+  <text x="912" y="459" fill="#c6d7e7" font-family="monospace" font-size="19">11.4.14</text>
+  <text x="96" y="526" fill="#9eb0c2" font-family="Arial,sans-serif" font-size="18">CVE-2026-136716  ·  Update core, run update.php, secure the installer</text>
+</svg>
