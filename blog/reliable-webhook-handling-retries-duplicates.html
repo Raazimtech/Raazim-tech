@@ -86,19 +86,50 @@ h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.15;letter-spacing:-.
 </style>
 <script type="application/ld+json">
 {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Handle Webhook Retries Without Duplicating Work",
+  "description": "Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.",
+  "image": "https://raazimtech.github.io/Raazim-tech/blog/images/webhook-inbox-flow.svg",
+  "datePublished": "2026-11-26",
+  "dateModified": "2026-11-26",
+  "author": {
+    "@type": "Organization",
+    "name": "Raazim Tech"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Raazim Tech",
+    "url": "https://raazimtech.github.io/Raazim-tech/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://raazimtech.github.io/Raazim-tech/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html",
+  "articleSection": "Database & Backend",
+  "keywords": [
+    "reliable webhook handling",
+    "webhook retries",
+    "duplicate webhook events",
+    "idempotency",
+    "PostgreSQL webhook inbox",
+    "event-driven architecture"
+  ],
+  "wordCount": 2698,
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
   "@context":"https://schema.org",
-  "@type":"BlogPosting",
-  "headline":"How to Handle Webhook Retries Without Duplicating Work",
-  "description":"Build reliable webhook handlers with signature checks, a durable inbox, idempotent database updates, retries, and recovery for duplicate or out-of-order events.",
-  "image":"https://raazimtech.github.io/Raazim-tech/blog/images/webhook-inbox-flow.svg",
-  "datePublished":"2026-11-26",
-  "dateModified":"2026-11-26",
-  "author":{"@type":"Organization","name":"Raazim Tech"},
-  "publisher":{"@type":"Organization","name":"Raazim Tech","url":"https://raazimtech.github.io/Raazim-tech/","logo":{"@type":"ImageObject","url":"https://raazimtech.github.io/Raazim-tech/logo.png"}},
-  "mainEntityOfPage":"https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html",
-  "articleSection":"Database & Backend",
-  "keywords":["reliable webhook handling","webhook retries","duplicate webhook events","idempotency","PostgreSQL webhook inbox","event-driven architecture"],
-  "wordCount":2662,"inLanguage":"en"
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://raazimtech.github.io/Raazim-tech/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://raazimtech.github.io/Raazim-tech/blog/"},
+    {"@type":"ListItem","position":3,"name":"Database & Backend","item":"https://raazimtech.github.io/Raazim-tech/blog/"},
+    {"@type":"ListItem","position":4,"name":"How to Handle Webhook Retries Without Duplicating Work","item":"https://raazimtech.github.io/Raazim-tech/blog/reliable-webhook-handling-retries-duplicates.html"}
+  ]
 }
 </script>
 </head>
@@ -281,6 +312,7 @@ ON CONFLICT (order_id) DO NOTHING;</code></pre>
       <p>Use bounded retries with backoff for temporary failures. A malformed payload, invalid signature, or unsupported event is not the same as a temporary database outage; do not retry permanent failures forever. After a configured number of attempts, move the event to a failed or dead-letter state and alert someone who can investigate it.</p>
       <p>Record enough metadata to answer operational questions: provider, event ID, event type, received time, attempt count, processing duration, status, and a short sanitized error. Avoid storing unnecessary personal data and never log signing secrets, access tokens, or full payment details.</p>
       <p>Build a replay tool that requeues a stored event without deleting its history. Replay should pass through the same idempotency checks as a normal delivery. Also run reconciliation for important records: compare your local order or subscription state with the provider's source of truth, because webhook delivery alone is not a complete audit process.</p>
+      <p>For GitHub, the <code>X-GitHub-Delivery</code> header identifies a delivery and remains the same when that delivery is manually redelivered. Store that stable identifier with the provider name so a replay is recognized as the same accepted event.</p>
       <p>Provider recovery rules differ. Stripe currently documents live-mode automatic retries for up to three days and manual resend windows of up to 15 days in the Dashboard or 30 days with the CLI. GitHub documents manual redelivery for deliveries from the past three days and says it does not automatically redeliver failed deliveries. Check the provider's current documentation rather than assuming its retry policy matches another service.</p>
 
       <h2 id="testing">A failure-focused test checklist</h2>
