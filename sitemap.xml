@@ -67,4 +67,5 @@
     <priority>0.8</priority>
     <image:image><image:loc>https://raazimtech.github.io/Raazim-tech/news/images/cloud-one-air-force-platform-breach.svg</image:loc><image:title>U.S. Air Force Cloud One platform breach investigation</image:title><image:caption>Original illustration of the Cloud One multi-cloud control plane and reported security incident</image:caption></image:image>
   </url>
+  <url><loc>https://raazimtech.github.io/Raazim-tech/blog/postgresql-zero-downtime-database-migrations.html</loc><lastmod>2026-11-28</lastmod><priority>0.8</priority><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/blog/images/zero-downtime-migrations.svg</image:loc><image:title>Expand-and-contract PostgreSQL migration stages</image:title><image:caption>Original illustration of a staged database migration</image:caption></image:image></url>
 </urlset>
