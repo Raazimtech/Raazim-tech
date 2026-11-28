@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Cloud One multi-cloud platform security incident</title>
+<desc id="desc">Original illustration of a multi-cloud control plane with a security breach alert and connected mission applications under investigation.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1725"/><stop offset="1" stop-color="#183451"/></linearGradient>
+<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#193653"/><stop offset="1" stop-color="#10263b"/></linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/><circle cx="1030" cy="95" r="230" fill="#2876c8" opacity=".10"/><circle cx="135" cy="570" r="260" fill="#2876c8" opacity=".08"/>
+<g fill="none" stroke="#6b9cc8" stroke-width="3" opacity=".6"><path d="M260 215 L405 300 L595 300 L740 215"/><path d="M595 300 L595 420"/><path d="M405 300 L310 425"/><path d="M740 215 L890 425"/></g>
+<g font-family="Arial,sans-serif">
+<text x="74" y="88" fill="#8fbbe5" font-size="20" font-weight="700" letter-spacing="5">RAAZIM TECH · CYBERSECURITY</text>
+<text x="74" y="145" fill="#ffffff" font-size="48" font-weight="700">Cloud One under investigation</text>
+<text x="76" y="184" fill="#b8cde0" font-size="23">Reported breach of the U.S. Air Force multi-cloud platform</text>
+<rect x="405" y="235" width="380" height="210" rx="22" fill="url(#panel)" stroke="#6c9bc4" stroke-width="2"/>
+<text x="595" y="280" fill="#9fc5e8" font-size="18" font-weight="700" text-anchor="middle" letter-spacing="3">CLOUD ONE</text>
+<text x="595" y="330" fill="#ffffff" font-size="31" font-weight="700" text-anchor="middle">CONTROL PLANE</text>
+<rect x="495" y="356" width="200" height="48" rx="9" fill="#71343b" stroke="#f18b83" stroke-width="2"/>
+<path d="M520 380 l13 -14 13 14 -13 14z" fill="#ffd3cc"/><text x="620" y="387" fill="#fff0ed" font-size="16" font-weight="700" text-anchor="middle">ACCESS ALERT</text>
+<g><rect x="130" y="185" width="180" height="62" rx="12" fill="#17314a" stroke="#5b87b2" stroke-width="2"/><text x="220" y="224" fill="#dcecff" font-size="20" font-weight="700" text-anchor="middle">AWS</text>
+<rect x="780" y="185" width="180" height="62" rx="12" fill="#17314a" stroke="#5b87b2" stroke-width="2"/><text x="870" y="224" fill="#dcecff" font-size="20" font-weight="700" text-anchor="middle">AZURE</text>
+<rect x="220" y="425" width="180" height="62" rx="12" fill="#17314a" stroke="#5b87b2" stroke-width="2"/><text x="310" y="464" fill="#dcecff" font-size="20" font-weight="700" text-anchor="middle">GOOGLE CLOUD</text>
+<rect x="800" y="425" width="180" height="62" rx="12" fill="#17314a" stroke="#5b87b2" stroke-width="2"/><text x="890" y="464" fill="#dcecff" font-size="20" font-weight="700" text-anchor="middle">ORACLE CLOUD</text></g>
+<rect x="1010" y="255" width="130" height="150" rx="16" fill="#122a41" stroke="#527fa8" stroke-width="2"/>
+<path d="M1075 285 l34 13 v28 c0 25 -14 43 -34 54 -20 -11 -34 -29 -34 -54 v-28z" fill="#294d6d" stroke="#8db9df" stroke-width="2"/><path d="M1059 326 l12 12 23 -26" fill="none" stroke="#d9ebfb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1075" y="386" fill="#c4d8e9" font-size="14" font-weight="700" text-anchor="middle">ASSESSMENT</text>
+<text x="74" y="555" fill="#ffffff" font-size="22" font-weight="700">Scope and data impact have not been established</text><text x="74" y="590" fill="#a8bfd4" font-size="16">Original illustration · 28 November 2026</text>
+</g></svg>
