@@ -39,7 +39,7 @@
     <image:image><image:loc>https://raazimtech.github.io/Raazim-tech/blog/images/pwa-architecture.svg</image:loc><image:title>Progressive Web App architecture: manifest, service worker and offline cache</image:title><image:caption>How a PWA combines an installable web app with optional offline support</image:caption></image:image>
   </url>
   <url><loc>https://raazimtech.github.io/Raazim-tech/blog/api-security-checklist-small-businesses-2026.html</loc><lastmod>2026-11-25</lastmod><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/blog/images/api-security.svg</image:loc><image:title>API security layers for small businesses</image:title><image:caption>Authentication, permissions, validation and monitoring for business APIs</image:caption></image:image></url>
-  <url><loc>https://raazimtech.github.io/Raazim-tech/news/</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://raazimtech.github.io/Raazim-tech/news/</loc><lastmod>2026-11-28</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url>
     <loc>https://raazimtech.github.io/Raazim-tech/news/minimax-ai-prompt-data-access-investigation.html</loc>
     <lastmod>2026-11-27</lastmod>
@@ -60,4 +60,11 @@
   <url><loc>https://raazimtech.github.io/Raazim-tech/case-studies.html</loc><lastmod>2026-11-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://raazimtech.github.io/Raazim-tech/start-project.html</loc><lastmod>2026-11-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 <url><loc>https://raazimtech.github.io/Raazim-tech/saas.html</loc><lastmod>2026-11-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url><url><loc>https://raazimtech.github.io/Raazim-tech/starbus-project.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/star%20bus%20preview.png</image:loc><image:title>Star Bus Somaliland website preview</image:title></image:image></url><url><loc>https://raazimtech.github.io/Raazim-tech/ardaa-project.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/ardaa%20cafe%20preview.png</image:loc><image:title>Ardaa Cafe website preview</image:title></image:image></url><url><loc>https://raazimtech.github.io/Raazim-tech/naima-project.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/naima%20design%20preview.png</image:loc><image:title>Naima Design website preview</image:title></image:image></url><url><loc>https://raazimtech.github.io/Raazim-tech/blog/localstorage-vs-indexeddb-when-to-use-browser-storage.html</loc><lastmod>2026-11-27</lastmod><priority>0.8</priority><image:image><image:loc>https://raazimtech.github.io/Raazim-tech/blog/images/browser-storage-guide.svg</image:loc><image:title>Browser storage choices: localStorage, IndexedDB and Cache Storage</image:title><image:caption>Original illustration comparing browser storage APIs</image:caption></image:image></url>
+
+  <url>
+    <loc>https://raazimtech.github.io/Raazim-tech/news/us-air-force-cloud-one-platform-breach.html</loc>
+    <lastmod>2026-11-28</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://raazimtech.github.io/Raazim-tech/news/images/cloud-one-air-force-platform-breach.svg</image:loc><image:title>U.S. Air Force Cloud One platform breach investigation</image:title><image:caption>Original illustration of the Cloud One multi-cloud control plane and reported security incident</image:caption></image:image>
+  </url>
 </urlset>
